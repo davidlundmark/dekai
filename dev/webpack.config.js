@@ -35,7 +35,7 @@ module.exports = {
                     ['css-loader?sourceMap', 'postcss-loader', 'sass-loader?sourceMap']
                 )
             },
-            { test: /\.(eot|woff|woff2|svg|ttf)([\?]?.*)$/, loader: "file-loader?name=../assets/fonts/[name].[ext]" }
+            { test: /\.(eot|woff|woff2|svg|ttf)([\?]?.*)$/, loader: "file-loader?name=../assets/fonts/icomoon/[name].[ext]" }
         ] : [{
             test: /\.scss$/,
             loader: extracttextplugin.extract(

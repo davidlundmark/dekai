@@ -45,4 +45,26 @@ $form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($action-color, $l
 $base-duration: 150ms;
 $base-timing: ease;
 
+// =================================================
+// Colors
+// =================================================
+
+// Brand Colors
+@color-green: #00723f;
+@color-dark-green: darken(#00723f,10%);
+
+// Grays
+@color-black: #000;
+@color-gray-dark: #333;
+@color-gray: #555;
+@color-gray-light: #ccc;
+@color-white: #fff;
+
+// Bg
+@color-bg-primary: #fff;
+@color-bg-secondary: #f9f9f3;
+//@color-bg-tertiary: #;
+//@color-bg-quaternary: #;
+//@color-bg-quinary: #;
+
 
