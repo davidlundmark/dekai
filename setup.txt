@@ -1,0 +1,23 @@
+--general
+
+download and install node.js
+
+npm install webpack -global
+
+npm install webpack sass-loader css-loader style-loader node-sass autoprefixer postcss-loader precss extract-text-webpack-plugin  url-loader jquery
+
+NOD_ENV=debug webpack to change ENV mode
+
+--custom
+
+npm install --save-dev bourbon@5.0.0-beta.6 bourbon-neat@2.0.0-beta.1
+
+get latest bitters from : https://github.com/thoughtbot/bitters
+
+get latest normalize.css from : https://necolas.github.io/normalize.css/
+
+-- packages
+
+All Autocomplete , Preferences -> Settings - User -> "word_separators": "./\\()\"'-:,.;<>~!@#%^&*|+=[]{}`~?"
+
+
