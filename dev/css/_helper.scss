@@ -1,0 +1,70 @@
+@import "variables";
+@mixin clearfix {
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+@mixin transition($transition-property: all, $transition-duration: $base-transition-duration, $transition-timing: $base-transition-timing, $acceleration: false) {
+    transition: $transition-property $transition-duration $transition-timing;
+    @if $acceleration==true {
+        transform: translateZ(0);
+        backface-visibility: hidden;
+    }
+}
+
+@mixin acceleratedTransition($transition-property: all, $transition-duration: $base-transition-duration, $transition-timing: $base-transition-timing, $acceleration: false) {
+    @include transition($transition-property $transition-duration $transition-timing, true);
+}
+
+@mixin setTextFormat($font-family: null, $font-size: null, $font-weight: null, $line-height: null, $text-transform: none, $text-decoration: null, $font-style: null) {
+    @if $font-size !=null {
+        font-size: $font-size;
+    }
+    @if $font-family !=null {
+        font-family: $font-family;
+    }
+    @if $font-weight !=null {
+        font-weight: $font-weight;
+    }
+    @if $line-height !=null {
+        line-height: $line-height;
+    }
+    @if $text-transform !=none {
+        text-transform: $text-transform;
+    }
+    @if $font-style !=null {
+        font-style: $font-style;
+    }
+    @if $text-transform !=null {
+        text-decoration: $text-decoration;
+    }
+}
+
+@mixin fixedOverlay($top:0, $right:0, $bottom:0, $left:0) {
+    position: fixed;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+@mixin border($color:$base-border-color, $dir:null, $thickness:$base-border-thickness, $style:$base-border-style) {
+    @if $dir==null {
+        border: $thickness $style $color;
+    }
+    @else if $dir==top {
+        border-top: $thickness $style $color;
+    }
+    @else if $dir==right {
+        border-right: $thickness $style $color;
+    }
+    @else if $dir==bottom {
+        border-bottom: $thickness $style $color;
+    }
+    @else if $dir==left {
+        border-left: $thickness $style $color;
+    }
+}

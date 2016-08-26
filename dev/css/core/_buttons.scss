@@ -2,38 +2,37 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-  appearance: none;
-  background-color: $action-color;
-  border: 0;
-  border-radius: $base-border-radius;
-  color: #fff;
-  cursor: pointer;
-  display: inline-block;
-  font-family: $base-font-family;
-  font-size: $base-font-size;
-  -webkit-font-smoothing: antialiased;
-  font-weight: 600;
-  line-height: 1;
-  padding: $small-spacing $base-spacing;
-  text-align: center;
-  text-decoration: none;
-  transition: background-color $base-duration $base-timing;
-  user-select: none;
-  vertical-align: middle;
-  white-space: nowrap;
-
-  &:hover,
-  &:focus {
-    background-color: shade($action-color, 20%);
-    color: #fff;
-  }
-
-  &:disabled {
-    cursor: not-allowed;
-    opacity: 0.5;
-
-    &:hover {
-      background-color: $action-color;
+    color: $button-color;
+    background-color: $button-background-color;
+    border-radius: $button-border-radius; 
+    @include border($button-border-color);
+    @include setTextFormat($button-font-family, $button-font-size, $button-font-weight, $button-line-height, $button-text-transform);
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: $base-transition;
+    padding: $gap-half $gap;
+    appearance: none;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+    &:hover,
+    &:focus {
+        outline: none;
     }
-  }
+    .no-touch & {
+        @include transition();
+        &:hover {
+            color: $button-hover-color;
+            background-color: $button-hover-background-color;
+        }
+    }
+    &:disabled,
+    &.disabled {
+        cursor: not-allowed;
+        opacity: 0.5;
+        pointer-events: none;
+    }
 }

@@ -1,257 +1,45 @@
 @import './lib/normalize';
 //@import 'bourbon';
 @import 'neat';
+@import "variables";
+@import "helper";
 @import './core/base';
-body {}
-
-section {
-    padding: 20px;
-    &::after {
-        clear: both;
-        content: "";
-        display: table;
-    }
-}
-
-.grid-container {
-    //@include grid-container;
-    @include grid-collapse;
-}
-
-.grid-column {
-    @include grid-column(6);
-    border: 1px solid black;
-    &::after {
-        clear: both;
-        content: "";
-        display: table;
-    }
-    //$custom-neat-grid: ( columns: 12, gutter:50px, media: 1000px);
-    //@include grid-media($custom-neat-grid) {
-    //    @include grid-column(12);
-    //}
-}
-
+@import './components/base';
+//project specific styles
 .side-nav {
-    $action-color: #477DCA !default;
-    $side-nav-border-color: #dddddd;
-    $side-nav-background: #fff;
-    $side-nav-color: #808080; //#333333;
-    $side-nav-border: 1px solid $side-nav-border-color;
-    $side-nav-background-hover: #dddddd;
-    $side-nav-color-hover: #333333;
-    $side-nav-background-focus: #dddddd;
-    //@include position(fixed, 0 auto 0 0);
-    position: fixed;
-    top: 0;
-    right: auto;
-    left: 0;
-    bottom: 0;
-    width: 30%;
-    max-width: 300px;
-    height: 100%;
-    background: $side-nav-background;
-    -webkit-overflow-scrolling: touch;
-    overflow-y: auto;
-    transform: translateX(-100%);
-    transition: all 0.25s linear;
-    z-index: 999999;
-    border-right: $side-nav-border;
     .logo-container {
-        //color: #fff;
-        //background-color: #64af3c;
-        border-bottom: $side-nav-border;
+        padding: $gap;
         img {
             margin: 0 auto;
-            max-width: 200px;
+            width: 100px;
             display: block;
         }
     }
-    ul {
-        padding: 0;
-        margin: 0;
-    }
-    li {
-        list-style: none;
-    }
-    li > a {
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        border-bottom: $side-nav-border;
-        color: $side-nav-color;
-        display: block;
-        //font-weight: bold;
-        font-size: 12px;
-        padding: 1em;
-        text-decoration: none;
-        &:focus {
-            //background-color: $side-nav-background-focus;
-        }
-        &:hover {
-            background-color: $side-nav-background-hover;
-            color: $side-nav-color-hover;
-        }
-        &:last-child {
-            border: 0;
-        }
-        display: table;
-        width: 100%;
-        table-layout: fixed;
-        > span {
-            vertical-align: middle;
-            display: table-cell;
-            &.label {
-                width: 85%;
-                text-align: left;
-            }
-            &.icon {
-                width: 15%;
-                text-align: right;
-
-                > span {
-                    margin-top: 1px;
-                    display: inline-block;
-                    transform: rotate(90deg);
-                    //transform-origin: 6px 7px;
-                    transition: all 0.2s $easeOutQuint;
-                    
+    .accordion {
+        border-right: none;
+        a {
+            @include setTextFormat($button-font-family, $button-font-size, $button-font-weight, $button-line-height, $button-text-transform);
+            letter-spacing: 1px;
+            text-decoration: none;
+            display: table;
+            width: 100%;
+            table-layout: fixed;
+            > span {
+                vertical-align: middle;
+                display: table-cell;
+                &.label {
+                    width: 85%;
+                    text-align: left;
                 }
-                
+                &.icon {
+                    width: 15%;
+                    text-align: right;
+                    > span {
+                        margin-top: 1px;
+                        display: inline-block;
+                    }
+                }
             }
-        }
-    }
-    &.is-visible {
-        transform: translateX(0);
-    }
-    ul.submenu {
-        display: none;
-        li {
-            border-bottom: $side-nav-border;
-            background-color: #f7f8f7;
-            &:first-child {
-                //border-top: $accordion-menu-border;
-                //box-shadow: inset 0 1px 1px $accordion-menu-sub-inset;
-            }
-            &:focus,
-            &:hover {
-                //background-color: $accordion-menu-sub-hover;
-            }
-        }
-    }
-    .is-expanded {
-        //display: block;
-        //padding-bottom: 0;
-
-        > a > span.icon > span {
-            transform: rotate(-90deg);
-        }
-    }
-}
-
-.js-menu-trigger {
-    cursor: pointer;
-    display: inline-block;
-    outline: none;
-    padding: 10px 16px;
-    position: relative;
-    img {
-        height: 1.3em;
-    }
-}
-
-.content-wrapper {
-    padding-left: 30%;
-}
-
-// Based on code by Diego Eis
-.accordion-tabs {
-    $base-border-color: #dcdcdc !default;
-    $base-border-radius: 3px !default;
-    $base-background-color: #fff !default;
-    $base-spacing: 1.5em !default;
-    $action-color: #477dca !default;
-    $dark-gray: #333 !default;
-    $light-gray: #ddd !default;
-    $medium-screen: 40em !default;
-    $tab-border: 1px solid $base-border-color;
-    $tab-content-background: lighten($light-gray, 10);
-    $tab-active-background: $tab-content-background;
-    $tab-inactive-color: $base-background-color;
-    $tab-inactive-hover-color: darken($light-gray, 5);
-    $custom-neat-grid: ( columns: 12, gutter: 50px, media: 1000px, );
-    $gutter: 20px;
-    //@include clearfix;
-    &::after {
-        clear: both;
-        content: "";
-        display: table;
-    }
-    line-height: 1.5;
-    margin-bottom: $base-spacing;
-    padding: 0;
-    @include grid-media($custom-neat-grid) {
-        border: $tab-border;
-        border-radius: $base-border-radius;
-    }
-    .tab-header-and-content {
-        list-style: none;
-        @include grid-media($custom-neat-grid) {
-            display: inline;
-        }
-        &:first-child .tab-link {
-            border-top-left-radius: $base-border-radius;
-            border-top-right-radius: $base-border-radius;
-            @include grid-media($custom-neat-grid) {
-                border-top: 0;
-            }
-        }
-        &:last-child .tab-link {
-            @include grid-media($custom-neat-grid) {
-                border-bottom-left-radius: $base-border-radius;
-                border-bottom-right-radius: $base-border-radius;
-            }
-        }
-    }
-    .tab-link {
-        background-color: $tab-inactive-color;
-        border-top: $tab-border;
-        color: $dark-gray;
-        display: block;
-        font-weight: bold;
-        padding: $base-spacing;
-        text-decoration: none;
-        @include grid-media($custom-neat-grid) {
-            //@include border-top-radius($base-border-radius);
-            border-top: 0;
-            display: inline-block;
-        }
-        &:hover {
-            color: $action-color;
-        }
-        &:focus {
-            outline: none;
-        }
-        &.is-active {
-            background-color: $tab-active-background;
-            @include grid-media($custom-neat-grid) {
-                background-color: $tab-active-background;
-                border: $tab-border;
-                border-bottom-color: $tab-active-background;
-                margin-bottom: -1px;
-            }
-        }
-    }
-    .tab-content {
-        background: $tab-content-background;
-        display: none;
-        padding: $base-spacing $gutter;
-        width: 100%;
-        @include grid-media($custom-neat-grid) {
-            border: $tab-border;
-            border-bottom-left-radius: $base-border-radius;
-            border-bottom-right-radius: $base-border-radius;
-            border-top-right-radius: $base-border-radius;
-            float: left;
         }
     }
 }

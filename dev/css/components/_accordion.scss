@@ -1,0 +1,49 @@
+.accordion {
+    background-color: $accordion-menu-background;
+    @include border($accordion-menu-border-color);
+    margin: 0 0 $gap 0;
+    padding: 0;
+    > li:last-child {
+    	> a {
+    		border: none;
+    	}
+    }
+    ul {
+        margin: 0;
+        padding: 0;
+    }
+    li {
+        list-style: none;
+        > a {
+            @include border($accordion-menu-border-color, bottom);
+            color: $accordion-menu-color;
+            display: block;
+            padding: $accordion-menu-list-padding;
+            text-decoration: none;
+        }
+        &:last-child {
+            border: 0;
+        }
+        .no-touch & {
+            &:hover {
+                background-color: $accordion-menu-hover;
+            }
+        }
+    }
+    ul.submenu {
+        display: none;
+        li {
+            background-color: $accordion-menu-sub-background;
+            //@include border($accordion-menu-border-color, bottom);
+            .no-touch & {
+                &:hover {
+                    background-color: $accordion-menu-sub-hover;
+                }
+            }
+        }
+    }
+    .is-expanded {
+        display: block;
+        padding-bottom: 0;
+    }
+}

@@ -1,0 +1,191 @@
+// =================================================
+// Default Colors
+// =================================================
+
+// Brand Colors
+$color-green: #00723f;
+$color-dark-green: darken(#00723f,10%);
+
+// Grays
+$black: #000;
+$dark-gray: #333;
+$medium-gray: #999;
+$light-gray: #ddd;
+$white: #fff;
+
+// Background Colors
+$base-background-color: $white;
+$secondary-background-color : $light-gray;
+//$tertiary-background-color : #;
+//$quaternary-background-color : #;
+
+// Brand
+$base-brand-color: $color-green;
+$secondary-brand-color: $color-dark-green;
+
+// Font Colors
+$base-font-color: $dark-gray;
+
+// =================================================
+// Fonts
+// =================================================
+
+// Font familys
+$opensans: 'Open Sans', sans-serif;
+$sourcesanspro : 'Source Sans Pro', sans-serif;
+
+// Text
+$base-font-weight: 400;
+$base-font-family: $opensans;
+$base-font-size: 14px;
+$base-line-height: 1.5;
+
+// Text
+$heading-font-weight: normal;
+$heading-font-family: $sourcesanspro;
+$heading-font-size: 18px;
+$heading-line-height: 1.2;
+$heading-text-transform: none;
+
+// h1
+$h1-font-family: $heading-font-family;
+$h1-font-weight: $heading-font-weight;
+$h1-text-transform: none;
+$h1-line-height: $heading-line-height;
+$h1-font-size: 36px;
+$h1-font-size-lg: 32px;
+$h1-font-size-md: 28px;
+$h1-font-size-sm: 24px;
+
+//h2
+// h1
+$h2-font-family: $heading-font-family;
+$h2-font-weight: $heading-font-weight;
+$h2-text-transform: none;
+$h2-line-height: $heading-line-height;
+$h2-font-size: 34px;
+$h2-font-size-lg: 30px;
+$h2-font-size-md: 26px;
+$h2-font-size-sm: 22px;
+
+//h3
+//etc
+
+
+// =================================================
+// Border
+// =================================================
+
+// Border
+$base-border-color: $light-gray;
+$base-border: 1px solid $base-border-color;
+$base-border-thickness: 1px;
+$base-border-style: solid;
+$secondary-border-color : $light-gray;
+$secondary-border: 1px solid $secondary-border-color;
+
+// =================================================
+// Breakpoints
+// =================================================
+
+$screen-xl: 1400px;
+$screen-lg: 1024px;
+$screen-md: 768px;
+$screen-sm: 460px;
+$screen-xs: 320px;
+
+// =================================================
+//Gaps
+// =================================================
+
+$gap-xxl: 35px;
+$gap-xl: 30px;
+$gap-lg: 25px;
+$gap: 20px;
+$gap-md: 15px;
+$gap-sm: 10px;
+$gap-xs: 5px;
+
+$gap-triple: $gap * 3;
+$gap-double: $gap * 2;
+$gap-half: $gap * 0.5;
+$gap-none: 0;
+
+// =================================================
+// Animation
+// =================================================
+
+$base-transition-duration: 0.2s;
+$base-transition-timing: linear; 
+$base-transition: all $base-transition-duration $base-transition-timing;
+
+// =================================================
+// Misc
+// =================================================
+
+$base-border-radius : 0;
+
+// =================================================
+// Buttons
+// =================================================
+
+$button-color: $base-font-color;
+$button-background-color: $base-background-color;
+$button-border-radius: $base-border-radius;
+$button-font-family: $heading-font-family;
+$button-font-size: 12px;
+$button-font-weight: $heading-font-weight;
+$button-line-height: 1;
+$button-hover-color: $white;
+$button-hover-background-color: $base-brand-color;
+$button-border-color: $base-border-color;
+$button-text-transform: uppercase;
+
+ 
+// =================================================
+// Links
+// =================================================
+
+$link-color: $base-font-color;
+$link-hover-color: $base-brand-color;
+$link-text-transform: none;
+$link-font-family: $base-font-family;
+$link-font-size: $base-font-size;
+$link-font-weight: $base-font-weight;
+$link-text-decoration: underline;
+
+// =================================================
+// Page section
+// =================================================
+
+$section-padding: $gap;
+$section-max-width: 1024px;
+
+// =================================================
+// Text inputs
+// =================================================
+
+$text-input-background-color: $base-background-color;
+$text-input-border: $base-border;
+$text-input-padding: $gap-sm $gap;
+
+// =================================================
+// Side nav
+// =================================================
+
+$sidenav-width: 300px;
+$sidenav-background-color: $base-background-color;
+$sidenav-border-color: $base-border-color;
+
+// =================================================
+// Accordion
+// =================================================
+  
+$accordion-menu-border-color: $base-border-color;
+$accordion-menu-color: $base-font-color;
+$accordion-menu-background: $white;
+$accordion-menu-hover: $white;
+$accordion-menu-sub-background: $white;
+$accordion-menu-sub-inset: darken($accordion-menu-sub-background, 6%);
+$accordion-menu-sub-hover: $light-gray;
+$accordion-menu-list-padding: $gap-half $gap;

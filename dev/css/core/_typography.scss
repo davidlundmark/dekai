@@ -1,42 +1,51 @@
 body {
-  color: $base-font-color;
-  font-family: $base-font-family;
-  font-size: $base-font-size;
-  line-height: $base-line-height;
+    color: $base-font-color;
+    @include setTextFormat($base-font-family, $base-font-size, $base-font-weight, $base-line-height);
+    -webkit-font-smoothing: antialiased;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: $heading-font-family;
-  font-size: modular-scale(1);
-  line-height: $heading-line-height;
-  margin: 0 0 $small-spacing;
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+    @include setTextFormat($heading-font-family, $heading-font-size, $heading-font-weight, $heading-line-height);
+    margin: 0 0 $gap-half;
+}
+
+h1, .h1 {
+    @include setTextFormat($h1-font-family, $h1-font-size, $h1-font-weight, $h1-line-height, $h1-text-transform);
+}
+
+h2, .h2 {
+    @include setTextFormat($h2-font-family, $h2-font-size, $h2-font-weight, $h2-line-height, $h2-text-transform);
 }
 
 p {
-  margin: 0 0 $small-spacing;
+    margin: 0 0 $gap-half;
 }
 
 a {
-  color: $action-color;
-  text-decoration: none;
-  transition: color $base-duration $base-timing;
-
-  &:active,
-  &:focus,
-  &:hover {
-    color: shade($action-color, 25%);
-  }
+    color: $link-color;
+    @include setTextFormat($link-font-family, $link-font-size, $link-font-weight, $base-line-height, $link-text-transform, $link-text-decoration);
+    &:active,
+    &:hover,
+    &:focus {
+        outline: none;
+    }
+    .no-touch & {
+        @include transition(color);
+        &:hover {
+            color: $link-hover-color;
+        }
+    }
 }
 
 hr {
-  border-bottom: $base-border;
-  border-left: 0;
-  border-right: 0;
-  border-top: 0;
-  margin: $base-spacing 0;
+    border-bottom: $base-border;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    margin: $gap 0;
 }

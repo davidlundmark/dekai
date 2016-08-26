@@ -1,0 +1,20 @@
+.side-nav {
+    width: $sidenav-width;
+    background-color: $sidenav-background-color;
+    @include fixedOverlay($right: auto);
+    @include border($sidenav-border-color, right);
+    -webkit-overflow-scrolling: touch;
+    overflow-y: auto;
+    z-index: 999;
+    .logo-container {
+        img {
+            margin: 0 auto;
+            width: 200px;
+            display: block;
+        }
+    }
+}
+
+main {
+    padding-left: $sidenav-width;
+}
