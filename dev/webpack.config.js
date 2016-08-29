@@ -21,7 +21,11 @@ module.exports = {
         filename: jsFile,
         publicPath: './assets/'
     },
-    plugins: debug ? [new extracttextplugin(cssFile)] : [
+    plugins: debug ? [new extracttextplugin(cssFile),
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery"
+    })] : [
         new webpack.optimize.DedupePlugin(),
         new webpack.optimize.OccurenceOrderPlugin(),
         new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false }),

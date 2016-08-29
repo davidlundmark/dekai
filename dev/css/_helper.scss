@@ -15,8 +15,40 @@
     }
 }
 
+@mixin customTransitionTiming($custom-transition-timing) {
+    @include transition($transition-timing: $custom-transition-timing);
+}
+
 @mixin acceleratedTransition($transition-property: all, $transition-duration: $base-transition-duration, $transition-timing: $base-transition-timing, $acceleration: false) {
-    @include transition($transition-property $transition-duration $transition-timing, true);
+    @include transition($transition-property, $transition-duration, $transition-timing, true);
+}
+
+@mixin setFont($font-name: $base-font-name) {
+    @if $font-name==$base-font-name {
+        @include setTextFormat($base-font-family, $base-font-size, $base-font-weight, $base-line-height);
+        text-decoration: none;
+    }
+    @else if $font-name==$heading-font-name {
+        @include setTextFormat($heading-font-family, $heading-font-size, $heading-font-weight, $heading-line-height);
+    }
+    //@else if $font-name==$h1-font-name {
+    //    @include setTextFormat($h1-font-family, $h1-font-size, $h1-font-weight, $h1-line-height, $h1-text-transform);
+    //}
+    //@else if $font-name==$h2-font-name {
+    //    @include setTextFormat($h2-font-family, $h2-font-size, $h2-font-weight, $h2-line-height, $h2-text-transform);
+    //}
+    //@else if $font-name==$link-font-name {
+    //    @include setTextFormat($link-font-family, $link-font-size, $link-font-weight, $base-line-height, $link-text-transform, $link-text-decoration);
+    //}
+    @else if $font-name==$button-font-name {
+        @include setTextFormat($button-font-family, $button-font-size, $button-font-weight, $button-line-height, $button-text-transform);
+        text-decoration: none;
+        letter-spacing: 1px;
+    }
+}
+
+@mixin setFontSize($font-size) {
+    font-size: $font-size;
 }
 
 @mixin setTextFormat($font-family: null, $font-size: null, $font-weight: null, $line-height: null, $text-transform: none, $text-decoration: null, $font-style: null) {
@@ -67,4 +99,51 @@
     @else if $dir==left {
         border-left: $thickness $style $color;
     }
+}
+
+@mixin createCircle($background-color: $base-brand-color, $diameter: $gap, $color: $base-font-color, $background-hover-color: null, $border: null) {
+    //padding: $padding;
+    width: $diameter;
+    height: $diameter;
+    border-radius: $diameter;
+    //float: left;
+    text-align: center;
+    position: relative;
+    @if $background-color !=null {
+        background-color: $background-color;
+    }
+    @if $color !=null {
+        color: $color;
+    }
+    @if $border !=null {
+        border: $border;
+    }
+    //font-size: @text-size;border: @border;
+    @if $background-hover-color !=null {
+        border: $border;
+        .no-touch & {
+            &:hover {
+                @include transition();
+            }
+        }
+    }
+
+    > .icon {
+        @include centerElement();
+    }
+}
+
+@mixin centerElement() {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    @include translate(-50%, -50%);
+}
+
+@mixin translate($x, $y) {
+    transform: translate($x, $y);
+}
+
+@mixin translateY($y) {
+    transform: translateY($y);
 }

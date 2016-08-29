@@ -1,4 +1,5 @@
 @import './lib/normalize';
+@import './lib/prism';
 //@import 'bourbon';
 @import 'neat';
 @import "variables";
@@ -15,31 +16,39 @@
             display: block;
         }
     }
-    .accordion {
-        border-right: none;
-        a {
-            @include setTextFormat($button-font-family, $button-font-size, $button-font-weight, $button-line-height, $button-text-transform);
-            letter-spacing: 1px;
-            text-decoration: none;
-            display: table;
-            width: 100%;
-            table-layout: fixed;
-            > span {
-                vertical-align: middle;
-                display: table-cell;
-                &.label {
-                    width: 85%;
-                    text-align: left;
-                }
-                &.icon {
-                    width: 15%;
-                    text-align: right;
-                    > span {
-                        margin-top: 1px;
-                        display: inline-block;
-                    }
-                }
-            }
+    .accordion-menu {
+        li.menu-item > a {
+            @include setFont($button-font-name);
+            padding: $gap;
+        }
+    }
+}
+
+.introduction {
+    text-align: center;
+    padding: $gap-double $gap-triple;
+    background-color: $secondary-background-color;
+    @include border($dir: bottom);
+}
+
+.dk-expander {
+    $diameter: $gap-double;
+    @include border($dir: top);
+    margin: $diameter 0 0;
+    .line-behind-icon {
+        text-align: center;
+        display: block;
+        .icon-container {
+            position: relative;
+            top: -$diameter*0.5;
+            display: inline-block;
+            padding: 0 $gap;
+            background-color: $base-background-color;
+        }
+        .icon-circle {
+            @include createCircle($diameter: $diameter, $color: $white);
+            //padding: 0 $gap;
+            display: inline-block;
         }
     }
 }

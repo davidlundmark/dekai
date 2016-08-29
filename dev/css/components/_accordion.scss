@@ -1,49 +1,77 @@
-.accordion {
-    background-color: $accordion-menu-background;
-    @include border($accordion-menu-border-color);
-    margin: 0 0 $gap 0;
-    padding: 0;
-    > li:last-child {
-    	> a {
-    		border: none;
-    	}
-    }
-    ul {
-        margin: 0;
-        padding: 0;
-    }
-    li {
-        list-style: none;
-        > a {
-            @include border($accordion-menu-border-color, bottom);
-            color: $accordion-menu-color;
-            display: block;
-            padding: $accordion-menu-list-padding;
-            text-decoration: none;
-        }
-        &:last-child {
-            border: 0;
-        }
-        .no-touch & {
-            &:hover {
-                background-color: $accordion-menu-hover;
-            }
+    ul,
+    ol {
+        &.accordion {
+            margin: 0 0 $gap 0;
         }
     }
-    ul.submenu {
-        display: none;
-        li {
-            background-color: $accordion-menu-sub-background;
-            //@include border($accordion-menu-border-color, bottom);
-            .no-touch & {
-                &:hover {
-                    background-color: $accordion-menu-sub-hover;
+    
+    ul,
+    ol {
+        &.accordion-menu,
+        &.accordion {
+            @include border($accordion-border-color);
+            margin: 0;
+            padding: 0;
+            > li.menu-item:first-child {
+                > a {
+                    border-top: none !important;
                 }
             }
+            li.menu-item {
+                list-style: none;
+                > a {
+                    background-color: $accordion-background-color;
+                    @include transition();
+                    @include setFont($accordion-font);
+                    @include border($accordion-border-color, top);
+                    color: $accordion-color;
+                    display: block;
+                    padding: $accordion-padding;
+                }
+                .no-touch & {
+                    &:hover {
+                        > a {
+                            background-color: $accordion-hover-background-color;
+                            color: $accordion-hover-color;
+                        }
+                    }
+                }
+            }
+            .icon {
+                transform: rotate(90deg);
+                @include customTransitionTiming($easeOutCubic);
+            }
+            .is-expanded {
+                .icon {
+                    transform: rotate(-90deg);
+                }
+            }
+            ul.submenu {
+                margin: 0;
+                padding: 0;
+                display: none;
+                li.menu-item {
+                    > a {
+                        background-color: $accordion-sub-background-color;
+                        color: $accordion-sub-color;
+                        padding-left: $accordion-sub-indent;
+                    }
+                    .no-touch & {
+                        &:hover {
+                            > a {
+                                color: $accordion-sub-hover-color;
+                                background-color: $accordion-sub-hover-background-color;
+                            }
+                        }
+                    }
+                }
+            }
+            .side-nav & {
+                border-right: none;
+                margin: 0;
+            }
+            .accordion-content {
+                padding: $gap;
+            }
         }
     }
-    .is-expanded {
-        display: block;
-        padding-bottom: 0;
-    }
-}

@@ -15,7 +15,7 @@ $white: #fff;
 
 // Background Colors
 $base-background-color: $white;
-$secondary-background-color : $light-gray;
+$secondary-background-color : #f5f5f3;
 //$tertiary-background-color : #;
 //$quaternary-background-color : #;
 
@@ -24,7 +24,7 @@ $base-brand-color: $color-green;
 $secondary-brand-color: $color-dark-green;
 
 // Font Colors
-$base-font-color: $dark-gray;
+$base-font-color: #373b37;
 
 // =================================================
 // Fonts
@@ -35,10 +35,17 @@ $opensans: 'Open Sans', sans-serif;
 $sourcesanspro : 'Source Sans Pro', sans-serif;
 
 // Text
-$base-font-weight: 400;
 $base-font-family: $opensans;
+$base-font-weight: 400;
 $base-font-size: 14px;
 $base-line-height: 1.5;
+$base-font-name: 'base';
+
+// Small Text
+$small-font-size: $base-font-size - 2px;
+
+// Large Text
+$large-font-size: $base-font-size + 2px;
 
 // Text
 $heading-font-weight: normal;
@@ -46,27 +53,29 @@ $heading-font-family: $sourcesanspro;
 $heading-font-size: 18px;
 $heading-line-height: 1.2;
 $heading-text-transform: none;
+$heading-font-name: 'heading';
 
 // h1
-$h1-font-family: $heading-font-family;
-$h1-font-weight: $heading-font-weight;
-$h1-text-transform: none;
-$h1-line-height: $heading-line-height;
+//$h1-font-family: $heading-font-family;
+//$h1-font-weight: $heading-font-weight;
+//$h1-text-transform: none;
+//$h1-line-height: $heading-line-height;
 $h1-font-size: 36px;
 $h1-font-size-lg: 32px;
 $h1-font-size-md: 28px;
 $h1-font-size-sm: 24px;
+//$h1-font-name: 'h1';
 
-//h2
-// h1
-$h2-font-family: $heading-font-family;
-$h2-font-weight: $heading-font-weight;
-$h2-text-transform: none;
-$h2-line-height: $heading-line-height;
-$h2-font-size: 34px;
-$h2-font-size-lg: 30px;
-$h2-font-size-md: 26px;
-$h2-font-size-sm: 22px;
+// h2
+//$h2-font-family: $heading-font-family;
+//$h2-font-weight: $heading-font-weight;
+//$h2-text-transform: none;
+//$h2-line-height: $heading-line-height;
+$h2-font-size: $h1-font-size - 2px;
+$h2-font-size-lg: $h1-font-size-lg - 2px;
+$h2-font-size-md: $h1-font-size-md - 2px;
+$h2-font-size-sm: $h1-font-size-sm - 2px;
+//$h2-font-name: 'h2';
 
 //h3
 //etc
@@ -140,6 +149,7 @@ $button-hover-color: $white;
 $button-hover-background-color: $base-brand-color;
 $button-border-color: $base-border-color;
 $button-text-transform: uppercase;
+$button-font-name: 'button';
 
  
 // =================================================
@@ -148,17 +158,18 @@ $button-text-transform: uppercase;
 
 $link-color: $base-font-color;
 $link-hover-color: $base-brand-color;
-$link-text-transform: none;
-$link-font-family: $base-font-family;
-$link-font-size: $base-font-size;
-$link-font-weight: $base-font-weight;
-$link-text-decoration: underline;
+//$link-text-transform: none;
+//$link-font-family: $base-font-family;
+//$link-font-size: $base-font-size;
+//$link-font-weight: $base-font-weight;
+//$link-text-decoration: underline;
+//$link-font-name: 'link';
 
 // =================================================
 // Page section
 // =================================================
 
-$section-padding: $gap;
+$section-padding: $gap $gap-double;
 $section-max-width: 1024px;
 
 // =================================================
@@ -181,11 +192,15 @@ $sidenav-border-color: $base-border-color;
 // Accordion
 // =================================================
   
-$accordion-menu-border-color: $base-border-color;
-$accordion-menu-color: $base-font-color;
-$accordion-menu-background: $white;
-$accordion-menu-hover: $white;
-$accordion-menu-sub-background: $white;
-$accordion-menu-sub-inset: darken($accordion-menu-sub-background, 6%);
-$accordion-menu-sub-hover: $light-gray;
-$accordion-menu-list-padding: $gap-half $gap;
+$accordion-border-color: $base-border-color;
+$accordion-color: $base-font-color;
+$accordion-background-color: $base-background-color;
+$accordion-hover-color: $accordion-color;
+$accordion-hover-background-color: $accordion-background-color;
+$accordion-sub-color: $accordion-color;
+$accordion-sub-background-color: $secondary-background-color;
+$accordion-sub-hover-color: $accordion-color;
+$accordion-sub-hover-background-color: $accordion-sub-background-color;
+$accordion-padding: $gap-half $gap;
+$accordion-sub-indent: $gap*2;
+$accordion-font: 'base';

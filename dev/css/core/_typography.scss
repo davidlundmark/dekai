@@ -1,6 +1,6 @@
 body {
     color: $base-font-color;
-    @include setTextFormat($base-font-family, $base-font-size, $base-font-weight, $base-line-height);
+    @include setFont($base-font-name);
     -webkit-font-smoothing: antialiased;
 }
 
@@ -10,16 +10,17 @@ h3, .h3,
 h4, .h4,
 h5, .h5,
 h6, .h6 {
-    @include setTextFormat($heading-font-family, $heading-font-size, $heading-font-weight, $heading-line-height);
+    @include setFont($heading-font-name);
     margin: 0 0 $gap-half;
 }
 
 h1, .h1 {
-    @include setTextFormat($h1-font-family, $h1-font-size, $h1-font-weight, $h1-line-height, $h1-text-transform);
+    //@include setFont($h1-font-name);
+    @include setFontSize($h1-font-size);
 }
 
 h2, .h2 {
-    @include setTextFormat($h2-font-family, $h2-font-size, $h2-font-weight, $h2-line-height, $h2-text-transform);
+    @include setFontSize($h2-font-size);
 }
 
 p {
@@ -27,8 +28,8 @@ p {
 }
 
 a {
+    //@include setFont($link-font-name);
     color: $link-color;
-    @include setTextFormat($link-font-family, $link-font-size, $link-font-weight, $base-line-height, $link-text-transform, $link-text-decoration);
     &:active,
     &:hover,
     &:focus {
@@ -48,4 +49,12 @@ hr {
     border-right: 0;
     border-top: 0;
     margin: $gap 0;
+}
+
+.small {
+    @include setFontSize($small-font-size);
+}
+
+.large {
+    @include setFontSize($large-font-size);
 }

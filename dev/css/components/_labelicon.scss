@@ -1,0 +1,21 @@
+.label-with-icon {
+    display: table !important;
+    width: 100%;
+    table-layout: fixed;
+    > span {
+        vertical-align: middle;
+        display: table-cell;
+        &.label {
+            width: 85%;
+            text-align: left;
+        }
+        &.icon-container {
+            width: 15%;
+            text-align: right;
+            > span {
+                margin-top: 1px;
+                display: inline-block;
+            }
+        }
+    }
+}

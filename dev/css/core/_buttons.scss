@@ -1,3 +1,4 @@
+.button,
 button,
 input[type="button"],
 input[type="reset"],
@@ -5,10 +6,8 @@ input[type="submit"] {
     color: $button-color;
     background-color: $button-background-color;
     border-radius: $button-border-radius; 
+    @include setFont($button-font-name);
     @include border($button-border-color);
-    @include setTextFormat($button-font-family, $button-font-size, $button-font-weight, $button-line-height, $button-text-transform);
-    letter-spacing: 1px;
-    text-decoration: none;
     transition: $base-transition;
     padding: $gap-half $gap;
     appearance: none;
