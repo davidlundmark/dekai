@@ -33,7 +33,7 @@
 
 .dk-expander {
     $diameter: $gap-double;
-    @include border($dir: top);
+    @include border($dir: top, $style: dashed);
     margin: $diameter 0 0;
     .line-behind-icon {
         text-align: center;
