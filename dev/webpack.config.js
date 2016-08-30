@@ -7,7 +7,7 @@ var precss = require('precss');
 var autoprefixer = require('autoprefixer');
 
 //var bourbon = require('bourbon');
-var neat = require('bourbon-neat');
+//var neat = require('bourbon-neat');
 
 var jsFile = '../scripts.min.js';
 var cssFile = '../styles.min.css';
@@ -71,6 +71,6 @@ module.exports = {
         ];
     },
     sassLoader: {
-        includePaths: [].concat('client/style', /*bourbon.includePaths,*/ neat.includePaths)
+        includePaths: [].concat('client/style'/*, bourbon.includePaths, neat.includePaths*/)
     }
 };

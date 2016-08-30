@@ -8,23 +8,17 @@
     <title>Have fun ♥️</title>
     <!-- Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic' rel='stylesheet' type='text/css'>
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" rel="stylesheet">
     <!-- CSS -->
     <link rel="stylesheet" href="styles.min.css">
 </head>
+<!--[if IE]>
+   <body class="ie">
+<![endif]-->
+<!--[if !IE]>-->
 
 <body>
-    <!--<header class="welcome-message" role="banner">
-        <div class="container">
-            <h1>
-          Hey there! Thanks for contributing to
-          <a href="http://bitters.bourbon.io">Bitters</a>.
-        </h1>
-            <p>
-                The purpose of this page is to help contributors view and test changes to Bitters.
-            </p>
-        </div>
-    </header>-->
+    <!--<![endif]-->
     <div id="page-wrapper">
         <nav class="side-nav is-visible">
             <div class="logo-container">
@@ -33,14 +27,14 @@
             <ul class="accordion-menu">
                 <li class="menu-item">
                     <a href="" class="accordion-trigger label-with-icon">
-                        <span class="label">Design</span>
+                        <span class="label">1.0 - Design</span>
                         <span class="icon-container">
                             <span class="icon icon-play3"></span>
                         </span>
                     </a>
                     <ul class="submenu">
                         <li class="menu-item">
-                            <a href="#headings">Headings</a>
+                            <a href="#headings">1.1 - Headings</a>
                         </li>
                         <li class="menu-item">
                             <a href="javascript:void(0)">Sub Item 2</a>
@@ -69,8 +63,8 @@
             </script>
         </nav>
         <main role="main">
-            <section class="page-section">
-                <div class="section-container introduction">
+            <section class="page-section introduction">
+                <div class="section-container">
                     <h1 id="main">Design</h1>
                     <p class="large">"Rugby is a different game. There is an interruption every two minutes also in American football. Our soccer is a moving game: play, play, play, move, move - you don't interrupt."</p>
                     <p class="small">- Der Kaiser</p>
@@ -78,7 +72,12 @@
             </section>
             <section class="page-section">
                 <div class="section-container">
-                    <h2 id="headings">Headings</h2>
+                    <div class="information">
+                        <h2 id="headings">1.1 - Headings</h2>
+                        <p>Font family: Source Sans Pro</p>
+                        <p>Font weight: 300</p>
+                        <p>Line height: 1.2</p>
+                    </div>
                     <h1>h1. Heading</h1>
                     <h2>h2. Heading</h2>
                     <h3>h3. Heading</h3>
@@ -94,8 +93,9 @@
                                 </span>
                             </a>
                             </span>
-                            <div class="expander-content">
-                                <pre class="code-toolbar language-markup">
+                        </div>
+                        <div class="expander-content">
+                            <pre class="code-toolbar language-markup">
                                     <code>
                                         &lt;h1&gt;h1. Heading&lt;/h1&gt;
                                         &lt;h2&gt;h2. Heading&lt;/h2&gt;
@@ -105,7 +105,6 @@
                                         &lt;h6&gt;h6. Heading&lt;/h6&gt;
                                     </code>
                                 </pre>
-                            </div>
                         </div>
                         <script>
                         var useExpander = true;
@@ -114,10 +113,40 @@
             </section>
             <section class="page-section">
                 <div class="section-container">
-                    <h2 id="paragraph">Paragraph</h2>
+                    <div class="information">
+                        <h2 id="paragraph">1.2 - Paragraph</h2>
+                        <p>Font family: Open Sans</p>
+                        <p>Font size: 14px</p>
+                        <p>Font weight: 400</p>
+                        <p>Line height: 1.5</p>
+                    </div>
                     <p>Lorem ipsum dolor sit amet, <a href="#" title="test link">test link</a> adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.</p>
                     <p>Lorem ipsum dolor sit amet, <em>emphasis</em> consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.</p>
-                    <hr>
+                    <div class="expander dk-expander">
+                        <div class="line-behind-icon">
+                            <a href="" class="expander-trigger icon-container">
+                                <span class="icon-circle">
+                                    <span class="icon icon-embed2"></span>
+                                </span>
+                                </span>
+                            </a>
+                            </span>
+                        </div>
+                        <div class="expander-content">
+                            <pre class="code-toolbar language-markup">
+                                    <code>
+                                        &lt;p&gt;Lorem ipsum dolor sit amet...&lt;/p&gt;
+                                    </code>
+                                </pre>
+                        </div>
+                        <script>
+                        var useExpander = true;
+                        </script>
+                    </div>
+                </div>
+            </section>
+            <section class="page-section">
+                <div class="section-container">
                     <h2 id="list_types">List Types</h2>
                     <h3>Definition List</h3>
                     <dl>
@@ -308,6 +337,22 @@
                         </span>
                         <div class="expander-content">
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio mollitia fugiat facilis enim accusamus quisquam aut, repellendus incidunt quod optio facere labore illo numquam ipsum beatae vero debitis, fugit excepturi.</p>
+                        </div>
+                    </div>
+                    <script>
+                    var useExpander = true;
+                    </script>
+                </div>
+            </section>
+            <section class="page-section">
+                <div class="section-container">
+                    <h2 id="grid">Grid</h2>
+                    <div class="row dk-row">
+                        <div class="column col-6">
+                            <p>col-6</p>
+                        </div>
+                        <div class="column col-6">
+                            <p>col-6</p>
                         </div>
                     </div>
                     <script>

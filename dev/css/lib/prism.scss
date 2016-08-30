@@ -3,7 +3,7 @@
  * prism.js default theme for JavaScript, CSS and HTML
  * Based on dabblet (http://dabblet.com)
  * @author Lea Verou
- */
+ */ 
 
 code[class*="language-"],
 pre[class*="language-"] {
@@ -14,7 +14,7 @@ pre[class*="language-"] {
 	text-align: left;
 	white-space: pre;
 	word-spacing: normal;
-	word-break: normal;
+	word-break: normal; 
 	word-wrap: normal;
 	line-height: 1.5;
 
@@ -49,8 +49,10 @@ code[class*="language-"]::selection, code[class*="language-"] ::selection {
 
 /* Code blocks */
 pre[class*="language-"] {
-	padding: 1em;
-	margin: .5em 0;
+	/*padding: 1em;
+	margin: .5em 0;*/
+	margin: 0;
+	padding: $gap;
 	overflow: auto;
 }
 

@@ -50,43 +50,53 @@ $large-font-size: $base-font-size + 2px;
 // Text
 $heading-font-weight: normal;
 $heading-font-family: $sourcesanspro;
-$heading-font-size: 18px;
+$heading-font-size: 26px;
 $heading-line-height: 1.2;
 $heading-text-transform: none;
 $heading-font-name: 'heading';
 
 // h1
-//$h1-font-family: $heading-font-family;
-//$h1-font-weight: $heading-font-weight;
-//$h1-text-transform: none;
-//$h1-line-height: $heading-line-height;
 $h1-font-size: 36px;
 $h1-font-size-lg: 32px;
 $h1-font-size-md: 28px;
 $h1-font-size-sm: 24px;
-//$h1-font-name: 'h1';
 
 // h2
-//$h2-font-family: $heading-font-family;
-//$h2-font-weight: $heading-font-weight;
-//$h2-text-transform: none;
-//$h2-line-height: $heading-line-height;
 $h2-font-size: $h1-font-size - 2px;
 $h2-font-size-lg: $h1-font-size-lg - 2px;
 $h2-font-size-md: $h1-font-size-md - 2px;
 $h2-font-size-sm: $h1-font-size-sm - 2px;
-//$h2-font-name: 'h2';
 
-//h3
-//etc
+// h3
+$h3-font-size: $h1-font-size - 4px;
+$h3-font-size-lg: $h1-font-size-lg - 4px;
+$h3-font-size-md: $h1-font-size-md - 4px;
+$h3-font-size-sm: $h1-font-size-sm - 4px;
 
+// h4
+$h4-font-size: $h1-font-size - 6px;
+$h4-font-size-lg: $h1-font-size-lg - 6px;
+$h4-font-size-md: $h1-font-size-md - 6px;
+$h4-font-size-sm: $h1-font-size-sm - 6px;
+
+// h5
+$h5-font-size: $h1-font-size - 8px;
+$h5-font-size-lg: $h1-font-size-lg - 8px;
+$h5-font-size-md: $h1-font-size-md - 8px;
+$h5-font-size-sm: $h1-font-size-sm - 8px;
+
+// h6
+$h6-font-size: $h1-font-size - 10px;
+$h6-font-size-lg: $h1-font-size-lg - 10px;
+$h6-font-size-md: $h1-font-size-md - 10px;
+$h6-font-size-sm: $h1-font-size-sm - 10px;
 
 // =================================================
 // Border
 // =================================================
 
 // Border
-$base-border-color: $light-gray;
+$base-border-color: #e0e0e0;
 $base-border: 1px solid $base-border-color;
 $base-border-thickness: 1px;
 $base-border-style: solid;
@@ -141,9 +151,9 @@ $base-border-radius : 0;
 $button-color: $base-font-color;
 $button-background-color: $base-background-color;
 $button-border-radius: $base-border-radius;
-$button-font-family: $heading-font-family;
+$button-font-family: $sourcesanspro;
 $button-font-size: 12px;
-$button-font-weight: $heading-font-weight;
+$button-font-weight: 600;
 $button-line-height: 1;
 $button-hover-color: $white;
 $button-hover-background-color: $base-brand-color;
@@ -169,7 +179,7 @@ $link-hover-color: $base-brand-color;
 // Page section
 // =================================================
 
-$section-padding: $gap $gap-double;
+$section-padding: $gap-double;
 $section-max-width: 1024px;
 
 // =================================================
@@ -204,3 +214,10 @@ $accordion-sub-hover-background-color: $accordion-sub-background-color;
 $accordion-padding: $gap-half $gap;
 $accordion-sub-indent: $gap*2;
 $accordion-font: 'base';
+
+
+// =================================================
+// Grid
+// =================================================
+
+$grid-gap: $gap;

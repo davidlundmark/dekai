@@ -1,0 +1,44 @@
+@mixin generateGrid($index: 12, $prefix: '', $gap: $grid-gap) {
+    @while $index > 0 {
+        &.col-#{$prefix}#{$index} {
+            @include setColumnWidth(12/$index, $gap)
+        }
+        $index: $index - 1;
+    }
+}
+
+@mixin setColumnWidth($count, $gap) {
+    body:not(.ie) & {
+        @if $gap !=0 {
+            width: calc((100% / #{$count}) - #{$gap});
+        }
+        @else {
+            width: calc(100% / #{$count});
+        }
+    }
+    body.ie & {
+        $iefix: 1px; //-1px = IE subpixel rounding fix
+        @if $gap !=0 {
+            width: calc((100% / #{$count}) - #{$gap} - #{$iefix});
+        }
+        @else {
+            width: calc((100% / #{$count}) - #{$iefix});
+        }
+    }
+}
+
+.row {
+    margin-top: -$grid-gap;
+    margin-left: -$grid-gap;
+    width: calc(100% + #{$grid-gap});
+    @include clearfix();
+    > .column {
+        //position: relative;
+        overflow: hidden;
+        display: block;
+        float: left;
+        margin-top: $gap;
+        margin-left: $gap - 0.01px;
+        @include generateGrid();
+    }
+}
