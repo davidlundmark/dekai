@@ -1,94 +1,122 @@
-@import './lib/normalize';
-//@import 'bourbon';
-//@import 'neat';
-@import "variables";
-@import "helper";
-@import './lib/prism';
-@import './core/base';
-@import './components/base';
-//project specific styles
-.side-nav {
-    .logo-container {
-        padding: $gap;
-        img {
-            margin: 0 auto;
-            width: 100px;
-            display: block;
-        }
-    }
-    .accordion-menu {
-        li.menu-item > a {
-            @include setFont($button-font-name);
+    @import './lib/normalize';
+    //@import 'bourbon';
+    //@import 'neat';
+    @import "variables";
+    @import "helper";
+    @import './lib/prism';
+    @import './core/base';
+    @import './components/base';
+    //project specific styles
+    .side-nav {
+        .logo-container {
             padding: $gap;
+            img {
+                margin: 0 auto;
+                width: 100px;
+                display: block;
+            }
+        }
+        .accordion-menu {
+            li.menu-item > a {
+                @include setFont($button-font-name);
+                padding: $gap;
+            }
         }
     }
-}
-
-section.page-section.introduction {
-    text-align: center;
-    background-color: $secondary-background-color;
-    > .section-container {
-        padding: $gap-double $gap-triple;
-    }
-}
-
-.page-section {
-    @include border($dir: bottom);
-}
-
-.section-container {
-    .information {
-        margin-bottom: $gap-double;
-        @include border($color: $base-font-color, $thickness: 4px, $dir: left);
-        padding-left: $gap-half + 4px;
-        h2 {
-            margin-bottom: $gap-md;
-        }
-        p {
-            font-weight: 300;
-            @include setFontSize($button-font-size - 2px);
-        }
-        > * {
-            @include setFont($button-font-name);
-        }
-    }
-}
-
-.dk-expander {
-    $diameter: $gap-double;
-    @include border($dir: top, $style: dashed);
-    margin: $gap-double 0 0;
-    .line-behind-icon {
+    
+    section.page-section.introduction {
         text-align: center;
-        display: block;
-        height: $gap;
-        .icon-container {
-            position: relative;
-            top: -$diameter*0.5;
-            display: inline-block;
-            padding: 0 $gap;
-            background-color: $base-background-color;
-        }
-        .icon-circle {
-            @include createCircle($diameter: $diameter, $color: $white);
-            //padding: 0 $gap;
-            display: inline-block;
+        background-color: $secondary-background-color;
+        > .section-container {
+            padding: $gap-double $gap-triple;
         }
     }
-    .expander-content {
-        pre {
-            margin-top: $gap;
+    
+    .page-section {
+        @include border($dir: bottom);
+    }
+    
+    .section-container {
+        .information {
+            margin-bottom: $gap-double;
+            @include border($color: $base-font-color, $thickness: 4px, $dir: left);
+            padding-left: $gap;
+            background-color: $secondary-background-color;
+            padding-top: $gap;
+            padding-bottom: $gap;
+            h2 {
+                margin-bottom: $gap-md;
+            }
+            p {
+                font-weight: 300;
+                @include setFontSize($button-font-size - 2px);
+            }
+            > * {
+                @include setFont($button-font-name);
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
         }
     }
-}
-
-.row.dk-row {
-    > .column {
-        text-align: center;
-        padding: $gap-half 0;
-        @include border();
-        > p {
-            margin: 0;
+    
+    .dk-expander {
+        $diameter: $gap-double;
+        @include border($dir: top, $style: dashed);
+        margin: $gap-double 0 0;
+        .line-behind-icon {
+            text-align: center;
+            display: block;
+            height: $gap;
+            .icon-container {
+                position: relative;
+                top: -$diameter*0.5;
+                display: inline-block;
+                padding: 0 $gap;
+                background-color: $base-background-color;
+            }
+            .icon-circle {
+                @include createCircle($diameter: $diameter, $color: $white);
+                //padding: 0 $gap;
+                display: inline-block;
+            }
+        }
+        .expander-content {
+            pre {
+                @include border($color: $base-font-color, $thickness: 4px, $dir: left);
+                margin-top: $gap;
+            }
         }
     }
-}
+    
+    #list-types {
+        .column {
+            .reset {
+                padding-bottom: 4px;
+            }
+            min-height: 150px;
+            > h3 {
+                @include setFont($button-font-name);
+                @include border($color: $base-font-color, $thickness: 4px, $dir: left);
+                padding-left: $gap;
+            }
+        }
+        .content {
+            > .row {
+                padding-top: $gap-double;
+                &:first-child {
+                    padding-top: 0;
+                }
+            }
+        }
+        .row.dk-row {
+            > .column {
+                text-align: center;
+                padding: $gap-half 0;
+                @include border();
+                > p {
+                    margin: 0;
+                }
+            }
+        }
+    }

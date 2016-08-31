@@ -33,6 +33,7 @@
     width: calc(100% + #{$grid-gap});
     @include clearfix();
     > .column {
+        @include clearfix();
         //position: relative;
         overflow: hidden;
         display: block;
