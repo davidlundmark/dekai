@@ -120,3 +120,15 @@
             }
         }
     }
+    
+    #form-elements {
+        .content {
+            .expander {
+                margin-bottom: $gap;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
