@@ -5,7 +5,6 @@ require('./lib/fastclick.js');
 
 console.log('deKai v.1');
 
-
 //#region AccordionHandler
 var AccordionHandler = function() {}
 
@@ -115,6 +114,7 @@ InformationHandler.prototype = {
     init: function() {
         this.headingsInfo();
         this.paragraphInfo();
+        this.colorsInfo();
     },
 
     headingsInfo: function() {
@@ -146,9 +146,46 @@ InformationHandler.prototype = {
         $info.find('.font-weight').text(this.getCSSValue($p, 'font-weight'));
     },
 
-    getCSSValue($elem, $value) {
+    colorsInfo: function() {
+        var $colors = $('#colors');
+
+        this.setColorsInfo($colors.find('.primary-color'));
+        this.setColorsInfo($colors.find('.secondary-color'));
+        this.setColorsInfo($colors.find('.tertiary-color'));
+        this.setColorsInfo($colors.find('.primary-background-color'));
+        this.setColorsInfo($colors.find('.secondary-background-color'));
+        this.setColorsInfo($colors.find('.tertiary-background-color'));
+        this.setColorsInfo($colors.find('.primary-font-color')); 
+        this.setColorsInfo($colors.find('.secondary-font-color'));
+    },
+
+    setColorsInfo: function($color) {
+        var $colorBg = this.getCSSValue($color.siblings('.color'), 'background-color');
+        $color.find('.color-rgb').text($colorBg.replace('rgb(', '').replace(')', ''));
+        $color.find('.color-hex').text(this.rgbToHex($colorBg));
+    },
+
+    getCSSValue: function($elem, $value) {
         return $elem.css($value);
+    },
+
+    rgbToHex: function(color) {
+        if (color.charAt(0) === "#") {
+            return color;
+        }
+
+        var nums = /(.*?)rgb\((\d+),\s*(\d+),\s*(\d+)\)/i.exec(color),
+            r = parseInt(nums[2], 10).toString(16),
+            g = parseInt(nums[3], 10).toString(16),
+            b = parseInt(nums[4], 10).toString(16);
+
+        return "#" + (
+            (r.length == 1 ? "0" + r : r) +
+            (g.length == 1 ? "0" + g : g) +
+            (b.length == 1 ? "0" + b : b)
+        );
     }
+
 };
 //#endregion
 

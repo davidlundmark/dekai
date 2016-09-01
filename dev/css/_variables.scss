@@ -4,7 +4,6 @@
 
 // Brand Colors
 $color-green: #00723f;
-$color-dark-green: darken(#00723f,10%);
 
 // Grays
 $black: #000;
@@ -16,15 +15,17 @@ $white: #fff;
 // Background Colors
 $base-background-color: $white;
 $secondary-background-color : #f5f5f3;
-//$tertiary-background-color : #;
+$tertiary-background-color : #1a1a1a;
 //$quaternary-background-color : #;
 
 // Brand
 $base-brand-color: $color-green;
-$secondary-brand-color: $color-dark-green;
+$secondary-brand-color: #373b37;
+$tertiary-brand-color: #e0e0e0;
 
 // Font Colors
 $base-font-color: #373b37;
+$secondary-font-color: $base-background-color;
 
 // =================================================
 // Fonts

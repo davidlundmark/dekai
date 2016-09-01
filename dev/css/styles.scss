@@ -38,14 +38,13 @@
     }
     
     .section-container {
-        .information {
+        .information,
+        .sub-information {
             margin-bottom: $gap-double;
             @include border($color: $base-font-color, $thickness: 4px, $dir: left);
             padding-left: $gap;
-            background-color: $secondary-background-color;
-            padding-top: $gap;
-            padding-bottom: $gap;
-            h2 {
+            h2,
+            h3 {
                 margin-bottom: $gap-md;
             }
             p {
@@ -58,6 +57,11 @@
                     margin-bottom: 0;
                 }
             }
+        }
+        .information {
+            background-color: $secondary-background-color;
+            padding-top: $gap;
+            padding-bottom: $gap;
         }
     }
     
@@ -89,7 +93,9 @@
         }
     }
     
-    #list-types {
+    #icons,
+    #list-types,
+    #colors {
         .column {
             .reset {
                 padding-bottom: 4px; //align fix
@@ -110,6 +116,46 @@
         }
     }
     
+    #colors {
+        .color {
+            @include createCircle($diameter: 100px, $background-color: transparent);
+            margin-left: $gap;
+        }
+        .primary-color + .color {
+            background-color: $base-brand-color;
+        }
+
+        .secondary-color + .color {
+            background-color: $secondary-brand-color;
+        }
+
+        .tertiary-color + .color {
+            background-color: $tertiary-brand-color;
+        }
+
+        .primary-background-color + .color {
+            background-color: $base-background-color;
+            @include border();
+        }
+
+        .secondary-background-color + .color {
+            background-color: $secondary-background-color;
+        }
+
+        .tertiary-background-color + .color {
+            background-color: $tertiary-background-color;
+        }
+
+        .primary-font-color + .color {
+            background-color: $base-font-color;
+        }
+
+        .secondary-font-color + .color {
+            background-color: $secondary-font-color;
+            @include border();
+        }
+    }
+    
     #form-elements {
         .content {
             .expander {
@@ -121,6 +167,22 @@
         }
         .row {
             margin-bottom: $gap;
+        }
+    }
+
+    #icons {
+        .content .icon {
+            font-size: 40px;
+        }
+
+        .sub-information {
+            > h3 {
+                text-transform: none;
+            }
+        }
+
+        .code-expander {
+            margin-top: $gap*3;
         }
     }
     
