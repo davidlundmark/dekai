@@ -43,9 +43,11 @@ $base-font-name: 'base';
 
 // Small Text
 $small-font-size: $base-font-size - 2px;
+$small-font-name: 'small';
 
 // Large Text
 $large-font-size: $base-font-size + 2px;
+$large-font-name: 'large';
 
 // Text
 $heading-font-weight: normal;
@@ -179,8 +181,8 @@ $link-hover-color: $base-brand-color;
 // Page section
 // =================================================
 
-$section-padding: $gap-double;
-$section-max-width: 1024px;
+$page-section-padding: $gap-double;
+$page-section-max-width: 1024px;
 
 // =================================================
 // Text inputs

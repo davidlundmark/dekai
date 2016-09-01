@@ -16,14 +16,14 @@
                 display: block;
             }
         }
-        .accordion-menu {
+        .accordion {
             li.menu-item > a {
                 @include setFont($button-font-name);
                 padding: $gap;
             }
         }
     }
-    
+    /*
     section.page-section.introduction {
         text-align: center;
         background-color: $secondary-background-color;
@@ -31,6 +31,7 @@
             padding: $gap-double $gap-triple;
         }
     }
+    */
     
     .page-section {
         @include border($dir: bottom);
@@ -60,7 +61,7 @@
         }
     }
     
-    .dk-expander {
+    .code-expander {
         $diameter: $gap-double;
         @include border($dir: top, $style: dashed);
         margin: $gap-double 0 0;
@@ -77,7 +78,6 @@
             }
             .icon-circle {
                 @include createCircle($diameter: $diameter, $color: $white);
-                //padding: 0 $gap;
                 display: inline-block;
             }
         }
@@ -92,9 +92,8 @@
     #list-types {
         .column {
             .reset {
-                padding-bottom: 4px;
+                padding-bottom: 4px; //align fix
             }
-            min-height: 150px;
             > h3 {
                 @include setFont($button-font-name);
                 @include border($color: $base-font-color, $thickness: 4px, $dir: left);
@@ -109,26 +108,29 @@
                 }
             }
         }
-        .row.dk-row {
-            > .column {
-                text-align: center;
-                padding: $gap-half 0;
-                @include border();
-                > p {
-                    margin: 0;
-                }
-            }
-        }
     }
     
     #form-elements {
         .content {
             .expander {
                 margin-bottom: $gap;
-
                 &:last-child {
                     margin-bottom: 0;
                 }
+            }
+        }
+        .row {
+            margin-bottom: $gap;
+        }
+    }
+    
+    .row.dk-row {
+        > .column {
+            text-align: center;
+            padding: $gap-half 0;
+            @include border();
+            > p {
+                margin: 0;
             }
         }
     }

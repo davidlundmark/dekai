@@ -6,15 +6,23 @@ table {
 }
 
 th {
-  @include setTextFormat($heading-font-family, $heading-font-size, $heading-font-weight, $heading-line-height);
+  @include setFont($large-font-name);
   border-bottom: $base-border;
-  padding: $gap-half 0;
   text-align: left;
 }
 
 td {
   border-bottom: $base-border;
-  padding: $gap-half 0;
+}
+
+tr {
+  &.even {
+    background-color: $secondary-background-color;
+  }
+}
+
+td, th {
+  padding: $gap-half;
 }
 
 tr,

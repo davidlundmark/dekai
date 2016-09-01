@@ -17,7 +17,7 @@ AccordionHandler.prototype = {
 
         $('.accordion-trigger').bind('click', function(e) {
             var $parent = $(this).parent();
-            $parent.find('.submenu').slideToggle(200, 'easeOutSine'); // apply the toggle to the ul
+            $parent.find('.submenu').slideToggle(300, 'easeOutSine');
             $parent.toggleClass('is-expanded');
             e.preventDefault();
             return false;

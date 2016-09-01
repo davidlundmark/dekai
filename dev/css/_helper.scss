@@ -45,6 +45,14 @@
         text-decoration: none;
         letter-spacing: 1px;
     }
+    @else if $font-name==$large-font-name {
+        @include setFont($base-font-name);
+        @include setFontSize($large-font-size);
+    }
+    @else if $font-name==$small-font-name {
+        @include setTextFormat($base-font-name);
+        @include setFontSize($small-font-size);
+    }
 }
 
 @mixin setFontSize($font-size) {

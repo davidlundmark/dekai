@@ -1,16 +1,15 @@
     ul,
     ol {
         &.accordion {
-            margin: 0 0 $gap 0;
+            
         }
     }
     
     ul,
     ol {
-        &.accordion-menu,
         &.accordion {
             @include border($accordion-border-color);
-            margin: 0;
+            margin: 0 0 $gap 0;
             padding: 0;
             > li.menu-item:first-child {
                 > a {

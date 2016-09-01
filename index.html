@@ -20,11 +20,11 @@
 <body>
     <!--<![endif]-->
     <div id="page-wrapper">
-        <nav class="side-nav is-visible">
+        <nav class="side-nav">
             <div class="logo-container">
                 <img class="logo" src="assets/images/logo.svg">
             </div>
-            <ul class="accordion-menu">
+            <ul class="accordion">
                 <li class="menu-item">
                     <a href="" class="accordion-trigger label-with-icon">
                         <span class="label">1.0 - Design</span>
@@ -41,6 +41,12 @@
                         </li>
                         <li class="menu-item">
                             <a href="#list-types">1.3 - List types</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#form-elements">1.4 - Form elements</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#tables">1.5 - Tables</a>
                         </li>
                     </ul>
                 </li>
@@ -92,7 +98,7 @@
                         <h5>h5. Heading - <span class="h5-font-size"></span></h5>
                         <h6>h6. Heading - <span class="h6-font-size"></span></h6>
                     </div>
-                    <div class="expander dk-expander">
+                    <div class="expander code-expander">
                         <div class="line-behind-icon">
                             <a href="" class="expander-trigger icon-container">
                                 <span class="icon-circle">
@@ -129,7 +135,7 @@
                         <p>Lorem ipsum dolor sit amet, <a href="#" title="test link">test link</a> adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.</p>
                         <p>Lorem ipsum dolor sit amet, <em>emphasis</em> consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.</p>
                     </div>
-                    <div class="expander dk-expander">
+                    <div class="expander code-expander">
                         <div class="line-behind-icon">
                             <a href="" class="expander-trigger icon-container">
                                 <span class="icon-circle">
@@ -144,9 +150,6 @@
                                 </code>
                             </pre>
                         </div>
-                        <script>
-                        var useExpander = true;
-                        </script>
                     </div>
                 </div>
             </section>
@@ -164,7 +167,7 @@
                                     <li>List Item 2</li>
                                     <li>List Item 3</li>
                                 </ol>
-                                <div class="expander dk-expander">
+                                <div class="expander code-expander">
                                     <div class="line-behind-icon">
                                         <a href="" class="expander-trigger icon-container">
                                             <span class="icon-circle">
@@ -183,9 +186,6 @@
                                         </code>
                                     </pre>
                                     </div>
-                                    <script>
-                                    var useExpander = true;
-                                    </script>
                                 </div>
                             </div>
                             <div class="column col-6">
@@ -195,7 +195,7 @@
                                     <li>List Item 2</li>
                                     <li>List Item 3</li>
                                 </ol>
-                                <div class="expander dk-expander">
+                                <div class="expander code-expander">
                                     <div class="line-behind-icon">
                                         <a href="" class="expander-trigger icon-container">
                                             <span class="icon-circle">
@@ -214,9 +214,6 @@
                                         </code>
                                     </pre>
                                     </div>
-                                    <script>
-                                    var useExpander = true;
-                                    </script>
                                 </div>
                             </div>
                         </div>
@@ -228,7 +225,7 @@
                                     <li>List Item 2</li>
                                     <li>List Item 3</li>
                                 </ul>
-                                <div class="expander dk-expander">
+                                <div class="expander code-expander">
                                     <div class="line-behind-icon">
                                         <a href="" class="expander-trigger icon-container">
                                             <span class="icon-circle">
@@ -247,9 +244,6 @@
                                         </code>
                                     </pre>
                                     </div>
-                                    <script>
-                                    var useExpander = true;
-                                    </script>
                                 </div>
                             </div>
                             <div class="column col-6">
@@ -259,7 +253,7 @@
                                     <li>List Item 2</li>
                                     <li>List Item 3</li>
                                 </ul>
-                                <div class="expander dk-expander">
+                                <div class="expander code-expander">
                                     <div class="line-behind-icon">
                                         <a href="" class="expander-trigger icon-container">
                                             <span class="icon-circle">
@@ -278,9 +272,6 @@
                                         </code>
                                     </pre>
                                     </div>
-                                    <script>
-                                    var useExpander = true;
-                                    </script>
                                 </div>
                             </div>
                         </div>
@@ -302,15 +293,12 @@
                     </div>
                     <div class="content">
                         <fieldset>
-                            <!--<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus.</p>-->
                             <form>
-                                <!--<h2>Form Element</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui.</p>-->
                                 <p>
                                     <label for="text_field">Text Field:</label>
                                     <input type="text" id="text_field" placeholder="Text">
                                 </p>
-                                <div class="expander dk-expander">
+                                <div class="expander code-expander">
                                     <div class="line-behind-icon">
                                         <a href="" class="expander-trigger icon-container">
                                             <span class="icon-circle">
@@ -326,15 +314,12 @@
                                             </code>
                                         </pre>
                                     </div>
-                                    <script>
-                                    var useExpander = true;
-                                    </script>
                                 </div>
                                 <p>
                                     <label for="text_area">Text Area:</label>
                                     <textarea id="text_area"></textarea>
                                 </p>
-                                <div class="expander dk-expander">
+                                <div class="expander code-expander">
                                     <div class="line-behind-icon">
                                         <a href="" class="expander-trigger icon-container">
                                             <span class="icon-circle">
@@ -350,9 +335,6 @@
                                             </code>
                                         </pre>
                                     </div>
-                                    <script>
-                                    var useExpander = true;
-                                    </script>
                                 </div>
                                 <p>
                                     <label for="select_element">Select Element:</label>
@@ -369,7 +351,7 @@
                                         </optgroup>
                                     </select>
                                 </p>
-                                <div class="expander dk-expander">
+                                <div class="expander code-expander">
                                     <div class="line-behind-icon">
                                         <a href="" class="expander-trigger icon-container">
                                             <span class="icon-circle">
@@ -396,15 +378,12 @@
                                             </code>
                                         </pre>
                                     </div>
-                                    <script>
-                                    var useExpander = true;
-                                    </script>
                                 </div>
                                 <p>
                                     <label for="password">Password:</label>
                                     <input type="password" class="password" name="password">
                                 </p>
-                                <div class="expander dk-expander">
+                                <div class="expander code-expander">
                                     <div class="line-behind-icon">
                                         <a href="" class="expander-trigger icon-container">
                                             <span class="icon-circle">
@@ -420,11 +399,7 @@
                                             </code>
                                         </pre>
                                     </div>
-                                    <script>
-                                    var useExpander = true;
-                                    </script>
                                 </div>
-                                <!--<div class="content">-->
                                 <div class="row">
                                     <div class="column col-6">
                                         <p>
@@ -439,7 +414,7 @@
                                                 <input type="radio" class="radio" name="radio_button" value="radio_3"> Radio 3
                                             </label>
                                         </p>
-                                        <div class="expander dk-expander">
+                                        <div class="expander code-expander">
                                             <div class="line-behind-icon">
                                                 <a href="" class="expander-trigger icon-container">
                                                     <span class="icon-circle">
@@ -463,9 +438,6 @@
                                                     </code>
                                                 </pre>
                                             </div>
-                                            <script>
-                                            var useExpander = true;
-                                            </script>
                                         </div>
                                     </div>
                                     <div class="column col-6">
@@ -481,7 +453,7 @@
                                                 <input type="checkbox" class="checkbox" name="checkboxes" value="check_3"> Checkbox 3
                                             </label>
                                         </p>
-                                        <div class="expander dk-expander">
+                                        <div class="expander code-expander">
                                             <div class="line-behind-icon">
                                                 <a href="" class="expander-trigger icon-container">
                                                     <span class="icon-circle">
@@ -505,18 +477,14 @@
                                                     </code>
                                                 </pre>
                                             </div>
-                                            <script>
-                                            var useExpander = true;
-                                            </script>
                                         </div>
                                     </div>
                                 </div>
-                                <!--</div>-->
                                 <p>
                                     <label for="file">File Input:</label>
                                     <input type="file" class="file" name="file">
                                 </p>
-                                <div class="expander dk-expander">
+                                <div class="expander code-expander">
                                     <div class="line-behind-icon">
                                         <a href="" class="expander-trigger icon-container">
                                             <span class="icon-circle">
@@ -532,46 +500,89 @@
                                             </code>
                                         </pre>
                                     </div>
-                                    <script>
-                                    var useExpander = true;
-                                    </script>
                                 </div>
                             </form>
                         </fieldset>
                     </div>
                 </div>
             </section>
-            <section class="page-section">
+            <section id="tables" class="page-section">
+                <div class="section-container">
+                    <div id="tables-information" class="information">
+                        <h2>1.5 - Tables</h2>
+                    </div>
+                    <div class="content">
+                        <table cellspacing="0" cellpadding="0">
+                            <tbody>
+                                <tr>
+                                    <th>Table Header 1</th>
+                                    <th>Table Header 2</th>
+                                    <th>Table Header 3</th>
+                                </tr>
+                                <tr>
+                                    <td>Division 1</td>
+                                    <td>Division 2</td>
+                                    <td>Division 3</td>
+                                </tr>
+                                <tr class="even">
+                                    <td>Division 1</td>
+                                    <td>Division 2</td>
+                                    <td>Division 3</td>
+                                </tr>
+                                <tr>
+                                    <td>Division 1</td>
+                                    <td>Division 2</td>
+                                    <td>Division 3</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="expander code-expander">
+                            <div class="line-behind-icon">
+                                <a href="" class="expander-trigger icon-container">
+                                    <span class="icon-circle">
+                                                <span class="icon icon-embed2"></span>
+                                    </span>
+                                </a>
+                            </div>
+                            <div class="expander-content">
+                                <pre class="code-toolbar language-markup">
+                                            <code>
+                                                &lt;table cellspacing=&quot;0&quot; cellpadding=&quot;0&quot;&gt;
+                                                    &lt;tbody&gt;
+                                                        &lt;tr&gt;
+                                                            &lt;th&gt;Table Header 1&lt;/th&gt;
+                                                            &lt;th&gt;Table Header 2&lt;/th&gt;
+                                                            &lt;th&gt;Table Header 3&lt;/th&gt;
+                                                        &lt;/tr&gt;
+                                                        &lt;tr&gt;
+                                                            &lt;td&gt;Division 1&lt;/td&gt;
+                                                            &lt;td&gt;Division 2&lt;/td&gt;
+                                                            &lt;td&gt;Division 3&lt;/td&gt;
+                                                        &lt;/tr&gt;
+                                                        &lt;tr class=&quot;even&quot;&gt;
+                                                            &lt;td&gt;Division 1&lt;/td&gt;
+                                                            &lt;td&gt;Division 2&lt;/td&gt;
+                                                            &lt;td&gt;Division 3&lt;/td&gt;
+                                                        &lt;/tr&gt;
+                                                        &lt;tr&gt;
+                                                            &lt;td&gt;Division 1&lt;/td&gt;
+                                                            &lt;td&gt;Division 2&lt;/td&gt;
+                                                            &lt;td&gt;Division 3&lt;/td&gt;
+                                                        &lt;/tr&gt;
+                                                    &lt;/tbody&gt;
+                                                &lt;/table&gt;
+                                            </code>
+                                </pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="" class="page-section">
                 <div class="section-container">
                     <p>
                         <input type="submit" value="Submit">
                     </p>
-                    <hr>
-                    <h2 id="tables">Tables</h2>
-                    <table cellspacing="0" cellpadding="0">
-                        <tbody>
-                            <tr>
-                                <th>Table Header 1</th>
-                                <th>Table Header 2</th>
-                                <th>Table Header 3</th>
-                            </tr>
-                            <tr>
-                                <td>Division 1</td>
-                                <td>Division 2</td>
-                                <td>Division 3</td>
-                            </tr>
-                            <tr class="even">
-                                <td>Division 1</td>
-                                <td>Division 2</td>
-                                <td>Division 3</td>
-                            </tr>
-                            <tr>
-                                <td>Division 1</td>
-                                <td>Division 2</td>
-                                <td>Division 3</td>
-                            </tr>
-                        </tbody>
-                    </table>
                     <hr>
                     <h2 id="icons">Icons</h2>
                     <div>
