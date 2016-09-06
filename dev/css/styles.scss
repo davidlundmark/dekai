@@ -22,6 +22,10 @@
                 padding: $gap;
             }
         }
+
+        .label-with-icon {
+            width: 100%;
+        }
     }
     /*
     section.page-section.introduction {
@@ -81,8 +85,8 @@
                 background-color: $base-background-color;
             }
             .icon-circle {
-                @include createCircle($diameter: $diameter, $color: $white);
-                display: inline-block;
+                color: $white;
+                background-color: $base-brand-color;
             }
         }
         .expander-content {
@@ -93,19 +97,18 @@
         }
     }
     
-    #icons,
-    #list-types,
-    #colors {
+    /*
+    #list-types {
         .column {
             .reset {
                 padding-bottom: 4px; //align fix
             }
-            > h3 {
-                @include setFont($button-font-name);
-                @include border($color: $base-font-color, $thickness: 4px, $dir: left);
-                padding-left: $gap;
-            }
         }
+    }
+    */
+    
+    #list-types,
+    #colors {
         .content {
             > .row {
                 padding-top: $gap-double;
@@ -124,38 +127,32 @@
         .primary-color + .color {
             background-color: $base-brand-color;
         }
-
         .secondary-color + .color {
             background-color: $secondary-brand-color;
         }
-
         .tertiary-color + .color {
             background-color: $tertiary-brand-color;
         }
-
         .primary-background-color + .color {
             background-color: $base-background-color;
             @include border();
         }
-
         .secondary-background-color + .color {
             background-color: $secondary-background-color;
         }
-
         .tertiary-background-color + .color {
             background-color: $tertiary-background-color;
         }
-
         .primary-font-color + .color {
             background-color: $base-font-color;
         }
-
         .secondary-font-color + .color {
             background-color: $secondary-font-color;
             @include border();
         }
     }
     
+    #icons,
     #form-elements {
         .content {
             .expander {
@@ -169,28 +166,33 @@
             margin-bottom: $gap;
         }
     }
-
+    
     #icons {
-        .content .icon {
+        .content.standarn-icons .icon {
             font-size: 40px;
         }
-
-        .sub-information {
+        .column .sub-information {
             > h3 {
                 text-transform: none;
             }
         }
-
         .code-expander {
             margin-top: $gap*3;
         }
+        .expander {
+            margin-bottom: $gap-double;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
     }
     
-    .row.dk-row {
-        > .column {
+    #grid {
+        .column {
             text-align: center;
             padding: $gap-half 0;
-            @include border();
+            background-color: $secondary-background-color;
+            //@include border();
             > p {
                 margin: 0;
             }

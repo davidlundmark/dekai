@@ -109,7 +109,7 @@
     }
 }
 
-@mixin createCircle($background-color: $base-brand-color, $diameter: $gap, $color: $base-font-color, $background-hover-color: null, $border: null) {
+@mixin createCircle($background-color: $base-brand-color, $diameter: $gap-double, $color: $base-font-color, $background-hover-color: null, $border: null) {
     //padding: $padding;
     width: $diameter;
     height: $diameter;

@@ -34,12 +34,13 @@
     @include clearfix();
     > .column {
         @include clearfix();
-        //position: relative;
+        position: relative;
         overflow: hidden;
         display: block;
         float: left;
         margin-top: $gap;
         margin-left: $gap - 0.01px;
+        width: calc(100% - #{$grid-gap});
         @include generateGrid();
     }
 }

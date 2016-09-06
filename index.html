@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>DeKai v.1</title>
     <!-- Fonts -->
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,300,300italic,600,600italic' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" rel="stylesheet">
     <!-- CSS -->
     <link rel="stylesheet" href="styles.min.css">
@@ -22,12 +22,31 @@
     <div id="page-wrapper">
         <nav class="side-nav">
             <div class="logo-container">
-                <img class="logo" src="assets/images/logo.svg">
+                <img class="logo" src="assets/images/logo.svg" alt="logo">
             </div>
             <ul class="accordion">
                 <li class="menu-item">
                     <a href="" class="accordion-trigger label-with-icon">
-                        <span class="label">1.0 - Design</span>
+                        <span class="label">1.0 - Branding</span>
+                        <span class="icon-container">
+                            <span class="icon icon-play3"></span>
+                        </span>
+                    </a>
+                    <ul class="submenu">
+                        <li class="menu-item">
+                            <a href="#logo">1.1 - Logo</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#colors">1.2 - Colors</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#icons">1.3 - Icons</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="menu-item">
+                    <a href="" class="accordion-trigger label-with-icon">
+                        <span class="label">2.0 - Elements</span>
                         <span class="icon-container">
                             <span class="icon icon-play3"></span>
                         </span>
@@ -49,20 +68,20 @@
                             <a href="#tables">1.5 - Tables</a>
                         </li>
                         <li class="menu-item">
-                            <a href="#colors">1.6 - Colors</a>
+                            <a href="#buttons">2.6 - Buttons</a>
                         </li>
                     </ul>
                 </li>
                 <li class="menu-item">
                     <a href="" class="accordion-trigger label-with-icon">
-                        <span class="label">Accordion Item</span>
+                        <span class="label">2.0 - Layout</span>
                         <span class="icon-container">
                             <span class="icon icon-play3"></span>
                         </span>
                     </a>
                     <ul class="submenu">
                         <li class="menu-item">
-                            <a href="javascript:void(0)">Sub Item 1</a>
+                            <a href="#grid">2.1 - Grid</a>
                         </li>
                         <li class="menu-item">
                             <a href="javascript:void(0)">Sub Item 2</a>
@@ -74,7 +93,7 @@
             var useAccordion = true;
             </script>
         </nav>
-        <main role="main">
+        <main>
             <!--
             <section class="page-section introduction">
                 <div class="section-container">
@@ -84,6 +103,294 @@
                 </div>
             </section>
         -->
+            <section id="logo" class="page-section">
+                <div class="section-container">
+                    <div id="logo-information" class="information">
+                        <h2>1.1 - Logo</h2>
+                    </div>
+                    <div class="content">
+                    </div>
+                </div>
+            </section>
+            <section id="colors" class="page-section">
+                <div class="section-container">
+                    <div id="colors-information" class="information">
+                        <h2>1.2 - Colors</h2>
+                    </div>
+                    <div class="content">
+                        <div class="row">
+                            <div class="column col-4">
+                                <div class="sub-information primary-color">
+                                    <h3>Primary color</h3>
+                                    <p>RGB: <span class="color-rgb"></span></p>
+                                    <p>HEX: <span class="color-hex"></span></p>
+                                </div>
+                                <div class="color"></div>
+                            </div>
+                            <div class="column col-4">
+                                <div class="sub-information secondary-color">
+                                    <h3>Secondary color</h3>
+                                    <p>RGB: <span class="color-rgb"></span></p>
+                                    <p>HEX: <span class="color-hex"></span></p>
+                                </div>
+                                <div class="color"></div>
+                            </div>
+                            <div class="column col-4">
+                                <div class="sub-information tertiary-color">
+                                    <h3>Tertiary color</h3>
+                                    <p>RGB: <span class="color-rgb"></span></p>
+                                    <p>HEX: <span class="color-hex"></span></p>
+                                </div>
+                                <div class="color"></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="column col-4">
+                                <div class="sub-information primary-background-color">
+                                    <h3>Primary background color</h3>
+                                    <p>RGB: <span class="color-rgb"></span></p>
+                                    <p>HEX: <span class="color-hex"></span></p>
+                                </div>
+                                <div class="color"></div>
+                            </div>
+                            <div class="column col-4">
+                                <div class="sub-information secondary-background-color">
+                                    <h3>Secondary background color</h3>
+                                    <p>RGB: <span class="color-rgb"></span></p>
+                                    <p>HEX: <span class="color-hex"></span></p>
+                                </div>
+                                <div class="color"></div>
+                            </div>
+                            <div class="column col-4">
+                                <div class="sub-information tertiary-background-color">
+                                    <h3>Teritary background color</h3>
+                                    <p>RGB: <span class="color-rgb"></span></p>
+                                    <p>HEX: <span class="color-hex"></span></p>
+                                </div>
+                                <div class="color"></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="column col-4">
+                                <div class="sub-information primary-font-color">
+                                    <h3>Primary font color</h3>
+                                    <p>RGB: <span class="color-rgb"></span></p>
+                                    <p>HEX: <span class="color-hex"></span></p>
+                                </div>
+                                <div class="color"></div>
+                            </div>
+                            <div class="column col-4">
+                                <div class="sub-information secondary-font-color">
+                                    <h3>Secondary font color</h3>
+                                    <p>RGB: <span class="color-rgb"></span></p>
+                                    <p>HEX: <span class="color-hex"></span></p>
+                                </div>
+                                <div class="color"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="icons" class="page-section">
+                <div class="section-container">
+                    <div id="icons-information" class="information">
+                        <h2>1.3 - Icons</h2>
+                        <p>Path: \assets\fonts\icomoon</p>
+                    </div>
+                    <div class="content standarn-icons">
+                        <div class="sub-information">
+                            <h3>Standard icons</h3>
+                        </div>
+                        <div class="row">
+                            <div class="column col-3">
+                                <div class="sub-information">
+                                    <h3>play3</h3>
+                                </div>
+                                <div class="icon-container">
+                                    <span class="icon icon-play3"></span>
+                                </div>
+                            </div>
+                            <div class="column col-3">
+                                <div class="sub-information">
+                                    <h3>embed2</h3>
+                                </div>
+                                <div class="icon-container">
+                                    <span class="icon icon-embed2"></span>
+                                </div>
+                            </div>
+                            <div class="column col-3">
+                                <div class="sub-information">
+                                    <h3>cog</h3>
+                                </div>
+                                <div class="icon-container">
+                                    <span class="icon icon-cog"></span>
+                                </div>
+                            </div>
+                            <div class="column col-3">
+                                <div class="sub-information">
+                                    <h3>heart</h3>
+                                </div>
+                                <div class="icon-container">
+                                    <span class="icon icon-heart"></span>
+                                </div>
+                            </div>
+                            <div class="column col-3">
+                                <div class="sub-information">
+                                    <h3>play3</h3>
+                                </div>
+                                <div class="icon-container">
+                                    <span class="icon icon-play3"></span>
+                                </div>
+                            </div>
+                            <div class="column col-3">
+                                <div class="sub-information">
+                                    <h3>embed2</h3>
+                                </div>
+                                <div class="icon-container">
+                                    <span class="icon icon-embed2"></span>
+                                </div>
+                            </div>
+                            <div class="column col-3">
+                                <div class="sub-information">
+                                    <h3>cog</h3>
+                                </div>
+                                <div class="icon-container">
+                                    <span class="icon icon-cog"></span>
+                                </div>
+                            </div>
+                            <div class="column col-3">
+                                <div class="sub-information">
+                                    <h3>heart</h3>
+                                </div>
+                                <div class="icon-container">
+                                    <span class="icon icon-heart"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="expander code-expander">
+                        <div class="line-behind-icon">
+                            <a href="" class="expander-trigger icon-container">
+                                <span class="icon-circle">
+                                                <span class="icon icon-embed2"></span>
+                                </span>
+                            </a>
+                        </div>
+                        <div class="expander-content">
+                            <pre class="code-toolbar language-markup">
+                                            <code>
+                                                &lt;span class=&quot;icon icon-{name}&quot;&gt;&lt;/span&gt; //replace {name} with icon name
+                                            </code>
+                                </pre>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="sub-information">
+                            <h3>Icons with circle</h3>
+                        </div>
+                        <div class="row">
+                            <div class="column col-3">
+                                <div class="sub-information">
+                                    <h3>play3</h3>
+                                </div>
+                                <div class="icon-container">
+                                    <span class="icon-circle">
+                                        <span class="icon icon-play3"></span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="column col-3">
+                                <div class="sub-information">
+                                    <h3>embed2</h3>
+                                </div>
+                                <div class="icon-container">
+                                    <span class="icon-circle">
+                                        <span class="icon icon-embed2"></span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="column col-3">
+                                <div class="sub-information">
+                                    <h3>cog</h3>
+                                </div>
+                                <div class="icon-container">
+                                    <span class="icon-circle">
+                                        <span class="icon icon-cog"></span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="column col-3">
+                                <div class="sub-information">
+                                    <h3>heart</h3>
+                                </div>
+                                <div class="icon-container">
+                                    <span class="icon-circle">
+                                        <span class="icon icon-heart"></span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="column col-3">
+                                <div class="sub-information">
+                                    <h3>play3</h3>
+                                </div>
+                                <div class="icon-container">
+                                    <span class="icon-circle">
+                                        <span class="icon icon-play3"></span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="column col-3">
+                                <div class="sub-information">
+                                    <h3>embed2</h3>
+                                </div>
+                                <div class="icon-container">
+                                    <span class="icon-circle">
+                                        <span class="icon icon-embed2"></span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="column col-3">
+                                <div class="sub-information">
+                                    <h3>cog</h3>
+                                </div>
+                                <div class="icon-container">
+                                    <span class="icon-circle">
+                                        <span class="icon icon-cog"></span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="column col-3">
+                                <div class="sub-information">
+                                    <h3>heart</h3>
+                                </div>
+                                <div class="icon-container">
+                                    <span class="icon-circle">
+                                        <span class="icon icon-heart"></span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="expander code-expander">
+                        <div class="line-behind-icon">
+                            <a href="" class="expander-trigger icon-container">
+                                <span class="icon-circle">
+                                    <span class="icon icon-embed2"></span>
+                                </span>
+                            </a>
+                        </div>
+                        <div class="expander-content">
+                            <pre class="code-toolbar language-markup">
+                                            <code>
+                                                &lt;span class=&quot;icon-circle&quot;&gt;
+                                                    &lt;span class=&quot;icon icon-{name}&quot;&gt;&lt;/span&gt; //replace {name} with icon name
+                                                &lt;/span&gt; 
+                                            </code>
+                                </pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
             <section id="headings" class="page-section">
                 <div class="section-container">
                     <div class="information">
@@ -125,6 +432,7 @@
                         var useExpander = true;
                         </script>
                     </div>
+                </div>
             </section>
             <section id="paragraph" class="page-section">
                 <div class="section-container">
@@ -164,7 +472,9 @@
                     <div class="content">
                         <div class="row">
                             <div class="column col-6">
-                                <h3>1.3.1 - Ordered List</h3>
+                                <div class="sub-information">
+                                    <h3>1.3.1 - Ordered List</h3>
+                                </div>
                                 <ol>
                                     <li>List Item 1</li>
                                     <li>List Item 2</li>
@@ -174,7 +484,7 @@
                                     <div class="line-behind-icon">
                                         <a href="" class="expander-trigger icon-container">
                                             <span class="icon-circle">
-                                            <span class="icon icon-embed2"></span>
+                                                <span class="icon icon-embed2"></span>
                                             </span>
                                         </a>
                                     </div>
@@ -192,7 +502,9 @@
                                 </div>
                             </div>
                             <div class="column col-6">
-                                <h3>1.3.2 - Ordered List Reseted</h3>
+                                <div class="sub-information">
+                                    <h3>1.3.2 - Ordered List Reseted</h3>
+                                </div>
                                 <ol class="reset">
                                     <li>List Item 1</li>
                                     <li>List Item 2</li>
@@ -222,7 +534,9 @@
                         </div>
                         <div class="row">
                             <div class="column col-6">
-                                <h3>1.3.3 - Unordered List</h3>
+                                <div class="sub-information">
+                                    <h3>1.3.3 - Unordered List</h3>
+                                </div>
                                 <ul>
                                     <li>List Item 1</li>
                                     <li>List Item 2</li>
@@ -250,7 +564,9 @@
                                 </div>
                             </div>
                             <div class="column col-6">
-                                <h3>1.3.4 - Unordered List reseted</h3>
+                                <div class="sub-information">
+                                    <h3>1.3.4 - Unordered List reseted</h3>
+                                </div>
                                 <ul class="reset">
                                     <li>List Item 1</li>
                                     <li>List Item 2</li>
@@ -341,7 +657,7 @@
                                 </div>
                                 <p>
                                     <label for="select_element">Select Element:</label>
-                                    <select name="select_element">
+                                    <select id="select_element">
                                         <optgroup label="Option Group 1">
                                             <option value="1">Option 1</option>
                                             <option value="2">Option 2</option>
@@ -366,7 +682,7 @@
                                         <pre class="code-toolbar language-markup">
                                             <code>
                                                 &lt;label for=&quot;select_element&quot;&gt;Select Element:&lt;/label&gt;
-                                                &lt;select name=&quot;select_element&quot;&gt;
+                                                &lt;select id=&quot;select_element&quot;&gt;
                                                     &lt;optgroup label=&quot;Option Group 1&quot;&gt;
                                                         &lt;option value=&quot;1&quot;&gt;Option 1&lt;/option&gt;
                                                         &lt;option value=&quot;2&quot;&gt;Option 2&lt;/option&gt;
@@ -384,7 +700,7 @@
                                 </div>
                                 <p>
                                     <label for="password">Password:</label>
-                                    <input type="password" class="password" name="password">
+                                    <input type="password" class="password" id="password">
                                 </p>
                                 <div class="expander code-expander">
                                     <div class="line-behind-icon">
@@ -398,7 +714,7 @@
                                         <pre class="code-toolbar language-markup">
                                             <code>
                                                 &lt;label for=&quot;password&quot;&gt;Password:&lt;/label&gt;
-                                                &lt;input type=&quot;password&quot; class=&quot;password&quot; name=&quot;password&quot;&gt;
+                                                &lt;input type=&quot;password&quot; class=&quot;password&quot; id=&quot;password&quot;&gt;
                                             </code>
                                         </pre>
                                     </div>
@@ -406,7 +722,7 @@
                                 <div class="row">
                                     <div class="column col-6">
                                         <p>
-                                            <label for="radio_buttons">Radio Buttons:</label>
+                                            <label>Radio Buttons:</label>
                                             <label>
                                                 <input type="radio" class="radio" name="radio_button" value="radio_1"> Radio 1
                                             </label>
@@ -428,7 +744,7 @@
                                             <div class="expander-content">
                                                 <pre class="code-toolbar language-markup">
                                                     <code>
-                                                        &lt;label for=&quot;radio_buttons&quot;&gt;Radio Buttons:&lt;/label&gt;
+                                                        &lt;label&gt;Radio Buttons:&lt;/label&gt;
                                                         &lt;label&gt;
                                                             &lt;input type=&quot;radio&quot; class=&quot;radio&quot; name=&quot;radio_button&quot; value=&quot;radio_1&quot;&gt; Radio 1
                                                         &lt;/label&gt;
@@ -445,7 +761,7 @@
                                     </div>
                                     <div class="column col-6">
                                         <p>
-                                            <label for="checkboxes">Checkboxes:</label>
+                                            <label>Checkboxes:</label>
                                             <label>
                                                 <input type="checkbox" class="checkbox" name="checkboxes" value="check_1"> Checkbox 1
                                             </label>
@@ -467,7 +783,7 @@
                                             <div class="expander-content">
                                                 <pre class="code-toolbar language-markup">
                                                     <code>
-                                                        &lt;label for=&quot;checkboxes&quot;&gt;Checkboxes:&lt;/label&gt;
+                                                        &lt;label&gt;Checkboxes:&lt;/label&gt;
                                                         &lt;label&gt;
                                                             &lt;input type=&quot;checkbox&quot; class=&quot;checkbox&quot; name=&quot;checkboxes&quot; value=&quot;check_1&quot;&gt; Checkbox 1
                                                         &lt;/label&gt;
@@ -485,7 +801,7 @@
                                 </div>
                                 <p>
                                     <label for="file">File Input:</label>
-                                    <input type="file" class="file" name="file">
+                                    <input type="file" class="file" id="file">
                                 </p>
                                 <div class="expander code-expander">
                                     <div class="line-behind-icon">
@@ -515,7 +831,7 @@
                         <h2>1.5 - Tables</h2>
                     </div>
                     <div class="content">
-                        <table cellspacing="0" cellpadding="0">
+                        <table>
                             <tbody>
                                 <tr>
                                     <th>Table Header 1</th>
@@ -581,196 +897,154 @@
                     </div>
                 </div>
             </section>
-            <section id="colors" class="page-section">
+            <section id="grid" class="page-section">
                 <div class="section-container">
-                    <div id="colors-information" class="information">
-                        <h2>1.6 - Colors</h2>
+                    <div class="information">
+                        <h2>2.1 - Grid</h2>
                     </div>
                     <div class="content">
                         <div class="row">
-                            <div class="column col-4">
-                                <div class="sub-information primary-color">
-                                    <h3>1.6.1 - Primary color</h3>
-                                    <p>RGB: <span class="color-rgb"></span></p>
-                                    <p>HEX: <span class="color-hex"></span></p>
-                                </div>
-                                <div class="color"></div>
+                            <div class="column">
+                                <p>column</p>
                             </div>
-                            <div class="column col-4">
-                                <div class="sub-information secondary-color">
-                                    <h3>1.6.2 - Secondary color</h3>
-                                    <p>RGB: <span class="color-rgb"></span></p>
-                                    <p>HEX: <span class="color-hex"></span></p>
-                                </div>
-                                <div class="color"></div>
+                        </div>
+                        <div class="row">
+                            <div class="column col-6">
+                                <p>column col-6</p>
                             </div>
-                            <div class="column col-4">
-                                <div class="sub-information tertiary-color">
-                                    <h3>1.6.3 - Tertiary color</h3>
-                                    <p>RGB: <span class="color-rgb"></span></p>
-                                    <p>HEX: <span class="color-hex"></span></p>
-                                </div>
-                                <div class="color"></div>
+                            <div class="column col-6">
+                                <p>column col-6</p>
                             </div>
                         </div>
                         <div class="row">
                             <div class="column col-4">
-                                <div class="sub-information primary-background-color">
-                                    <h3>1.6.4 - Primary background color</h3>
-                                    <p>RGB: <span class="color-rgb"></span></p>
-                                    <p>HEX: <span class="color-hex"></span></p>
-                                </div>
-                                <div class="color"></div>
+                                <p>column col-4</p>
                             </div>
                             <div class="column col-4">
-                                <div class="sub-information secondary-background-color">
-                                    <h3>1.6.5 - Secondary background color</h3>
-                                    <p>RGB: <span class="color-rgb"></span></p>
-                                    <p>HEX: <span class="color-hex"></span></p>
-                                </div>
-                                <div class="color"></div>
+                                <p>column col-4</p>
                             </div>
                             <div class="column col-4">
-                                <div class="sub-information tertiary-background-color">
-                                    <h3>1.6.6 - Teritary background color</h3>
-                                    <p>RGB: <span class="color-rgb"></span></p>
-                                    <p>HEX: <span class="color-hex"></span></p>
-                                </div>
-                                <div class="color"></div>
+                                <p>column col-4</p>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="column col-4">
-                                <div class="sub-information primary-font-color">
-                                    <h3>1.6.7 - Primary font color</h3>
-                                    <p>RGB: <span class="color-rgb"></span></p>
-                                    <p>HEX: <span class="color-hex"></span></p>
-                                </div>
-                                <div class="color"></div>
+                            <div class="column col-6">
+                                <p>column col-6</p>
+                            </div>
+                            <div class="column col-2">
+                                <p>column col-2</p>
                             </div>
                             <div class="column col-4">
-                                <div class="sub-information secondary-font-color">
-                                    <h3>1.6.8 - Secondary font color</h3>
-                                    <p>RGB: <span class="color-rgb"></span></p>
-                                    <p>HEX: <span class="color-hex"></span></p>
-                                </div>
-                                <div class="color"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section id="icons" class="page-section">
-                <div class="section-container">
-                    <div id="icons-information" class="information">
-                        <h2>2.1 - Icons</h2>
-                    </div>
-                    <div class="content">
-                        <div class="row">
-                            <div class="column col-3">
-                                <div class="sub-information">
-                                    <h3>2.1.1 - play3</h3>
-                                </div>
-                                <div class="icon-container">
-                                    <span class="icon icon-play3"></span>
-                                </div>
-                            </div>
-                            <div class="column col-3">
-                                <div class="sub-information">
-                                    <h3>2.1.2 - embed2</h3>
-                                </div>
-                                <div class="icon-container">
-                                    <span class="icon icon-embed2"></span>
-                                </div>
-                            </div>
-                            <div class="column col-3">
-                                <div class="sub-information">
-                                    <h3>2.1.3 - cog</h3>
-                                </div>
-                                <div class="icon-container">
-                                    <span class="icon icon-cog"></span>
-                                </div>
-                            </div>
-                            <div class="column col-3">
-                                <div class="sub-information">
-                                    <h3>2.1.4 - heart</h3>
-                                </div>
-                                <div class="icon-container">
-                                    <span class="icon icon-heart"></span>
-                                </div>
-                            </div>
-                            <div class="column col-3">
-                                <div class="sub-information">
-                                    <h3>2.1.1 - play3</h3>
-                                </div>
-                                <div class="icon-container">
-                                    <span class="icon icon-play3"></span>
-                                </div>
-                            </div>
-                            <div class="column col-3">
-                                <div class="sub-information">
-                                    <h3>2.1.2 - embed2</h3>
-                                </div>
-                                <div class="icon-container">
-                                    <span class="icon icon-embed2"></span>
-                                </div>
-                            </div>
-                            <div class="column col-3">
-                                <div class="sub-information">
-                                    <h3>2.1.3 - cog</h3>
-                                </div>
-                                <div class="icon-container">
-                                    <span class="icon icon-cog"></span>
-                                </div>
-                            </div>
-                            <div class="column col-3">
-                                <div class="sub-information">
-                                    <h3>2.1.4 - heart</h3>
-                                </div>
-                                <div class="icon-container">
-                                    <span class="icon icon-heart"></span>
-                                </div>
+                                <p>column col-4</p>
                             </div>
                         </div>
                     </div>
                     <div class="expander code-expander">
-                            <div class="line-behind-icon">
-                                <a href="" class="expander-trigger icon-container">
-                                    <span class="icon-circle">
-                                                <span class="icon icon-embed2"></span>
+                        <div class="line-behind-icon">
+                            <a href="" class="expander-trigger icon-container">
+                                <span class="icon-circle">
+                                    <span class="icon icon-embed2"></span>
+                                </span>
+                            </a>
+                        </div>
+                        <div class="expander-content">
+                            <pre class="code-toolbar language-markup">
+                                    <code>
+                                        &lt;div class=&quot;row&quot;&gt;
+                                            &lt;div class=&quot;column col-{i}&quot;&gt; //replace {i} with column size
+                                                ...
+                                            &lt;/div&gt;
+                                            &lt;div class=&quot;column col-{i}&quot;&gt;
+                                                ...
+                                            &lt;/div&gt;
+                                            ...
+                                        &lt;/div&gt;
+                                    </code>
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="buttons" class="page-section">
+                <div class="section-container">
+                    <div class="information">
+                        <h2>2.6 - Buttons</h2>
+                    </div>
+                    <div class="content">
+                        <div class="row">
+                            <div class="column col-3">
+                                <div class="sub-information">
+                                    <h3>Input type button</h3>
+                                </div>
+                                <input type="button" value="Button">
+                            </div>
+                            <div class="column col-3">
+                                <div class="sub-information">
+                                    <h3>Link button</h3>
+                                </div>
+                                <a href="#buttons" target="_self" class="button">Button</a>
+                            </div>
+                            <div class="column col-3">
+                                <div class="sub-information">
+                                    <h3>Button with icon</h3>
+                                </div>
+                                <a href="#buttons" class="button label-with-icon">
+                                    <span class="label">Button</span>
+                                    <span class="icon-container">
+                                        <span class="icon icon-embed2"></span>
                                     </span>
                                 </a>
                             </div>
-                            <div class="expander-content">
-                                <pre class="code-toolbar language-markup">
-                                            <code>
-                                                &lt;span class=&quot;icon icon-{name}&quot;&gt;&lt;/span&gt; //replace {name} with icon name
-                                            </code>
-                                </pre>
+                            <div class="column col-3">
+                                <div class="sub-information">
+                                    <h3>Icon button</h3>
+                                </div>
+                                <a href="#buttons" class="button">
+                                    <span class="icon icon-embed2"></span>
+                                </a>
                             </div>
                         </div>
+                    </div>
+                    <div class="expander code-expander">
+                        <div class="line-behind-icon">
+                            <a href="" class="expander-trigger icon-container">
+                                <span class="icon-circle">
+                                    <span class="icon icon-embed2"></span>
+                                </span>
+                            </a>
+                        </div>
+                        <div class="expander-content">
+                            <pre class="code-toolbar language-markup">
+                                    <code>
+                                        /* Input type button */
+                                        &lt;input type=&quot;button&quot; value=&quot;Button&quot;&gt;
+
+                                        /* Link button */
+                                        &lt;a href=&quot;#buttons&quot; target=&quot;_self&quot; class=&quot;button&quot;&gt;Button&lt;/a&gt;
+
+                                        /* Button with icon */
+                                        &lt;a href=&quot;#buttons&quot; class=&quot;button label-with-icon&quot;&gt;
+                                            &lt;span class=&quot;label&quot;&gt;Button&lt;/span&gt;
+                                            &lt;span class=&quot;icon-container&quot;&gt;
+                                                &lt;span class=&quot;icon icon-embed2&quot;&gt;&lt;/span&gt;
+                                            &lt;/span&gt;
+                                        &lt;/a&gt;
+
+                                        /* Icon button */
+                                        &lt;a href=&quot;#buttons&quot; class=&quot;button&quot;&gt;
+                                            &lt;span class=&quot;icon icon-embed2&quot;&gt;&lt;/span&gt;
+                                        &lt;/a&gt;
+                                    </code>
+                            </pre>
+                        </div>
+                    </div>
                 </div>
             </section>
-            <section id="" class="page-section">
+            <section class="page-section">
                 <div class="section-container">
                     <p>
                         <input type="submit" value="Submit">
                     </p>
-                    <hr>
-                    <h2 id="icons">Icons</h2>
-                    <div>
-                        <span class="icon icon-play3"></span>
-                        <span class="mls"> icon-home</span>
-                    </div>
-                    <pre class="code-toolbar language-markup">
-                        <code>
-                        &lt;tr class=&quot;even&quot;&gt;
-                            &lt;td&gt;Division 1&lt;/td&gt;
-                            &lt;td&gt;Division 2&lt;/td&gt;
-                            &lt;td&gt;Division 3&lt;/td&gt;
-                        &lt;/tr&gt;
-                        </code>
-                    </pre>
                     <hr>
                     <h2 id="accordion">Accordion</h2>
                     <ul class="accordion">
@@ -829,22 +1103,9 @@
                     </script>
                 </div>
             </section>
-            <section class="page-section">
-                <div class="section-container">
-                    <h2 id="grid">Grid</h2>
-                    <div class="row dk-row">
-                        <div class="column col-6">
-                            <p>col-6</p>
-                        </div>
-                        <div class="column col-6">
-                            <p>col-6</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
         </main>
-        </div>
-        <script src="scripts.min.js"></script>
+    </div>
+    <script src="scripts.min.js"></script>
 </body>
 
 </html>

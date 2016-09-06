@@ -1,16 +1,17 @@
 .label-with-icon {
     display: table !important;
-    width: 100%;
+    //width: 100%;
     table-layout: fixed;
     > span {
         vertical-align: middle;
         display: table-cell;
         &.label {
-            width: 85%;
+            //width: 85%;
             text-align: left;
+            padding-right: $gap-half;
         }
         &.icon-container {
-            width: 15%;
+            //width: 15%;
             text-align: right;
             > span {
                 margin-top: 1px;
