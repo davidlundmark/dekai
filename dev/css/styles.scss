@@ -9,10 +9,10 @@
     //project specific styles
     .side-nav {
         .logo-container {
-            padding: $gap;
+            padding: $gap-triple $gap;
             img {
                 margin: 0 auto;
-                width: 100px;
+                max-width: 200px;
                 display: block;
             }
         }
@@ -22,7 +22,6 @@
                 padding: $gap;
             }
         }
-
         .label-with-icon {
             width: 100%;
         }
@@ -96,7 +95,6 @@
             }
         }
     }
-    
     /*
     #list-types {
         .column {
@@ -106,6 +104,18 @@
         }
     }
     */
+    
+    #logo {
+        .logo-container {
+            padding: $gap-double;
+            &.default {
+                @include border();
+            }
+        }
+        .inverted {
+            background-color: $tertiary-background-color;
+        }
+    }
     
     #list-types,
     #colors {
@@ -179,6 +189,10 @@
         .code-expander {
             margin-top: $gap*3;
         }
+    }
+    
+    #icons,
+    #grid {
         .expander {
             margin-bottom: $gap-double;
             &:last-child {
@@ -190,11 +204,17 @@
     #grid {
         .column {
             text-align: center;
-            padding: $gap-half 0;
+            padding: $gap-half;
             background-color: $secondary-background-color;
             //@include border();
             > p {
                 margin: 0;
+            }
+        }
+        .same-height {
+            .column {
+                padding: $gap;
+                text-align: left;
             }
         }
     }

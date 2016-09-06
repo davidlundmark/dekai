@@ -70,6 +70,9 @@
                         <li class="menu-item">
                             <a href="#buttons">2.6 - Buttons</a>
                         </li>
+                        <li class="menu-item">
+                            <a href="#lines">2.7 - Lines</a>
+                        </li>
                     </ul>
                 </li>
                 <li class="menu-item">
@@ -109,6 +112,26 @@
                         <h2>1.1 - Logo</h2>
                     </div>
                     <div class="content">
+                        <div class="row">
+                            <div class="column col-6">
+                                <div class="sub-information">
+                                    <h3>Default</h3>
+                                    <p>PATH: <span class="logo-path"></span></p>
+                                </div>
+                                <div class="logo-container default">
+                                    <img class="logo" src="assets/images/logo.svg" alt="logo">
+                                </div>
+                            </div>
+                            <div class="column col-6">
+                                <div class="sub-information">
+                                    <h3>Inverted</h3>
+                                    <p>PATH: <span class="logo-inverted-path"></span></p>
+                                </div>
+                                <div class="logo-container inverted">
+                                    <img class="logo" src="assets/images/logo_inverted.svg" alt="logo">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -195,7 +218,7 @@
                 <div class="section-container">
                     <div id="icons-information" class="information">
                         <h2>1.3 - Icons</h2>
-                        <p>Path: \assets\fonts\icomoon</p>
+                        <p>Path: assets/fonts/icomoon</p>
                     </div>
                     <div class="content standarn-icons">
                         <div class="sub-information">
@@ -866,7 +889,7 @@
                             <div class="expander-content">
                                 <pre class="code-toolbar language-markup">
                                             <code>
-                                                &lt;table cellspacing=&quot;0&quot; cellpadding=&quot;0&quot;&gt;
+                                                &lt;table&gt;
                                                     &lt;tbody&gt;
                                                         &lt;tr&gt;
                                                             &lt;th&gt;Table Header 1&lt;/th&gt;
@@ -893,74 +916,6 @@
                                             </code>
                                 </pre>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section id="grid" class="page-section">
-                <div class="section-container">
-                    <div class="information">
-                        <h2>2.1 - Grid</h2>
-                    </div>
-                    <div class="content">
-                        <div class="row">
-                            <div class="column">
-                                <p>column</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="column col-6">
-                                <p>column col-6</p>
-                            </div>
-                            <div class="column col-6">
-                                <p>column col-6</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="column col-4">
-                                <p>column col-4</p>
-                            </div>
-                            <div class="column col-4">
-                                <p>column col-4</p>
-                            </div>
-                            <div class="column col-4">
-                                <p>column col-4</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="column col-6">
-                                <p>column col-6</p>
-                            </div>
-                            <div class="column col-2">
-                                <p>column col-2</p>
-                            </div>
-                            <div class="column col-4">
-                                <p>column col-4</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="expander code-expander">
-                        <div class="line-behind-icon">
-                            <a href="" class="expander-trigger icon-container">
-                                <span class="icon-circle">
-                                    <span class="icon icon-embed2"></span>
-                                </span>
-                            </a>
-                        </div>
-                        <div class="expander-content">
-                            <pre class="code-toolbar language-markup">
-                                    <code>
-                                        &lt;div class=&quot;row&quot;&gt;
-                                            &lt;div class=&quot;column col-{i}&quot;&gt; //replace {i} with column size
-                                                ...
-                                            &lt;/div&gt;
-                                            &lt;div class=&quot;column col-{i}&quot;&gt;
-                                                ...
-                                            &lt;/div&gt;
-                                            ...
-                                        &lt;/div&gt;
-                                    </code>
-                            </pre>
                         </div>
                     </div>
                 </div>
@@ -1040,11 +995,165 @@
                     </div>
                 </div>
             </section>
+            <section id="lines" class="page-section">
+                <div class="section-container">
+                    <div class="information">
+                        <h2>2.7 - Lines</h2>
+                    </div>
+                    <div class="content">
+                        <div class="sub-information">
+                            <h3>Default</h3>
+                        </div>
+                        <hr>
+                        <div class="sub-information">
+                            <h3>Dashed</h3>
+                        </div>
+                        <hr class="dashed">
+                        <div class="sub-information">
+                            <h3>Thick</h3>
+                        </div>
+                        <hr class="thick">
+                    </div>
+                    <div class="expander code-expander">
+                        <div class="line-behind-icon">
+                            <a href="" class="expander-trigger icon-container">
+                                <span class="icon-circle">
+                                    <span class="icon icon-embed2"></span>
+                                </span>
+                            </a>
+                        </div>
+                        <div class="expander-content">
+                            <pre class="code-toolbar language-markup">
+                                    <code>
+                                        /* Default */
+                                        &lt;hr&gt;
+
+                                        /* Dashed */
+                                        &lt;hr class=&quot;dashed&quot;&gt;
+
+                                        /* Default */
+                                        &lt;hr class=&quot;thick&quot;&gt;
+                                    </code>
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="grid" class="page-section">
+                <div class="section-container">
+                    <div class="information">
+                        <h2>2.1 - Grid</h2>
+                    </div>
+                    <div class="content">
+                        <div class="sub-information">
+                            <h3>Default grid</h3>
+                        </div>
+                        <div class="row">
+                            <div class="column">
+                                <p>column</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="column col-6">
+                                <p>column col-6</p>
+                            </div>
+                            <div class="column col-6">
+                                <p>column col-6</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="column col-4">
+                                <p>column col-4</p>
+                            </div>
+                            <div class="column col-4">
+                                <p>column col-4</p>
+                            </div>
+                            <div class="column col-4">
+                                <p>column col-4</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="column col-6">
+                                <p>column col-6</p>
+                            </div>
+                            <div class="column col-2">
+                                <p>column col-2</p>
+                            </div>
+                            <div class="column col-4">
+                                <p>column col-4</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="expander code-expander">
+                        <div class="line-behind-icon">
+                            <a href="" class="expander-trigger icon-container">
+                                <span class="icon-circle">
+                                    <span class="icon icon-embed2"></span>
+                                </span>
+                            </a>
+                        </div>
+                        <div class="expander-content">
+                            <pre class="code-toolbar language-markup">
+                                    <code>
+                                        &lt;div class=&quot;row&quot;&gt;
+                                            &lt;div class=&quot;column col-{i}&quot;&gt; //replace {i} with column size
+                                                ...
+                                            &lt;/div&gt;
+                                            &lt;div class=&quot;column col-{i}&quot;&gt;
+                                                ...
+                                            &lt;/div&gt;
+                                            ...
+                                        &lt;/div&gt;
+                                    </code>
+                            </pre>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="sub-information">
+                            <h3>Grid with same height</h3>
+                        </div>
+                        <div class="row same-height">
+                            <div class="column col-6">
+                                <p>Lorem ipsum dolor sit amet.</p>
+                            </div>
+                            <div class="column col-6">
+                                <p>Sed dapibus lectus at interdum venenatis. Proin porta vel urna ac vulputate. Proin commodo turpis urna, suscipit rutrum odio vestibulum nec. Nulla vestibulum neque ut sem malesuada, vel euismod quam mattis. Nullam vel risus a felis commodo aliquam at vel erat. Nullam at elementum metus. Sed sollicitudin at lacus vitae euismod. Nam aliquet aliquam semper. Nullam id dolor non magna venenatis luctus. Curabitur posuere orci vitae congue ornare. Maecenas malesuada volutpat hendrerit. Vestibulum lobortis eu ipsum tincidunt commodo. In malesuada nulla mauris, vel lacinia augue pharetra sed. Sed tempor scelerisque arcu eu egestas. Cras accumsan rutrum eros eu volutpat.</p>
+                            </div>
+                        </div>
+                        <script>
+                        var useGridSameHeight = true;
+                        </script>
+                    </div>
+                    <div class="expander code-expander">
+                        <div class="line-behind-icon">
+                            <a href="" class="expander-trigger icon-container">
+                                <span class="icon-circle">
+                                    <span class="icon icon-embed2"></span>
+                                </span>
+                            </a>
+                        </div>
+                        <div class="expander-content">
+                            <pre class="code-toolbar language-markup">
+                                    <code>
+                                        &lt;div class=&quot;row same-height&quot;&gt;
+                                            &lt;div class=&quot;column col-{i}&quot;&gt;//replace {i} with column size
+                                                ...
+                                            &lt;/div&gt;
+                                            &lt;div class=&quot;column col-{i}&quot;&gt;
+                                                ...
+                                            &lt;/div&gt;
+                                        &lt;/div&gt;
+                                        &lt;script&gt;
+                                        var useGridSameHeight = true;
+                                        &lt;/script&gt;
+                                    </code>
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
             <section class="page-section">
                 <div class="section-container">
-                    <p>
-                        <input type="submit" value="Submit">
-                    </p>
                     <hr>
                     <h2 id="accordion">Accordion</h2>
                     <ul class="accordion">

@@ -2,6 +2,7 @@
 require('./lib/jquery.easing.1.3.js');
 require('./lib/prism.js');
 require('./lib/fastclick.js');
+require('./lib/jquery.matchHeight.js')
 
 console.log('deKai v.1');
 
@@ -115,6 +116,13 @@ InformationHandler.prototype = {
         this.headingsInfo();
         this.paragraphInfo();
         this.colorsInfo();
+        this.logoInfo();
+    },
+
+    logoInfo: function() {
+        var $logo = $('#logo');
+        $logo.find('.logo-path').text($logo.find('.default > img').attr('src'));
+        $logo.find('.logo-inverted-path').text($logo.find('.inverted > img').attr('src'));
     },
 
     headingsInfo: function() {
@@ -212,6 +220,11 @@ $(document).ready(function() {
     if (typeof useExpander !== 'undefined' && useExpander) {
         expanderHandler = new ExpanderHandler();
         expanderHandler.init();
+    }
+
+    //Grid same height
+    if (typeof useGridSameHeight !== 'undefined' && useGridSameHeight) {
+        $('.same-height > .column').matchHeight();
     }
 });
 

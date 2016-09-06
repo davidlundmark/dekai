@@ -65,6 +65,14 @@ hr {
     border-right: 0;
     border-top: 0;
     margin: $gap 0;
+
+    &.dashed {
+        border-style: dashed;
+    }
+
+    &.thick {
+        border-width: 4px;
+    }
 }
 
 .small {
