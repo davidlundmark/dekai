@@ -8,3 +8,9 @@
 @import "icons";
 @import "easing";
 @import "colors";
+@import "images";
+
+.clearfix {
+	@include clearfix();
+}
+

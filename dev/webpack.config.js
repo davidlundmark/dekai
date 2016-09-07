@@ -1,4 +1,4 @@
-var debug = process.env.NODE_ENV !== 'production';
+var debug = true; //process.env.NODE_ENV !== 'production';
 
 var webpack = require('webpack');
 var extracttextplugin = require('extract-text-webpack-plugin');
@@ -22,14 +22,13 @@ module.exports = {
         publicPath: './assets/'
     },
     plugins: debug ? [new extracttextplugin(cssFile),
-        new webpack.ProvidePlugin({
-          $: "jquery",
-          jQuery: "jquery"
-    })] : [
+        new webpack.ProvidePlugin({ $: "jquery", jQuery: "jquery" })
+    ] : [
         new webpack.optimize.DedupePlugin(),
         new webpack.optimize.OccurenceOrderPlugin(),
         new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false }),
-        new extracttextplugin(cssFile)
+        new extracttextplugin(cssFile),
+        new webpack.ProvidePlugin({ $: "jquery", jQuery: "jquery" })
     ],
     module: {
         loaders: debug ? [{
@@ -41,12 +40,14 @@ module.exports = {
             },
             { test: /\.(eot|woff|woff2|svg|ttf)([\?]?.*)$/, loader: "file-loader?name=../assets/fonts/icomoon/[name].[ext]" }
         ] : [{
-            test: /\.scss$/,
-            loader: extracttextplugin.extract(
-                'style-loader', // The backup style loader
-                ['css-loader', 'postcss-loader', 'sass-loader']
-            )
-        }]
+                test: /\.scss$/,
+                loader: extracttextplugin.extract(
+                    'style-loader', // The backup style loader
+                    ['css-loader', 'postcss-loader', 'sass-loader']
+                )
+            },
+            { test: /\.(eot|woff|woff2|svg|ttf)([\?]?.*)$/, loader: "file-loader?name=../assets/fonts/icomoon/[name].[ext]" }
+        ]
     },
     postcss: function() {
         return [
@@ -71,6 +72,6 @@ module.exports = {
         ];
     },
     sassLoader: {
-        includePaths: [].concat('client/style'/*, bourbon.includePaths, neat.includePaths*/)
+        includePaths: [].concat('client/style' /*, bourbon.includePaths, neat.includePaths*/ )
     }
 };

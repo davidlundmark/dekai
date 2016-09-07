@@ -1,7 +1,11 @@
-.background-color-secondary {
+.primary-background-color {
+	background-color: $base-background-color;
+}
+
+.secondary-background-color {
 	background-color: $secondary-background-color;
 }
 
-.background-color-tertiary {
+.tertiary-background-color {
 	background-color: $tertiary-background-color;
 }

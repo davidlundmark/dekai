@@ -22,7 +22,9 @@ section.page-section {
 }
 
 .section-container {
-    padding: $page-section-padding;
     max-width: $page-section-max-width;
-    margin: 0 auto;
+    &:not(.full-page) {
+        margin: 0 auto;
+        padding: $page-section-padding;
+    }
 }

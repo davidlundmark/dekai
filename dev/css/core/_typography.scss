@@ -4,38 +4,50 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-h1, .h1,
-h2, .h2,
-h3, .h3,
-h4, .h4,
-h5, .h5,
-h6, .h6 {
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
     @include setFont($heading-font-name);
     margin: 0 0 $gap-half;
 }
 
-h1, .h1 {
+h1,
+.h1 {
     //@include setFont($h1-font-name);
     @include setFontSize($h1-font-size);
 }
 
-h2, .h2 {
+h2,
+.h2 {
     @include setFontSize($h2-font-size);
 }
 
-h3, .h3 {
+h3,
+.h3 {
     @include setFontSize($h3-font-size);
 }
 
-h4, .h4 {
+h4,
+.h4 {
     @include setFontSize($h4-font-size);
 }
 
-h5, .h5 {
+h5,
+.h5 {
     @include setFontSize($h5-font-size);
 }
 
-h6, .h6 {
+h6,
+.h6 {
     @include setFontSize($h6-font-size);
 }
 
@@ -43,9 +55,12 @@ p {
     margin: 0 0 $gap-half;
 }
 
-a {
+a,
+.link {
     //@include setFont($link-font-name);
     color: $link-color;
+    text-decoration: underline;
+    cursor: pointer;
     &:active,
     &:hover,
     &:focus {
@@ -53,7 +68,8 @@ a {
     }
     .no-touch & {
         @include transition(color);
-        &:hover {
+        &:hover,
+        &.hover {
             color: $link-hover-color;
         }
     }
@@ -65,11 +81,9 @@ hr {
     border-right: 0;
     border-top: 0;
     margin: $gap 0;
-
     &.dashed {
         border-style: dashed;
     }
-
     &.thick {
         border-width: 4px;
     }

@@ -2,7 +2,8 @@
 require('./lib/jquery.easing.1.3.js');
 require('./lib/prism.js');
 require('./lib/fastclick.js');
-require('./lib/jquery.matchHeight.js')
+require('./lib/jquery.matchHeight.js');
+require('./lib/picturefill.js')
 
 console.log('deKai v.1');
 
@@ -146,7 +147,6 @@ InformationHandler.prototype = {
     paragraphInfo: function() {
         var $paragraph = $('#paragraph');
         var $info = $paragraph.find('.information');
-        var $content = $paragraph.find('.content');
 
         var $p = $('p').first();
         $info.find('.font-family').text(this.getCSSValue($p, 'font-family'));
@@ -225,6 +225,16 @@ $(document).ready(function() {
     //Grid same height
     if (typeof useGridSameHeight !== 'undefined' && useGridSameHeight) {
         $('.same-height > .column').matchHeight();
+    }
+
+    //Grid same height
+    if (typeof useAnchorCard !== 'undefined' && useAnchorCard) {
+        $('.card.card-anchor').hover(function () {
+            var $this = $(this);
+            $this.toggleClass('hover');
+            $this.find('.link').toggleClass('hover');
+            //$this.find('.carousel-item-overlay').toggleClass('hover');
+        });
     }
 });
 

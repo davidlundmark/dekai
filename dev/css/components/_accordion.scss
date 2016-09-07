@@ -19,6 +19,7 @@
             li.menu-item {
                 list-style: none;
                 > a {
+                    width: 100%;
                     background-color: $accordion-background-color;
                     @include transition();
                     @include setFont($accordion-font);

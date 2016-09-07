@@ -11,6 +11,10 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" rel="stylesheet">
     <!-- CSS -->
     <link rel="stylesheet" href="styles.min.css">
+    <script>
+    // Picture element HTML5 shiv
+    document.createElement("picture");
+    </script>
 </head>
 <!--[if IE]>
    <body class="ie">
@@ -53,19 +57,19 @@
                     </a>
                     <ul class="submenu">
                         <li class="menu-item">
-                            <a href="#headings">1.1 - Headings</a>
+                            <a href="#headings">2.1 - Headings</a>
                         </li>
                         <li class="menu-item">
-                            <a href="#paragraph">1.2 - Paragraph</a>
+                            <a href="#paragraph">2.2 - Paragraph</a>
                         </li>
                         <li class="menu-item">
-                            <a href="#list-types">1.3 - List types</a>
+                            <a href="#list-types">2.3 - List types</a>
                         </li>
                         <li class="menu-item">
-                            <a href="#form-elements">1.4 - Form elements</a>
+                            <a href="#form-elements">2.4 - Form elements</a>
                         </li>
                         <li class="menu-item">
-                            <a href="#tables">1.5 - Tables</a>
+                            <a href="#tables">2.5 - Tables</a>
                         </li>
                         <li class="menu-item">
                             <a href="#buttons">2.6 - Buttons</a>
@@ -73,21 +77,43 @@
                         <li class="menu-item">
                             <a href="#lines">2.7 - Lines</a>
                         </li>
+                        <li class="menu-item">
+                            <a href="#images">2.8 - Images</a>
+                        </li>
                     </ul>
                 </li>
                 <li class="menu-item">
                     <a href="" class="accordion-trigger label-with-icon">
-                        <span class="label">2.0 - Layout</span>
+                        <span class="label">3.0 - Layout</span>
                         <span class="icon-container">
                             <span class="icon icon-play3"></span>
                         </span>
                     </a>
                     <ul class="submenu">
                         <li class="menu-item">
-                            <a href="#grid">2.1 - Grid</a>
+                            <a href="#grid">3.1 - Grid</a>
                         </li>
                         <li class="menu-item">
-                            <a href="javascript:void(0)">Sub Item 2</a>
+                            <a href="#header">3.2 - Header</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#footer">3.3 - Footer</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="menu-item">
+                    <a href="" class="accordion-trigger label-with-icon">
+                        <span class="label">4.0 - Components</span>
+                        <span class="icon-container">
+                            <span class="icon icon-play3"></span>
+                        </span>
+                    </a>
+                    <ul class="submenu">
+                        <li class="menu-item">
+                            <a href="#accordion">4.1 - Accordion</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#expander">4.2 - Expander</a>
                         </li>
                     </ul>
                 </li>
@@ -620,14 +646,6 @@
                     </div>
                 </div>
             </section>
-            <!--
-            <h3>Definition List</h3>
-                    <dl>
-                        <dt>Definition List Title</dt>
-                        <dd>This is a definition list division.</dd>
-                    </dl>
-                    <hr>
-            -->
             <section id="form-elements" class="page-section">
                 <div class="section-container">
                     <div id="form-elements-information" class="information">
@@ -937,13 +955,13 @@
                                 <div class="sub-information">
                                     <h3>Link button</h3>
                                 </div>
-                                <a href="#buttons" target="_self" class="button">Button</a>
+                                <a href="javascript:void(0)" class="button">Button</a>
                             </div>
                             <div class="column col-3">
                                 <div class="sub-information">
                                     <h3>Button with icon</h3>
                                 </div>
-                                <a href="#buttons" class="button label-with-icon">
+                                <a href="javascript:void(0)" class="button label-with-icon">
                                     <span class="label">Button</span>
                                     <span class="icon-container">
                                         <span class="icon icon-embed2"></span>
@@ -954,7 +972,7 @@
                                 <div class="sub-information">
                                     <h3>Icon button</h3>
                                 </div>
-                                <a href="#buttons" class="button">
+                                <a href="javascript:void(0)" class="button">
                                     <span class="icon icon-embed2"></span>
                                 </a>
                             </div>
@@ -1033,6 +1051,40 @@
 
                                         /* Default */
                                         &lt;hr class=&quot;thick&quot;&gt;
+                                    </code>
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="images" class="page-section">
+                <div class="section-container">
+                    <div class="information">
+                        <h2>2.8 - Images</h2>
+                    </div>
+                    <div class="content">
+                        <picture>
+                            <source srcset="assets/images/1024x768.png" media="(max-width: 1024px)">
+                            <source srcset="assets/images/480x320.png" media="(max-width: 480px)">
+                            <img srcset="assets/images/1920x1200.png" alt="…">
+                        </picture>
+                    </div>
+                    <div class="expander code-expander">
+                        <div class="line-behind-icon">
+                            <a href="" class="expander-trigger icon-container">
+                                <span class="icon-circle">
+                                    <span class="icon icon-embed2"></span>
+                                </span>
+                            </a>
+                        </div>
+                        <div class="expander-content">
+                            <pre class="code-toolbar language-markup">
+                                    <code>
+                                        &lt;picture&gt;
+                                            &lt;source srcset=&quot;assets/images/1024x768.png&quot; media=&quot;(max-width: 1024px)&quot;&gt;
+                                            &lt;source srcset=&quot;assets/images/480x320.png&quot; media=&quot;(max-width: 480px)&quot;&gt;
+                                            &lt;img srcset=&quot;assets/images/1920x1200.png&quot; alt=&quot;&hellip;&quot;&gt;
+                                        &lt;/picture&gt;
                                     </code>
                             </pre>
                         </div>
@@ -1152,64 +1204,286 @@
                     </div>
                 </div>
             </section>
-            <section class="page-section">
+            <section id="accordion" class="page-section">
                 <div class="section-container">
-                    <hr>
-                    <h2 id="accordion">Accordion</h2>
-                    <ul class="accordion">
-                        <li class="menu-item">
-                            <a href="" class="accordion-trigger label-with-icon">
-                                <span class="label">Accordion Item</span>
-                                <span class="icon-container">
-                            <span class="icon icon-play3"></span>
+                    <div class="information">
+                        <h2>4.1 - Accordion</h2>
+                    </div>
+                    <div class="content">
+                        <ul class="accordion">
+                            <li class="menu-item">
+                                <a href="" class="accordion-trigger label-with-icon">
+                                    <span class="label">Accordion Item</span>
+                                    <span class="icon-container">
+                                        <span class="icon icon-play3"></span>
+                                    </span>
+                                </a>
+                                <ul class="submenu">
+                                    <li class="menu-item">
+                                        <a href="javascript:void(0)">Sub Item 1</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="javascript:void(0)">Sub Item 2</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="menu-item">
+                                <a href="" class="accordion-trigger label-with-icon">
+                                    <span class="label">Accordion Item</span>
+                                    <span class="icon-container">
+                                        <span class="icon icon-play3"></span>
+                                    </span>
+                                </a>
+                                <ul class="submenu">
+                                    <li class="menu-item">
+                                        <div class="accordion-content">
+                                            <p>
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tincidunt dui magna, quis molestie quam pretium a. Praesent ac elit arcu. Duis tempus felis quis rutrum tincidunt. Sed lectus eros, pulvinar quis nisi eu, lacinia dapibus metus. Quisque gravida gravida vestibulum. Integer commodo feugiat erat, sit amet lacinia justo ultrices ut. Nullam ut lectus et ligula malesuada lacinia. Morbi aliquet vulputate leo sed facilisis.
+                                            </p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="expander code-expander">
+                        <div class="line-behind-icon">
+                            <a href="" class="expander-trigger icon-container">
+                                <span class="icon-circle">
+                                    <span class="icon icon-embed2"></span>
                                 </span>
                             </a>
-                            <ul class="submenu">
-                                <li class="menu-item">
-                                    <a href="">
-                            Sub Item 1
-                            </a>
-                                </li>
-                                <li class="menu-item">
-                                    <a href="javascript:void(0)">Sub Item 2</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="menu-item">
-                            <a href="" class="accordion-trigger label-with-icon">
-                                <span class="label">Accordion Item</span>
-                                <span class="icon-container">
-                                <span class="icon icon-play3"></span>
-                                </span>
-                            </a>
-                            <ul class="submenu">
-                                <li class="menu-item">
-                                    <div class="accordion-content">
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tincidunt dui magna, quis molestie quam pretium a. Praesent ac elit arcu. Duis tempus felis quis rutrum tincidunt. Sed lectus eros, pulvinar quis nisi eu, lacinia dapibus metus. Quisque gravida gravida vestibulum. Integer commodo feugiat erat, sit amet lacinia justo ultrices ut. Nullam ut lectus et ligula malesuada lacinia. Morbi aliquet vulputate leo sed facilisis.
-                                        </p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
+                        </div>
+                        <div class="expander-content">
+                            <pre class="code-toolbar language-markup">
+                                    <code>
+                                        &lt;ul class=&quot;accordion&quot;&gt;
+                                            &lt;li class=&quot;menu-item&quot;&gt;
+                                                &lt;a href=&quot;&quot; class=&quot;accordion-trigger label-with-icon&quot;&gt;
+                                                    &lt;span class=&quot;label&quot;&gt;Accordion Item&lt;/span&gt;
+                                                    &lt;span class=&quot;icon-container&quot;&gt;
+                                                        &lt;span class=&quot;icon icon-play3&quot;&gt;&lt;/span&gt;
+                                                    &lt;/span&gt;
+                                                &lt;/a&gt;
+                                                &lt;ul class=&quot;submenu&quot;&gt;
+                                                    &lt;li class=&quot;menu-item&quot;&gt;
+                                                        &lt;a href=&quot;javascript:void(0)&quot;&gt;Sub Item 1&lt;/a&gt;
+                                                    &lt;/li&gt;
+                                                    &lt;li class=&quot;menu-item&quot;&gt;
+                                                        &lt;a href=&quot;javascript:void(0)&quot;&gt;Sub Item 2&lt;/a&gt;
+                                                    &lt;/li&gt;
+                                                &lt;/ul&gt;
+                                            &lt;/li&gt;
+                                            &lt;li class=&quot;menu-item&quot;&gt;
+                                                &lt;a href=&quot;&quot; class=&quot;accordion-trigger label-with-icon&quot;&gt;
+                                                    &lt;span class=&quot;label&quot;&gt;Accordion Item&lt;/span&gt;
+                                                    &lt;span class=&quot;icon-container&quot;&gt;
+                                                        &lt;span class=&quot;icon icon-play3&quot;&gt;&lt;/span&gt;
+                                                    &lt;/span&gt;
+                                                &lt;/a&gt;
+                                                &lt;ul class=&quot;submenu&quot;&gt;
+                                                    &lt;li class=&quot;menu-item&quot;&gt;
+                                                        &lt;div class=&quot;accordion-content&quot;&gt;
+                                                            ...
+                                                        &lt;/div&gt;
+                                                    &lt;/li&gt;
+                                                &lt;/ul&gt;
+                                            &lt;/li&gt;
+                                        &lt;/ul&gt;
+                                    </code>
+                            </pre>
+                        </div>
+                    </div>
                     <script>
                     var useAccordion = true;
                     </script>
                 </div>
             </section>
-            <section class="page-section">
+            <section id="expander" class="page-section">
                 <div class="section-container">
-                    <h2 id="expander">Expander</h2>
-                    <div class="expander">
-                        <a href="" class="expander-trigger">Expand</a>
+                    <div class="information">
+                        <h2>4.2 - Expander</h2>
+                    </div>
+                    <div class="content">
+                        <div class="expander">
+                            <a href="" class="expander-trigger">Expand</a>
+                            <div class="expander-content">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio mollitia fugiat facilis enim accusamus quisquam aut, repellendus incidunt quod optio facere labore illo numquam ipsum beatae vero debitis, fugit excepturi.</p>
+                            </div>
+                        </div>
+                        <script>
+                        var useExpander = true;
+                        </script>
+                    </div>
+                    <div class="expander code-expander">
+                        <div class="line-behind-icon">
+                            <a href="" class="expander-trigger icon-container">
+                                <span class="icon-circle">
+                                    <span class="icon icon-embed2"></span>
+                                </span>
+                            </a>
+                        </div>
                         <div class="expander-content">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio mollitia fugiat facilis enim accusamus quisquam aut, repellendus incidunt quod optio facere labore illo numquam ipsum beatae vero debitis, fugit excepturi.</p>
+                            <pre class="code-toolbar language-markup">
+                                    <code>
+                                        &lt;div class=&quot;expander&quot;&gt;
+                                            &lt;a href=&quot;&quot; class=&quot;expander-trigger&quot;&gt;Expand&lt;/a&gt;
+                                            &lt;div class=&quot;expander-content&quot;&gt;
+                                                ...
+                                            &lt;/div&gt;
+                                        &lt;/div&gt;
+                                        &lt;script&gt;
+                                        var useExpander = true;
+                                        &lt;/script&gt;
+                                    </code>
+                            </pre>
                         </div>
                     </div>
                     <script>
-                    var useExpander = true;
+                    var useAccordion = true;
                     </script>
+                </div>
+            </section>
+            <section id="cards" class="page-section">
+                <div class="section-container">
+                    <div class="information">
+                        <h2>4.3 - Cards</h2>
+                    </div>
+                    <div class="content">
+                        <div class="row">
+                            <div class="column col-6">
+                                <div class="sub-information">
+                                    <h3>Default card</h3>
+                                </div>
+                                <div class="card">
+                                    <div class="card-image">
+                                        <img src="assets/images/500x300.png" alt="..." />
+                                    </div>
+                                    <div class="card-text">
+                                        <h5>Lorem ispum</h5>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    </div>
+                                </div>
+                                <div class="expander code-expander">
+                                    <div class="line-behind-icon">
+                                        <a href="" class="expander-trigger icon-container">
+                                            <span class="icon-circle">
+                                    <span class="icon icon-embed2"></span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="expander-content">
+                                        <pre class="code-toolbar language-markup">
+                                                <code>
+                                                    &lt;div class=&quot;card&quot;&gt;
+                                                        &lt;div class=&quot;card-image&quot;&gt;
+                                                            &lt;img src=&quot;...&quot; alt=&quot;...&quot; /&gt;
+                                                        &lt;/div&gt;
+                                                        &lt;div class=&quot;card-text&quot;&gt;
+                                                            ...
+                                                        &lt;/div&gt;
+                                                    &lt;/div&gt;
+                                                </code>
+                                        </pre>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column col-6">
+                                <div class="sub-information">
+                                    <h3>Card with icon</h3>
+                                </div>
+                                <div class="card">
+                                    <div class="card-image">
+                                        <img src="assets/images/500x300.png" alt="..." />
+                                        <div class="card-icon">
+                                            <span class="icon-circle primary-background-color">
+                                                <span class="icon icon-link"></span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="card-text">
+                                        <h5>Lorem ispum</h5>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    </div>
+                                </div>
+                                <div class="expander code-expander">
+                                    <div class="line-behind-icon">
+                                        <a href="" class="expander-trigger icon-container">
+                                            <span class="icon-circle">
+                                    <span class="icon icon-embed2"></span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="expander-content">
+                                        <pre class="code-toolbar language-markup">
+                                                <code>
+                                                    &lt;div class=&quot;card&quot;&gt;
+                                                        &lt;div class=&quot;card-image&quot;&gt;
+                                                            &lt;img src=&quot;...&quot; alt=&quot;...&quot; /&gt;
+                                                            &lt;div class=&quot;card-icon&quot;&gt;
+                                                                &lt;span class=&quot;icon-circle&quot;&gt;
+                                                                    &lt;span class=&quot;icon icon-link&quot;&gt;&lt;/span&gt;
+                                                                &lt;/span&gt;
+                                                            &lt;/div&gt;
+                                                        &lt;/div&gt;
+                                                        &lt;div class=&quot;card-text&quot;&gt;
+                                                            ...
+                                                        &lt;/div&gt;
+                                                    &lt;/div&gt;
+                                                </code>
+                                        </pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="column col-6">
+                                <div class="sub-information">
+                                    <h3>Anchor card</h3>
+                                </div>
+                                <div class="card card-anchor">
+                                    <div class="card-image">
+                                        <img src="assets/images/500x300.png" alt="..." />
+                                    </div>
+                                    <div class="card-text">
+                                        <h5>Lorem ispum</h5>
+                                        <p class="link">Read more</p>
+                                    </div>
+                                    <a class="card-link" href="javascript:void(0)"></a>
+                                </div>
+                                <script>
+                                var useAnchorCard = true;
+                                </script>
+                                <div class="expander code-expander">
+                                    <div class="line-behind-icon">
+                                        <a href="" class="expander-trigger icon-container">
+                                            <span class="icon-circle">
+                                                <span class="icon icon-embed2"></span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="expander-content">
+                                        <pre class="code-toolbar language-markup">
+                                                <code>
+                                                    &lt;div class=&quot;card card-anchor&quot;&gt;
+                                                        &lt;div class=&quot;card-image&quot;&gt;
+                                                            &lt;img src=&quot;...&quot; alt=&quot;...&quot; /&gt;
+                                                        &lt;/div&gt;
+                                                        &lt;div class=&quot;card-text&quot;&gt;
+                                                            ...
+                                                        &lt;/div&gt;
+                                                        &lt;a class=&quot;card-link&quot; href=&quot;...&quot;&gt;&lt;/a&gt;
+                                                    &lt;/div&gt;
+                                                    &lt;script&gt;
+                                                    var useAnchorCard = true;
+                                                    &lt;/script&gt;
+                                                </code>
+                                        </pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
         </main>

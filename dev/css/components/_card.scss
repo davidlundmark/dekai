@@ -1,0 +1,29 @@
+.card {
+    position: relative;
+    @include border();
+    &-image {
+        position: relative;
+    }
+    &-icon {
+        @include centerElement();
+    }
+    &-text {
+        background-color: $base-background-color;
+        @include border($dir: top);
+        padding: $gap-md $gap;
+        > *:last-child {
+            margin-bottom: 0;
+        }
+    }
+    &-anchor {
+        .card-text {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background-color: rgba($base-background-color,0.5);
+        }
+        .card-link {
+        	@include coverAll();
+        }
+    }
+}
