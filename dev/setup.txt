@@ -4,7 +4,7 @@ download and install node.js
 
 npm install webpack -global
 
-npm install webpack sass-loader css-loader style-loader node-sass autoprefixer postcss-loader precss extract-text-webpack-plugin url-loader jquery bourbon-neat@2.0.0-beta.1
+npm install webpack file-loader sass-loader css-loader style-loader node-sass autoprefixer postcss-loader precss extract-text-webpack-plugin url-loader jquery bourbon-neat@2.0.0-beta.1
 
 NODE_ENV=debug webpack to change ENV mode (Windows: SET NODE_ENV=debug)
 

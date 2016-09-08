@@ -14,3 +14,11 @@
 	@include clearfix();
 }
 
+.overlay {
+    @include fixedOverlay();
+}
+
+.visibility-hidden {
+	visibility: hidden;
+}
+

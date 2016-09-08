@@ -38,7 +38,8 @@ module.exports = {
                     ['css-loader?sourceMap', 'postcss-loader', 'sass-loader?sourceMap']
                 )
             },
-            { test: /\.(eot|woff|woff2|svg|ttf)([\?]?.*)$/, loader: "file-loader?name=../assets/fonts/icomoon/[name].[ext]" }
+            { test: /\.(eot|woff|woff2|svg|ttf)([\?]?.*)$/, loader: "file-loader?name=../assets/fonts/[name]/[name].[ext]" },
+            { test: /\.(jpe?g|png|gif|svg)$/i, loader: 'file-loader?name=../assets/images/[name].[ext]' }
         ] : [{
                 test: /\.scss$/,
                 loader: extracttextplugin.extract(
@@ -46,7 +47,8 @@ module.exports = {
                     ['css-loader', 'postcss-loader', 'sass-loader']
                 )
             },
-            { test: /\.(eot|woff|woff2|svg|ttf)([\?]?.*)$/, loader: "file-loader?name=../assets/fonts/icomoon/[name].[ext]" }
+            { test: /\.(eot|woff|woff2|svg|ttf)([\?]?.*)$/, loader: "file-loader?name=../assets/fonts/[name]/[name].[ext]" },
+            { test: /\.(jpe?g|png|gif|svg)$/i, loader: 'file-loader?name=../assets/images/[name].[ext]' }
         ]
     },
     postcss: function() {

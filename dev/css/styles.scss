@@ -1,32 +1,33 @@
-    @import './lib/normalize';
-    //@import 'bourbon';
-    //@import 'neat';
-    @import "variables";
-    @import "helper";
-    @import './lib/prism';
-    @import './core/base';
-    @import './components/base';
-    //project specific styles
-    .side-nav {
-        .logo-container {
-            padding: $gap-triple $gap;
-            img {
-                margin: 0 auto;
-                max-width: 200px;
-                display: block;
-            }
-        }
-        .accordion {
-            li.menu-item > a {
-                @include setFont($button-font-name);
-                padding: $gap;
-            }
-        }
-        .label-with-icon {
-            width: 100%;
+//@import 'bourbon';
+//@import 'neat';
+@import "variables";
+@import "helper";
+@import './lib/base';
+@import './core/base';
+@import './components/base';
+//project specific styles
+.side-nav {
+    .logo-container {
+        padding: $gap-triple $gap;
+        img {
+            margin: 0 auto;
+            max-width: 200px;
+            display: block;
         }
     }
-    /*
+    .accordion {
+        li.menu-item > a {
+            @include setFont($button-font-name);
+            padding: $gap;
+        }
+    }
+    .label-with-icon {
+        width: 100%;
+    }
+}
+
+
+/*
     section.page-section.introduction {
         text-align: center;
         background-color: $secondary-background-color;
@@ -35,67 +36,69 @@
         }
     }
     */
-    
-    .page-section {
-        @include border($dir: bottom);
+
+.page-section {
+    @include border($dir: bottom);
+}
+
+.section-container {
+    .information,
+    .sub-information {
+        margin-bottom: $gap-double;
+        @include border($color: $base-font-color, $thickness: 4px, $dir: left);
+        padding-left: $gap;
+        h2,
+        h3 {
+            margin-bottom: $gap-md;
+        }
+        p {
+            font-weight: 300;
+            @include setFontSize($button-font-size - 2px);
+        }
+        > * {
+            @include setFont($button-font-name);
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
     }
-    
-    .section-container {
-        .information,
-        .sub-information {
-            margin-bottom: $gap-double;
+    .information {
+        background-color: $secondary-background-color;
+        padding-top: $gap;
+        padding-bottom: $gap;
+    }
+}
+
+.code-expander {
+    $diameter: $gap-double;
+    @include border($dir: top, $style: dashed);
+    margin: $gap-double 0 0;
+    .line-behind-icon {
+        text-align: center;
+        display: block;
+        height: $gap;
+        .icon-container {
+            position: relative;
+            top: -$diameter*0.5;
+            display: inline-block;
+            padding: 0 $gap;
+            background-color: $base-background-color;
+        }
+        .icon-circle {
+            color: $white;
+            background-color: $base-brand-color;
+        }
+    }
+    .expander-content {
+        pre {
             @include border($color: $base-font-color, $thickness: 4px, $dir: left);
-            padding-left: $gap;
-            h2,
-            h3 {
-                margin-bottom: $gap-md;
-            }
-            p {
-                font-weight: 300;
-                @include setFontSize($button-font-size - 2px);
-            }
-            > * {
-                @include setFont($button-font-name);
-                &:last-child {
-                    margin-bottom: 0;
-                }
-            }
-        }
-        .information {
-            background-color: $secondary-background-color;
-            padding-top: $gap;
-            padding-bottom: $gap;
+            margin-top: $gap;
         }
     }
-    
-    .code-expander {
-        $diameter: $gap-double;
-        @include border($dir: top, $style: dashed);
-        margin: $gap-double 0 0;
-        .line-behind-icon {
-            text-align: center;
-            display: block;
-            height: $gap;
-            .icon-container {
-                position: relative;
-                top: -$diameter*0.5;
-                display: inline-block;
-                padding: 0 $gap;
-                background-color: $base-background-color;
-            }
-            .icon-circle {
-                color: $white;
-                background-color: $base-brand-color;
-            }
-        }
-        .expander-content {
-            pre {
-                @include border($color: $base-font-color, $thickness: 4px, $dir: left);
-                margin-top: $gap;
-            }
-        }
-    }
-    /*
+}
+
+
+/*
     #list-types {
         .column {
             .reset {
@@ -104,118 +107,125 @@
         }
     }
     */
-    
-    #logo {
-        .logo-container {
-            padding: $gap-double;
-            &.default {
-                @include border();
-            }
-        }
-        .inverted {
-            background-color: $tertiary-background-color;
-        }
-    }
-    
-    #cards,
-    #list-types,
-    #colors {
-        .content {
-            > .row {
-                padding-top: $gap-double;
-                &:first-child {
-                    padding-top: 0;
-                }
-            }
-        }
-    }
-    
-    #colors {
-        .color {
-            @include createCircle($diameter: 100px, $background-color: transparent);
-            margin-left: $gap;
-        }
-        .primary-color + .color {
-            background-color: $base-brand-color;
-        }
-        .secondary-color + .color {
-            background-color: $secondary-brand-color;
-        }
-        .tertiary-color + .color {
-            background-color: $tertiary-brand-color;
-        }
-        .primary-background-color + .color {
-            background-color: $base-background-color;
-            @include border();
-        }
-        .secondary-background-color + .color {
-            background-color: $secondary-background-color;
-        }
-        .tertiary-background-color + .color {
-            background-color: $tertiary-background-color;
-        }
-        .primary-font-color + .color {
-            background-color: $base-font-color;
-        }
-        .secondary-font-color + .color {
-            background-color: $secondary-font-color;
+
+#logo {
+    .logo-container {
+        padding: $gap-double;
+        &.default {
             @include border();
         }
     }
-    
-    #icons,
-    #form-elements {
-        .content {
-            .expander {
-                margin-bottom: $gap;
-                &:last-child {
-                    margin-bottom: 0;
-                }
+    .inverted {
+        background-color: $tertiary-background-color;
+    }
+}
+
+#cards,
+#list-types,
+#colors {
+    .content {
+        > .row {
+            padding-top: $gap-double;
+            &:first-child {
+                padding-top: 0;
             }
         }
-        .row {
-            margin-bottom: $gap;
-        }
     }
-    
-    #icons {
-        .content.standarn-icons .icon {
-            font-size: 40px;
-        }
-        .column .sub-information {
-            > h3 {
-                text-transform: none;
-            }
-        }
-        .code-expander {
-            margin-top: $gap*3;
-        }
+
+    .sub-information {
+        background-color: transparent;
     }
-    
-    #icons,
-    #grid {
+}
+
+#colors {
+    .color {
+        @include createCircle($diameter: 100px, $background-color: transparent);
+        margin-left: $gap;
+    }
+    .primary-color + .color {
+        background-color: $base-brand-color;
+    }
+    .secondary-color + .color {
+        background-color: $secondary-brand-color;
+    }
+    .tertiary-color + .color {
+        background-color: $tertiary-brand-color;
+    }
+    .primary-background-color + .color {
+        background-color: $base-background-color;
+        @include border();
+    }
+    .secondary-background-color + .color {
+        background-color: $secondary-background-color;
+    }
+    .tertiary-background-color + .color {
+        background-color: $tertiary-background-color;
+    }
+    .primary-font-color + .color {
+        background-color: $base-font-color;
+    }
+    .secondary-font-color + .color {
+        background-color: $secondary-font-color;
+        @include border();
+    }
+}
+
+#icons,
+#form-elements {
+    .content {
         .expander {
-            margin-bottom: $gap-double;
+            margin-bottom: $gap;
             &:last-child {
                 margin-bottom: 0;
             }
         }
     }
-    
-    #grid {
-        .column {
-            text-align: center;
-            padding: $gap-half;
-            background-color: $secondary-background-color;
-            //@include border();
-            > p {
-                margin: 0;
-            }
-        }
-        .same-height {
-            .column {
-                padding: $gap;
-                text-align: left;
-            }
+    .row {
+        margin-bottom: $gap;
+    }
+}
+
+#icons {
+    .content.standarn-icons .icon {
+        font-size: 40px;
+    }
+    .column .sub-information {
+        > h3 {
+            text-transform: none;
         }
     }
+}
+
+#icons {
+    .code-expander {
+        margin-top: $gap*3;
+    }
+}
+
+#icons,
+#grid {
+    .expander {
+        margin-bottom: $gap-double;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+#grid {
+    .column {
+        text-align: center;
+        padding: $gap-half;
+        background-color: $secondary-background-color;
+        //@include border();
+        > p {
+            margin: 0;
+        }
+    }
+    .same-height {
+        .column {
+            padding: $gap;
+            text-align: left;
+        }
+    }
+}

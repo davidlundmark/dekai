@@ -3,7 +3,8 @@ require('./lib/jquery.easing.1.3.js');
 require('./lib/prism.js');
 require('./lib/fastclick.js');
 require('./lib/jquery.matchHeight.js');
-require('./lib/picturefill.js')
+require('./lib/picturefill.js');
+require('./lib/slick.js');
 
 console.log('deKai v.1');
 
@@ -49,10 +50,75 @@ ExpanderHandler.prototype = {
 };
 //#endregion
 
-//#region DekaiHandler
-var DekaiHandler = function() {}
+//#region CarouselHandler
+var CarouselHandler = function() {}
 
-DekaiHandler.prototype = {
+CarouselHandler.prototype = {
+    init: function() {
+        var $carousel;
+        var $this = this;
+
+        $('.slick-carousel').each(function() {
+            $carousel = $(this);
+            var slidesToShow = $carousel.data('slidesToShow');
+            var slidesToScroll = $carousel.data('slidesToScroll');
+            var slidesLg = $carousel.data('slidesLg');
+            var slidesMd = $carousel.data('slidesMd');
+            var slidesSm = $carousel.data('slidesSm');
+
+            if (!slidesLg) slidesLg = slidesToShow;
+            if (!slidesMd) slidesMd = slidesLg;
+            if (!slidesSm) slidesSm = slidesMd;
+
+            $this.createSlickSlider($carousel, slidesToShow, slidesToScroll, slidesLg, slidesMd, slidesSm);
+        });
+    },
+    createSlickSlider: function($carousel, slidesToShow, slidesToScroll, slidesLg, slidesMd, slidesSm) {
+        $carousel.slick({
+            dots: true,
+            infinite: false,
+            speed: 800,
+            slidesToShow: slidesToShow,
+            slidesToScroll: slidesToScroll,
+            //easing: 'easeOutQuad',
+            cssEsae: 'ease-out',
+            useTransform: true,
+            lazyLoad: 'ondemand',
+            responsive: [{
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: slidesLg,
+                        slidesToScroll: slidesLg
+                            //infinite: true,
+                            //dots: true
+                    }
+                }, {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: slidesMd,
+                        slidesToScroll: slidesMd
+                    }
+                }, {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: slidesSm,
+                        slidesToScroll: slidesSm
+                    }
+                }
+                // You can unslick at a given breakpoint now by adding:
+                // settings: "unslick"
+                // instead of a settings object
+            ]
+        });
+        //$carousel.slick('reinit');
+    }
+};
+//#endregion
+
+//#region Dekai
+var Dekai = function() {}
+
+Dekai.prototype = {
     //check if IE
     checkOS: function() {
         var isIE = this.detectIE();
@@ -105,6 +171,11 @@ DekaiHandler.prototype = {
                 FastClick.attach(document.body);
             }, false);
         }
+    },
+
+    hideOverlay: function() {
+        $('#page-wrapper').removeClass('visibility-hidden');
+        $('.overlay').delay(200).fadeOut(200);
     }
 };
 //#endregion
@@ -163,7 +234,7 @@ InformationHandler.prototype = {
         this.setColorsInfo($colors.find('.primary-background-color'));
         this.setColorsInfo($colors.find('.secondary-background-color'));
         this.setColorsInfo($colors.find('.tertiary-background-color'));
-        this.setColorsInfo($colors.find('.primary-font-color')); 
+        this.setColorsInfo($colors.find('.primary-font-color'));
         this.setColorsInfo($colors.find('.secondary-font-color'));
     },
 
@@ -197,15 +268,16 @@ InformationHandler.prototype = {
 };
 //#endregion
 
-var dekaiHandler = new DekaiHandler();
+var dekai = new Dekai();
 var informationHandler = new InformationHandler();
 var accordionHandler;
 var expanderHandler;
+var carouselHandler;
 
 $(document).ready(function() {
-    dekaiHandler.checkOS();
-    dekaiHandler.checkDevice();
-    dekaiHandler.addFastclick();
+    dekai.checkOS();
+    dekai.checkDevice();
+    dekai.addFastclick();
 
     //Information
     informationHandler.init();
@@ -227,15 +299,25 @@ $(document).ready(function() {
         $('.same-height > .column').matchHeight();
     }
 
-    //Grid same height
+    //Anchor card
     if (typeof useAnchorCard !== 'undefined' && useAnchorCard) {
-        $('.card.card-anchor').hover(function () {
+        $('.card.card-anchor').hover(function() {
             var $this = $(this);
             $this.toggleClass('hover');
             $this.find('.link').toggleClass('hover');
             //$this.find('.carousel-item-overlay').toggleClass('hover');
         });
     }
+
+    //Slick carousel
+    if (typeof useSlickCarousel !== 'undefined' && useSlickCarousel) {
+        carouselHandler = new CarouselHandler();
+        carouselHandler.init();
+    }
+});
+
+$(window).on('load', function() {
+    dekai.hideOverlay();
 });
 
 

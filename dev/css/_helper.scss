@@ -83,12 +83,17 @@
     }
 }
 
-@mixin fixedOverlay($top:0, $right:0, $bottom:0, $left:0) {
+@mixin fixedOverlay($top:0, $right:0, $bottom:0, $left:0, $background-color: $base-background-color, $z-index: 9999, $overflow: hidden) {
     position: fixed;
     top: $top;
     right: $right;
     bottom: $bottom;
     left: $left;
+    background-color: $background-color;
+    z-index: $z-index;
+    @if $overflow !=null {
+        overflow: $overflow;
+    }
 }
 
 @mixin border($color:$base-border-color, $dir:null, $thickness:$base-border-thickness, $style:$base-border-style) {
@@ -135,7 +140,6 @@
             }
         }
     }
-
     > .icon {
         @include centerElement();
     }
@@ -146,6 +150,12 @@
     left: 50%;
     top: 50%;
     @include translate(-50%, -50%);
+}
+
+@mixin centerVertical() {
+    position: absolute;
+    top: 50%;
+    @include translate(0, -50%);
 }
 
 @mixin coverAll() {

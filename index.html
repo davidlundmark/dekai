@@ -23,7 +23,7 @@
 
 <body>
     <!--<![endif]-->
-    <div id="page-wrapper">
+    <div id="page-wrapper" class="visibility-hidden">
         <nav class="side-nav">
             <div class="logo-container">
                 <img class="logo" src="assets/images/logo.svg" alt="logo">
@@ -114,6 +114,12 @@
                         </li>
                         <li class="menu-item">
                             <a href="#expander">4.2 - Expander</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#cards">4.3 - Cards</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#carousel">4.4 - Carousel</a>
                         </li>
                     </ul>
                 </li>
@@ -1486,8 +1492,60 @@
                     </div>
                 </div>
             </section>
+            <section id="carousel" class="page-section">
+                <div class="section-container">
+                    <div class="information">
+                        <h2>4.4 - Carousel</h2>
+                    </div>
+                    <div class="content">
+                        <div class="slick-carousel" data-slides-to-show="2" data-slides-to-scroll="2" data-slides-lg="1" data-slides-md="1" data-slides-sm="1">
+                            <div class="slick-slide">
+                                <img data-lazy="assets/images/500x300.png" alt="..." />
+                            </div>
+                            <div class="slick-slide">
+                                <img data-lazy="assets/images/500x300.png" alt="..." />
+                            </div>
+                            <div class="slick-slide">
+                                <img data-lazy="assets/images/500x300.png" alt="..." />
+                            </div>
+                        </div>
+                        <script>
+                        var useSlickCarousel = true;
+                        </script>
+                    </div>
+                    <hr class="divider">
+                    <div class="expander code-expander">
+                        <div class="line-behind-icon">
+                            <a href="" class="expander-trigger icon-container">
+                                <span class="icon-circle">
+                                                <span class="icon icon-embed2"></span>
+                                </span>
+                            </a>
+                        </div>
+                        <div class="expander-content">
+                            <pre class="code-toolbar language-markup">
+                                <code>
+                                    &lt;div class=&quot;slick-carousel&quot; data-slides-to-show=&quot;2&quot; data-slides-to-scroll=&quot;2&quot; data-slides-lg=&quot;1&quot; data-slides-md=&quot;1&quot; data-slides-sm=&quot;1&quot;&gt;
+                                        &lt;div class=&quot;slick-slide&quot;&gt;
+                                            ...
+                                        &lt;/div&gt;
+                                        &lt;div class=&quot;slick-slide&quot;&gt;
+                                            ..
+                                        &lt;/div&gt;
+                                        ...
+                                    &lt;/div&gt;
+                                    &lt;script&gt;
+                                    var useSlickCarousel = true;
+                                    &lt;/script&gt;
+                                </code>
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </main>
     </div>
+    <div class="overlay"></div>
     <script src="scripts.min.js"></script>
 </body>
 

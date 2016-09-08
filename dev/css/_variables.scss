@@ -28,6 +28,12 @@ $base-font-color: #373b37;
 $secondary-font-color: $base-background-color;
 
 // =================================================
+// Paths
+// =================================================
+$path-images: '../../assets/images/';
+$path-fonts: '../../assets/fonts/';
+
+// =================================================
 // Fonts
 // =================================================
 
@@ -231,3 +237,12 @@ $grid-gap: $gap;
 
 $icon-color: $base-font-color;
 $icon-background-color: $secondary-background-color;
+
+// =================================================
+// Carousel
+// =================================================
+
+$carousel-elements-color: $base-font-color;
+$carousel-dot-size: 8px;
+$carousel-arrow-size: $gap;
+$carousel-elements-not-active-opacity: 0.5;
