@@ -239,6 +239,13 @@ $icon-color: $base-font-color;
 $icon-background-color: $secondary-background-color;
 
 // =================================================
+// Cards
+// =================================================
+
+$card-background-color: $base-background-color;
+$card-overlay-opacity: 0.5;
+
+// =================================================
 // Carousel
 // =================================================
 
@@ -246,3 +253,14 @@ $carousel-elements-color: $base-font-color;
 $carousel-dot-size: 8px;
 $carousel-arrow-size: $gap;
 $carousel-elements-not-active-opacity: 0.5;
+
+// =================================================
+// Slider
+// =================================================
+
+$slider-elements-color: $white;
+$slider-dot-size: 8px;
+$slider-arrow-size: $gap;
+$slider-elements-not-active-opacity: 0.5;
+$slider-figcaption-background-color: $base-brand-color;
+$slider-figcaption-color: $white;

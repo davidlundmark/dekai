@@ -10,9 +10,21 @@
 @mixin transition($transition-property: all, $transition-duration: $base-transition-duration, $transition-timing: $base-transition-timing, $acceleration: false) {
     transition: $transition-property $transition-duration $transition-timing;
     @if $acceleration==true {
-        transform: translateZ(0);
-        backface-visibility: hidden;
+        @include forceHarwareAcceleration();
     }
+}
+
+@mixin centeredContainer($max-width: $page-section-max-width,$padding: $gap,$position: relative) {
+    position: $position;
+    width: auto;
+    padding: $padding;
+    max-width: $max-width;
+    margin: 0 auto;
+}
+
+@mixin forceHarwareAcceleration() {
+    transform: translateZ(0);
+    backface-visibility: hidden;
 }
 
 @mixin customTransitionTiming($custom-transition-timing) {

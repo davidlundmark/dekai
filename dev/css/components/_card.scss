@@ -16,14 +16,16 @@
         }
     }
     &-anchor {
+        .card-link {
+            @include coverAll();
+        }
+    }
+    &-overlay {
         .card-text {
             position: absolute;
             bottom: 0;
             width: 100%;
-            background-color: rgba($base-background-color,0.5);
-        }
-        .card-link {
-        	@include coverAll();
+            background-color: rgba($base-background-color, $card-overlay-opacity);
         }
     }
 }

@@ -121,6 +121,9 @@
                         <li class="menu-item">
                             <a href="#carousel">4.4 - Carousel</a>
                         </li>
+                        <li class="menu-item">
+                            <a href="#slider">4.5 - Slider</a>
+                        </li>
                     </ul>
                 </li>
             </ul>
@@ -1374,7 +1377,7 @@
                                     <div class="line-behind-icon">
                                         <a href="" class="expander-trigger icon-container">
                                             <span class="icon-circle">
-                                    <span class="icon icon-embed2"></span>
+                                                <span class="icon icon-embed2"></span>
                                             </span>
                                         </a>
                                     </div>
@@ -1416,7 +1419,7 @@
                                     <div class="line-behind-icon">
                                         <a href="" class="expander-trigger icon-container">
                                             <span class="icon-circle">
-                                    <span class="icon icon-embed2"></span>
+                                                <span class="icon icon-embed2"></span>
                                             </span>
                                         </a>
                                     </div>
@@ -1488,6 +1491,43 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="column col-6">
+                                <div class="sub-information">
+                                    <h3>Card overlay</h3>
+                                </div>
+                                <div class="card card-overlay">
+                                    <div class="card-image">
+                                        <img src="assets/images/500x300.png" alt="..." />
+                                    </div>
+                                    <div class="card-text">
+                                        <h5>Lorem ispum</h5>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    </div>
+                                </div>
+                                <div class="expander code-expander">
+                                    <div class="line-behind-icon">
+                                        <a href="" class="expander-trigger icon-container">
+                                            <span class="icon-circle">
+                                                <span class="icon icon-embed2"></span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="expander-content">
+                                        <pre class="code-toolbar language-markup">
+                                                <code>
+                                                     &lt;div class=&quot;card card-overlay&quot;&gt;
+                                                        &lt;div class=&quot;card-image&quot;&gt;
+                                                            &lt;img src=&quot;...&quot; alt=&quot;...&quot; /&gt;
+                                                        &lt;/div&gt;
+                                                        &lt;div class=&quot;card-text&quot;&gt;
+                                                            ..
+                                                        &lt;/div&gt;
+                                                    &lt;/div&gt;
+                                                </code>
+                                        </pre>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1536,6 +1576,101 @@
                                     &lt;/div&gt;
                                     &lt;script&gt;
                                     var useSlickCarousel = true;
+                                    &lt;/script&gt;
+                                </code>
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="slider" class="page-section">
+                <div class="section-container full-width">
+                    <div class="information">
+                        <h2>4.5 - Slider</h2>
+                    </div>
+                    <div class="content">
+                        <div class="flexslider">
+                            <ul class="slides">
+                                <li>
+                                    <figure>
+                                        <picture>
+                                            <source srcset="assets/images/1024x768.png" media="(max-width: 1024px)">
+                                            <source srcset="assets/images/480x320.png" media="(max-width: 480px)">
+                                            <img srcset="assets/images/1920x1200_city.png" alt="…">
+                                        </picture>
+                                        <figcaption class="flexslider-figcaption">
+                                            <div class="flexslider-text">
+                                                <span class="title">
+                                                    <h5>Lorem ipsum</h5>
+                                                </span>
+                                                <span class="subtitle">
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                                </span>
+                                            </div>
+                                        </figcaption>
+                                    </figure>
+                                </li>
+                                <li>
+                                    <figure>
+                                        <picture>
+                                            <source srcset="assets/images/1024x768.png" media="(max-width: 1024px)">
+                                            <source srcset="assets/images/480x320.png" media="(max-width: 480px)">
+                                            <img srcset="assets/images/1920x1200_houses.png" alt="…">
+                                        </picture>
+                                        <figcaption class="flexslider-figcaption">
+                                            <div class="flexslider-text">
+                                                <span class="title">
+                                                    <h5>Lorem ipsum</h5>
+                                                </span>
+                                                <span class="subtitle">
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                                </span>
+                                            </div>
+                                        </figcaption>
+                                    </figure>
+                                </li>
+                            </ul>
+                        </div>
+                        <script>
+                        var useFlexslider = true;
+                        </script>
+                    </div>
+                    <hr class="divider">
+                    <div class="expander code-expander">
+                        <div class="line-behind-icon">
+                            <a href="" class="expander-trigger icon-container">
+                                <span class="icon-circle">
+                                                <span class="icon icon-embed2"></span>
+                                </span>
+                            </a>
+                        </div>
+                        <div class="expander-content">
+                            <pre class="code-toolbar language-markup">
+                                <code>
+                                    &lt;div class=&quot;flexslider&quot;&gt;
+                                        &lt;ul class=&quot;slides&quot;&gt;
+                                            &lt;li&gt;
+                                                &lt;figure&gt;
+                                                    &lt;picture&gt;
+                                                        ...
+                                                    &lt;/picture&gt;
+                                                    &lt;figcaption class=&quot;flexslider-figcaption&quot;&gt;
+                                                        &lt;div class=&quot;flexslider-text&quot;&gt;
+                                                            &lt;span class=&quot;title&quot;&gt;
+                                                                ...
+                                                            &lt;/span&gt;
+                                                            &lt;span class=&quot;subtitle&quot;&gt;
+                                                                ...
+                                                            &lt;/span&gt;
+                                                        &lt;/div&gt;
+                                                    &lt;/figcaption&gt;
+                                                &lt;/figure&gt;
+                                            &lt;/li&gt;
+                                            ...
+                                        &lt;/ul&gt;
+                                    &lt;/div&gt;
+                                    &lt;script&gt;
+                                    var useFlexslider = true;
                                     &lt;/script&gt;
                                 </code>
                             </pre>

@@ -28,11 +28,14 @@
     &.slick-disabled {
         opacity: $carousel-elements-not-active-opacity;
         cursor: not-allowed;
+        pointer-events: none;
     }
-    .no-touch & {
-        @include transition();
-        &:hover {
-            opacity: 1;
+    &:not(.slick-disabled) {
+        .no-touch & {
+            @include transition();
+            &:hover {
+                opacity: 1;
+            }
         }
     }
 }
@@ -49,7 +52,7 @@
 }
 
 
-/* Dots */
+// Dots 
 
 .slick-dotted.slick-slider {
     margin-bottom: $gap-triple;

@@ -2,8 +2,8 @@
 //@import 'neat';
 @import "variables";
 @import "helper";
-@import './lib/base';
 @import './core/base';
+@import './lib/base';
 @import './components/base';
 //project specific styles
 .side-nav {
@@ -131,7 +131,6 @@
             }
         }
     }
-
     .sub-information {
         background-color: transparent;
     }
@@ -227,5 +226,21 @@
             padding: $gap;
             text-align: left;
         }
+    }
+}
+
+#slider {
+    .section-container {
+        padding: $gap 0;
+    }
+    .information {
+        margin: 0 auto $gap-double;
+    }
+    .code-expander {
+       margin-left: auto;
+       margin-right: auto;
+    }
+    .information,.code-expander {
+        max-width: $page-section-max-width;
     }
 }

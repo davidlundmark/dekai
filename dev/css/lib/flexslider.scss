@@ -1,0 +1,216 @@
+/*
+ * jQuery FlexSlider v2.0
+ * http://www.woothemes.com/flexslider/
+ *
+ * Copyright 2012 WooThemes
+ * Free to use under the GPLv2 license.
+ * http://www.gnu.org/licenses/gpl-2.0.html
+ *
+ * Contributing author: Tyler Smith (@mbmufffin)
+ */
+
+// Browser Resets 
+.flex-container,
+.flexslider,
+.flex-containe,
+.flexslider {
+    a {
+        &:hover,
+        &:focus {
+            outline: none;
+        }
+    }
+}
+
+.slides,
+.flex-control-nav,
+.flex-direction-nav {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+
+/* FlexSlider Necessary Styles
+*********************************/
+
+.flexslider {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    figure {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.flexslider .slides > li {
+    position: relative;
+    display: none;
+}
+
+// Hide the slides before the JS is loaded. Avoids image jumping 
+.flexslider .slides img {
+    width: 100%;
+    display: block;
+}
+
+
+/*
+.flex-pauseplay span {
+    text-transform: capitalize;
+}
+*/
+
+
+/* Clearfix for the .slides element */
+
+.slides:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+html[xmlns] .slides {
+    display: block;
+}
+
+* html .slides {
+    height: 1%;
+}
+
+
+/* No JavaScript Fallback */
+
+
+/* If you are not using another script, such as Modernizr, make sure you
+ * include js that eliminates this class on page load */
+
+.no-js .slides > li:first-child {
+    display: block;
+}
+
+
+/* FlexSlider Default Theme
+*********************************/
+
+.flexslider {
+    margin: 0 0;
+}
+
+.flexslider-figcaption {
+    @include centeredContainer();
+    padding: 0;
+    height: 0;
+    .flexslider-text {
+        //margin: 0 $gap;
+        top: -$gap-triple;
+        @include translateY(-100%);
+        position: absolute;
+        > span {
+            text-align: left;
+            float: left;
+            clear: both;
+            margin: $gap-half 0 0;
+            &:first-child {
+                margin-top: 0;
+            }
+            > * {
+                margin: 0;
+                padding: $gap-half $gap;
+                background-color: green;
+                color: $slider-figcaption-color;
+            }
+            &-title {}
+            &-subtitle {}
+        }
+    }
+}
+
+.flexslider .slides {
+    position: relative;
+    @include forceHarwareAcceleration();
+}
+
+.flex-next,
+.flex-prev {
+    opacity: $slider-elements-not-active-opacity;
+    z-index: 1;
+    display: block;
+    cursor: pointer;
+    @include centerVertical();
+    .no-touch & {
+        @include transition();
+    }
+    > .icon {
+        display: block;
+        font-size: $carousel-arrow-size;
+        color: $slider-elements-color;
+    }
+}
+
+.flex-prev {
+    left: ($carousel-arrow-size + $gap);
+    > .icon {
+        transform: rotate(180deg);
+    }
+}
+
+.flex-next {
+    right: ($carousel-arrow-size + $gap);
+}
+
+.flexslider:hover {
+    .flex-next,
+    .flex-prev {
+        opacity: 0.8;
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+
+/*
+.flex-direction-nav .disabled {
+    opacity: .3 !important;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+*/
+
+.flex-control-nav {
+    position: absolute;
+    bottom: $gap;
+    list-style: none;
+    display: block;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    vertical-align: middle;
+    line-height: 0;
+    li {
+        position: relative;
+        display: inline-block;
+        height: $gap;
+        width: $gap;
+        margin: 0 $gap-xs;
+        padding: 0;
+        cursor: pointer;
+        .flex-dot {
+            display: block;
+            @include createCircle($slider-elements-color, $slider-dot-size);
+            position: absolute;
+            top: calc(50% - #{$slider-dot-size/2});
+            left: calc(50% - #{$slider-dot-size/2});
+            opacity: $slider-elements-not-active-opacity;
+            &.flex-active {
+                opacity: 1;
+            }
+        }
+    }
+}

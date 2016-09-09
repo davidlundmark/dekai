@@ -5,6 +5,7 @@ require('./lib/fastclick.js');
 require('./lib/jquery.matchHeight.js');
 require('./lib/picturefill.js');
 require('./lib/slick.js');
+require('./lib/jquery.flexslider.js');
 
 console.log('deKai v.1');
 
@@ -111,6 +112,31 @@ CarouselHandler.prototype = {
             ]
         });
         //$carousel.slick('reinit');
+    }
+};
+//#endregion
+
+//#region FlexsliderHandler
+var FlexsliderHandler = function() {}
+
+FlexsliderHandler.prototype = {
+    init: function() {
+        $('.flexslider').each(function() {
+            $slider = $(this);
+            $slider.flexslider({
+                directionNav: true,
+                controlNav: true,
+                animationLoop: true,
+                slideshow: false,
+                slideshowSpeed: 0,
+                animation: 'slide',
+                useCSS: true,
+                startAt: 0,
+                init: function(slider) {}.bind(this),
+                start: function(slider) {}.bind(this),
+                after: function(slider) {}
+            });
+        });
     }
 };
 //#endregion
@@ -273,6 +299,7 @@ var informationHandler = new InformationHandler();
 var accordionHandler;
 var expanderHandler;
 var carouselHandler;
+var flexsliderHandler;
 
 $(document).ready(function() {
     dekai.checkOS();
@@ -313,6 +340,12 @@ $(document).ready(function() {
     if (typeof useSlickCarousel !== 'undefined' && useSlickCarousel) {
         carouselHandler = new CarouselHandler();
         carouselHandler.init();
+    }
+
+    //Flex slider
+    if (typeof useFlexslider !== 'undefined' && useFlexslider) {
+        flexsliderHandler = new FlexsliderHandler();
+        flexsliderHandler.init();
     }
 });
 
