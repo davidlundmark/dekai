@@ -6,6 +6,7 @@ require('./lib/jquery.matchHeight.js');
 require('./lib/picturefill.js');
 require('./lib/slick.js');
 require('./lib/jquery.flexslider.js');
+require('./lib/jquery.swipebox.js');
 
 console.log('deKai v.1');
 
@@ -122,7 +123,7 @@ var FlexsliderHandler = function() {}
 FlexsliderHandler.prototype = {
     init: function() {
         $('.flexslider').each(function() {
-            $slider = $(this);
+            var $slider = $(this);
             $slider.flexslider({
                 directionNav: true,
                 controlNav: true,
@@ -136,6 +137,31 @@ FlexsliderHandler.prototype = {
                 start: function(slider) {}.bind(this),
                 after: function(slider) {}
             });
+        });
+    }
+};
+//#endregion
+
+//#region SwipeboxHandler
+var SwipeboxHandler = function() {}
+
+SwipeboxHandler.prototype = {
+    $swipebox: null,
+    init: function () {
+        this.$swipebox = $('.swipebox');
+        if (!this.$swipebox.length) return;
+
+        this.$swipebox.swipebox({
+            useCSS: true, // false will force the use of jQuery for animations
+            useSVG: true, // false to force the use of png for buttons
+            hideCloseButtonOnMobile: false, // true will hide the close button on mobile devices
+            hideBarsDelay: 3000, // delay before hiding bars on desktop
+            videoMaxWidth: 1024, // videos max width
+            beforeOpen: function () { $('body').addClass('no-scroll') }, // called before opening
+            afterOpen: null, // called after opening
+            afterClose: function () { $('body').removeClass('no-scroll') }, // called after closing
+            loopAtEnd: false, // true will return to the first image after the last image is reached
+            removeBarsOnMobile: false
         });
     }
 };
@@ -300,6 +326,7 @@ var accordionHandler;
 var expanderHandler;
 var carouselHandler;
 var flexsliderHandler;
+var swipeboxHandler;
 
 $(document).ready(function() {
     dekai.checkOS();
@@ -337,15 +364,21 @@ $(document).ready(function() {
     }
 
     //Slick carousel
-    if (typeof useSlickCarousel !== 'undefined' && useSlickCarousel) {
+    if (typeof useCarousel !== 'undefined' && useCarousel) {
         carouselHandler = new CarouselHandler();
         carouselHandler.init();
     }
 
     //Flex slider
-    if (typeof useFlexslider !== 'undefined' && useFlexslider) {
+    if (typeof useSlider !== 'undefined' && useSlider) {
         flexsliderHandler = new FlexsliderHandler();
         flexsliderHandler.init();
+    }
+
+    //Lightbox
+    if (typeof useLightbox !== 'undefined' && useLightbox) {
+        swipeboxHandler = new SwipeboxHandler();
+        swipeboxHandler.init();
     }
 });
 

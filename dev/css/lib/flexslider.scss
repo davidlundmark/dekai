@@ -121,7 +121,7 @@ html[xmlns] .slides {
             > * {
                 margin: 0;
                 padding: $gap-half $gap;
-                background-color: green;
+                background-color: $slider-figcaption-background-color;
                 color: $slider-figcaption-color;
             }
             &-title {}

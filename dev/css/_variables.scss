@@ -264,3 +264,17 @@ $slider-arrow-size: $gap;
 $slider-elements-not-active-opacity: 0.5;
 $slider-figcaption-background-color: $base-brand-color;
 $slider-figcaption-color: $white;
+
+// =================================================
+// Lightbox
+// =================================================
+
+$lightbox-background-color: rbga($black, 0.8);
+$lightbox-color: $white;
+$lightbox-icon-color: rbga($white, 0.9);
+$lightbox-icon-disabled-opacity: 0.3;
+$lightbox-icon-hover-color: $white;
+$lightbox-icon-size: 50px;
+$lightbox-icon-size-lg: 30px;
+$lightbox-top-bar-background-color:rbga($black, 0.8);
+$lightbox-video-max-width: 1024px;
