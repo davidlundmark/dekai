@@ -88,13 +88,12 @@
 
                 //$(document).on('click', selector, function(event) {
                 $(elem).on('click', plugin.settings.selector, function(event) {
-
                     // console.log( selector );
 
                     if (event.target.parentNode.className === 'slide current') {
 
                         return false;
-                    }
+                    }                   
 
                     /*
                     if (!$.isArray(elem)) {
@@ -178,6 +177,7 @@
                 if (plugin.settings.afterOpen) {
                     plugin.settings.afterOpen();
                 }
+
             },
 
             /**

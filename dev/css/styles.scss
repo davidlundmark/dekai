@@ -245,7 +245,7 @@
 }
 
 #slider,
-#footer,
+#footer, 
 #header {
     > .section-container {
         padding: $gap 0;
@@ -281,7 +281,7 @@
     }
 }
 
-.menu-toggle {
+#page-wrapper > .menu-toggle {
     z-index: 999;
     display: none;
     position: fixed;
