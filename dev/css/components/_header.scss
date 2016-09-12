@@ -34,7 +34,7 @@
                 }
             }
         }
-        @include breakpoint($screen-lg) {
+        @include breakpoint($breakpoint-lg) {
         	display: none;
         }
     }
@@ -49,7 +49,7 @@
             @include burger($color: $header-color);
         }
 
-        @include breakpoint($screen-lg) {
+        @include breakpoint($breakpoint-lg) {
         	display: block;
         }
 

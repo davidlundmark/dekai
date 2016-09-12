@@ -42,5 +42,14 @@
         margin-left: $gap - 0.01px;
         width: calc(100% - #{$grid-gap});
         @include generateGrid();
+        @include breakpoint($breakpoint-lg) {
+            @include generateGrid($prefix: 'lg-');
+        }
+        @include breakpoint($breakpoint-md) {
+            @include generateGrid($prefix: 'md-');
+        }
+        @include breakpoint($breakpoint-sm) {
+            @include generateGrid($prefix: 'sm-');
+        }
     }
 }

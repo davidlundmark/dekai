@@ -1,11 +1,51 @@
+.menu-toggle {
+    z-index: 999;
+    display: none;
+    position: fixed;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    padding: $gap-half;
+    .circle {
+        @include createCircle($diameter: $gap-triple, $background-color: $secondary-background-color, $border: $base-border);
+        box-shadow: rgba(0, 0, 0, 0.117647) 0px 1px 6px, rgba(0, 0, 0, 0.117647) 0px 1px 4px;
+    }
+    .burger-container {
+    	cursor: pointer;
+        @include centerElement();
+        .burger {
+            @include burger($color: $base-font-color);
+        }
+        &.active {
+            .burger {
+                @include burger-to-cross();
+            }
+        }
+    }
+    @include breakpoint($breakpoint-lg) {
+        display: block;
+    }
+}
+
 .side-nav {
     width: $sidenav-width;
-    @include fixedOverlay($right: auto,$background-color: $sidenav-background-color,$z-index : 10);
+    @include fixedOverlay($right: auto, $background-color: $sidenav-background-color, $z-index: 10);
     @include border($sidenav-border-color, right);
     -webkit-overflow-scrolling: touch;
     overflow-y: auto;
+    @include breakpoint($breakpoint-lg) {
+        @include translateX(-100%);
+        @include transition(all, 0.4s, $easeOutCubic);
+
+        &.open {
+        	@include translateX(0);
+        }
+    }
 }
 
 main {
     padding-left: $sidenav-width;
+    @include breakpoint($breakpoint-lg) {
+        padding-left: 0;
+    }
 }

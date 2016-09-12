@@ -10,14 +10,100 @@ require('./lib/jquery.swipebox.js');
 
 console.log('deKai v.1');
 
+//#region ScreensizeHandler
+var ScreensizeHandler = function() {}
+
+ScreensizeHandler.prototype = {
+    screenSize: '',
+    stateIndicator: null,
+    isBigScreen: false,
+    isSmallScreen: false,
+    isLgOrSmaller: false,
+    isMdOrSmaller: false,
+    isSmOrSmaller: false,
+    init: function() {
+        this.stateIndicator = document.createElement('div');
+        this.stateIndicator.className = 'state-indicator';
+        document.body.appendChild(this.stateIndicator);
+        this.screenSize = this.getDeviceState();
+
+        $(window).resize(function() {
+            var currentScreenSize = this.getDeviceState();
+            if (currentScreenSize != this.screenSize) {
+                this.screenSize = currentScreenSize;
+            }
+        }.bind(this));
+    },
+    getDeviceState: function() {
+        var index = parseInt(window.getComputedStyle(this.stateIndicator).getPropertyValue('z-index'), 10);
+
+        var states = {
+            1: '',
+            2: 'lg',
+            3: 'md',
+            4: 'sm'
+        };
+
+        var state = states[index];
+
+        this.isBigScreen = false;
+        this.isSmallScreen = false;
+        this.isLgOrSmaller = false;
+        this.isMdOrSmaller = false;
+        this.isSmOrSmaler = false;
+
+        switch (state) {
+            case '':
+                this.isBigScreen = true;
+                break;
+            case 'lg':
+                this.isLgOrSmaller = true;
+                this.isSmallScreen = true;
+                break;
+            case 'md':
+                this.isLgOrSmaller = true;
+                this.isMdOrSmaller = true;
+                this.isSmallScreen = true;
+                break;
+            case 'sm':
+                this.isLgOrSmaller = true;
+                this.isMdOrSmaller = true;
+                this.isSmOrSmaller = true;
+                this.isSmallScreen = true;
+                break;
+        }
+
+        return state;
+    }
+
+};
+//#endregion
+
 //#region MobilemenuHandler
 var MobilemenuHandler = function() {}
 
 MobilemenuHandler.prototype = {
     lastScrollPos: 0,
     init: function() {
-        $('.burger-container').bind('click', function() {
-            $(this).toggleClass('active');
+        $('.menu-toggle').bind('click', function(e) {
+            var $this = $(this);
+            $this.find('.burger-container').toggleClass('active');
+            var $target = $($this.data('target'));
+            $target.toggleClass('open');
+            $('body').toggleClass('no-scroll');
+            e.stopPropagation();
+
+            if ($target.hasClass('open') && screensizeHandler.isLgOrSmaller) {
+                $target.bind('click', function(e) {
+                    e.stopPropagation();
+                });
+                $(window).bind('click', function() {
+                    $this.trigger('click');
+                });
+            } else {
+                $(window).unbind('click');
+                $target.unbind('click');
+            }
         });
     }
 
@@ -342,6 +428,7 @@ var carouselHandler;
 var flexsliderHandler;
 var swipeboxHandler;
 var mobilemenuHandler;
+var screensizeHandler = new ScreensizeHandler();
 
 $(document).ready(function() {
     dekai.checkOS();
@@ -350,6 +437,9 @@ $(document).ready(function() {
 
     //Information
     informationHandler.init();
+
+    //Screen sizes
+    screensizeHandler.init();
 
     //Accordion
     if (typeof useAccordion !== 'undefined' && useAccordion) {
@@ -397,7 +487,7 @@ $(document).ready(function() {
     }
 
     //Header
-    if (typeof useHeader !== 'undefined' && useHeader) {
+    if (typeof useMenuToggle !== 'undefined' && useMenuToggle) {
         mobilemenuHandler = new MobilemenuHandler();
         mobilemenuHandler.init();
     }

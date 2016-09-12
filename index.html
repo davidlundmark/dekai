@@ -24,6 +24,12 @@
 <body>
     <!--<![endif]-->
     <div id="page-wrapper" class="visibility-hidden">
+        <div class="menu-toggle" data-target=".side-nav">
+            <div class="circle"></div>
+            <div class="burger-container">
+                <div class="burger"></div>
+            </div>
+        </div>
         <nav class="side-nav">
             <div class="logo-container">
                 <img class="logo" src="assets/images/logo.svg" alt="logo">
@@ -146,12 +152,12 @@
         -->
             <section id="logo" class="page-section">
                 <div class="section-container">
-                    <div id="logo-information" class="information">
+                    <div class="information">
                         <h2>1.1 - Logo</h2>
                     </div>
                     <div class="content">
                         <div class="row">
-                            <div class="column col-6">
+                            <div class="column col-6 col-lg-12">
                                 <div class="sub-information">
                                     <h3>Default</h3>
                                     <p>PATH: <span class="logo-path"></span></p>
@@ -160,7 +166,7 @@
                                     <img class="logo" src="assets/images/logo.svg" alt="logo">
                                 </div>
                             </div>
-                            <div class="column col-6">
+                            <div class="column col-6 col-lg-12">
                                 <div class="sub-information">
                                     <h3>Inverted</h3>
                                     <p>PATH: <span class="logo-inverted-path"></span></p>
@@ -180,7 +186,7 @@
                     </div>
                     <div class="content">
                         <div class="row">
-                            <div class="column col-4">
+                            <div class="column col-4 col-lg-6">
                                 <div class="sub-information primary-color">
                                     <h3>Primary color</h3>
                                     <p>RGB: <span class="color-rgb"></span></p>
@@ -188,7 +194,7 @@
                                 </div>
                                 <div class="color"></div>
                             </div>
-                            <div class="column col-4">
+                            <div class="column col-4 col-lg-6">
                                 <div class="sub-information secondary-color">
                                     <h3>Secondary color</h3>
                                     <p>RGB: <span class="color-rgb"></span></p>
@@ -196,7 +202,7 @@
                                 </div>
                                 <div class="color"></div>
                             </div>
-                            <div class="column col-4">
+                            <div class="column col-4 col-lg-6">
                                 <div class="sub-information tertiary-color">
                                     <h3>Tertiary color</h3>
                                     <p>RGB: <span class="color-rgb"></span></p>
@@ -1247,14 +1253,14 @@
                                         </li>
                                     </ul>
                                 </div>
-                                <div class="burger-container">
+                                <div class="menu-toggle burger-container">
                                     <div class="burger">
                                     </div>
                                 </div>
                             </div>
                         </header>
                         <script>
-                        var useHeader = true;
+                        var useMenuToggle = true;
                         </script>
                     </div>
                     <div class="centered-container">
@@ -1291,7 +1297,7 @@
                                         &lt;/div&gt;
                                     &lt;/header&gt;
                                     &lt;script&gt;
-                                    var useHeader = true;
+                                    var useMenuToggle = true;
                                     &lt;/script&gt;
                                 </code>
                                 </pre>

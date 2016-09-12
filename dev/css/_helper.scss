@@ -210,6 +210,10 @@
     transform: translateY($y);
 }
 
+@mixin translateX($x) {
+    transform: translateX($x);
+}
+
 @mixin breakpoint($breakpoint) {
     @media screen and (max-width: $breakpoint) {
       @content;
