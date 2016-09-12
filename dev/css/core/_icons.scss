@@ -30,6 +30,10 @@
     display: inline-block;
 }
 
+.icon-center {
+    @include centerElement();
+}
+
 .icon-cog:before {
     content: "\e994";
 }
@@ -48,4 +52,12 @@
 
 .icon-link:before {
   content: "\e9cb";
+}
+
+.icon-cross:before {
+  content: "\ea0f";
+}
+
+.icon-enlarge2:before {
+  content: "\e98b";
 }

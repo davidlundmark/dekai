@@ -14,7 +14,7 @@
     }
 }
 
-@mixin centeredContainer($max-width: $page-section-max-width,$padding: $gap,$position: relative) {
+@mixin centeredContainer($max-width: $page-section-max-width, $padding: $gap, $position: relative) {
     position: $position;
     width: auto;
     padding: $padding;
@@ -25,6 +25,12 @@
 @mixin forceHarwareAcceleration() {
     transform: translateZ(0);
     backface-visibility: hidden;
+}
+
+@mixin resetList() {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
 @mixin customTransitionTiming($custom-transition-timing) {

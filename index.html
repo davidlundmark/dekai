@@ -124,6 +124,9 @@
                         <li class="menu-item">
                             <a href="#slider">4.5 - Slider</a>
                         </li>
+                        <li class="menu-item">
+                            <a href="#lightbox">4.6 - Lightbox</a>
+                        </li>
                     </ul>
                 </li>
             </ul>
@@ -1404,7 +1407,7 @@
                                 <div class="card">
                                     <div class="card-image">
                                         <img src="assets/images/500x300.png" alt="..." />
-                                        <div class="card-icon">
+                                        <div class="icon-container icon-center">
                                             <span class="icon-circle primary-background-color">
                                                 <span class="icon icon-link"></span>
                                             </span>
@@ -1429,7 +1432,7 @@
                                                     &lt;div class=&quot;card&quot;&gt;
                                                         &lt;div class=&quot;card-image&quot;&gt;
                                                             &lt;img src=&quot;...&quot; alt=&quot;...&quot; /&gt;
-                                                            &lt;div class=&quot;card-icon&quot;&gt;
+                                                            &lt;div class=&quot;icon-container icon-center&quot;&gt;
                                                                 &lt;span class=&quot;icon-circle&quot;&gt;
                                                                     &lt;span class=&quot;icon icon-link&quot;&gt;&lt;/span&gt;
                                                                 &lt;/span&gt;
@@ -1515,7 +1518,7 @@
                                     <div class="expander-content">
                                         <pre class="code-toolbar language-markup">
                                                 <code>
-                                                     &lt;div class=&quot;card card-overlay&quot;&gt;
+                                                    &lt;div class=&quot;card card-overlay&quot;&gt;
                                                         &lt;div class=&quot;card-image&quot;&gt;
                                                             &lt;img src=&quot;...&quot; alt=&quot;...&quot; /&gt;
                                                         &lt;/div&gt;
@@ -1585,8 +1588,10 @@
             </section>
             <section id="slider" class="page-section">
                 <div class="section-container full-width">
-                    <div class="information">
-                        <h2>4.5 - Slider</h2>
+                    <div class="centered-container">
+                        <div class="information">
+                            <h2>4.5 - Slider</h2>
+                        </div>
                     </div>
                     <div class="content">
                         <div class="flexslider">
@@ -1635,17 +1640,17 @@
                         var useSlider = true;
                         </script>
                     </div>
-                    <hr class="divider">
-                    <div class="expander code-expander">
-                        <div class="line-behind-icon">
-                            <a href="" class="expander-trigger icon-container">
-                                <span class="icon-circle">
+                    <div class="centered-container">
+                        <div class="expander code-expander">
+                            <div class="line-behind-icon">
+                                <a href="" class="expander-trigger icon-container">
+                                    <span class="icon-circle">
                                                 <span class="icon icon-embed2"></span>
-                                </span>
-                            </a>
-                        </div>
-                        <div class="expander-content">
-                            <pre class="code-toolbar language-markup">
+                                    </span>
+                                </a>
+                            </div>
+                            <div class="expander-content">
+                                <pre class="code-toolbar language-markup">
                                 <code>
                                     &lt;div class=&quot;flexslider&quot;&gt;
                                         &lt;ul class=&quot;slides&quot;&gt;
@@ -1674,6 +1679,7 @@
                                     &lt;/script&gt;
                                 </code>
                             </pre>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1684,14 +1690,115 @@
                         <h2>4.6 - Lightbox</h2>
                     </div>
                     <div class="content">
+                        <div class="row">
+                            <div class="column col-6">
+                                <div class="sub-information">
+                                    <h3>Single image</h3>
+                                </div>
+                                <a href="assets/images/1920x1200_houses.png" rel="single-image" class="swipebox" title="Lorem ipsum 1">
+                                    <img src="assets/images/500x300.png" alt="...">
+                                    <span class="icon-container icon-center">
+                                        <span class="icon-circle primary-background-color">
+                                                <span class="icon icon-enlarge2"></span>
+                                    </span>
+                                    </span>
+                                </a>
+                                <div class="expander code-expander">
+                                    <div class="line-behind-icon">
+                                        <a href="" class="expander-trigger icon-container">
+                                            <span class="icon-circle">
+                                                <span class="icon icon-embed2"></span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="expander-content">
+                                        <pre class="code-toolbar language-markup">
+                                                <code>
+                                                    &lt;a href=&quot;image url&quot;  rel=&quot;...&quot; class=&quot;swipebox&quot; title=&quot;...&quot;&gt;
+                                                    ...
+                                                    &lt;/a&gt;
+                                                </code>
+                                        </pre>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column col-6">
+                                <div class="sub-information">
+                                    <h3>Single video</h3>
+                                </div>
+                                <a href="https://vimeo.com/181455873" rel="single-video" class="swipebox" title="Lorem ipsum 1">
+                                    <img src="assets/images/500x300.png" alt="...">
+                                    <span class="icon-container icon-center">
+                                        <span class="icon-circle primary-background-color">
+                                                <span class="icon icon-enlarge2"></span>
+                                    </span>
+                                    </span>
+                                </a>
+                                <div class="expander code-expander">
+                                    <div class="line-behind-icon">
+                                        <a href="" class="expander-trigger icon-container">
+                                            <span class="icon-circle">
+                                                <span class="icon icon-embed2"></span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="expander-content">
+                                        <pre class="code-toolbar language-markup">
+                                                <code>
+                                                &lt;a href=&quot;video url&quot; rel=&quot;...&quot; class=&quot;swipebox&quot; title=&quot;...&quot;&gt;
+                                                ...
+                                                &lt;/a&gt;
+                                                </code>
+                                        </pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="divider">
                         <div class="sub-information">
-                            <h3>Single</h3>
+                            <h3>Image gallery</h3>
                         </div>
                         <div class="row">
-                            <div class="column col-3">
-                                <a href="assets/images/1920x1200_houses.png" class="swipebox" title="Lorem ipsum 1">
+                            <div class="column col-6">
+                                <a href="assets/images/1920x1200_houses.png" rel="gallery-1" class="swipebox" title="Lorem ipsum 1">
                                     <img src="assets/images/500x300.png" alt="...">
+                                    <span class="icon-container icon-center">
+                                        <span class="icon-circle primary-background-color">
+                                                <span class="icon icon-enlarge2"></span>
+                                    </span>
+                                    </span>
                                 </a>
+                            </div>
+                            <div class="column col-6">
+                                <a href="assets/images/1920x1200_city.png" rel="gallery-1" class="swipebox" title="Lorem ipsum 1">
+                                    <img src="assets/images/500x300.png" alt="...">
+                                    <span class="icon-container icon-center">
+                                        <span class="icon-circle primary-background-color">
+                                                <span class="icon icon-enlarge2"></span>
+                                    </span>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="expander code-expander">
+                            <div class="line-behind-icon">
+                                <a href="" class="expander-trigger icon-container">
+                                    <span class="icon-circle">
+                                                <span class="icon icon-embed2"></span>
+                                    </span>
+                                </a>
+                            </div>
+                            <div class="expander-content">
+                                <pre class="code-toolbar language-markup">
+                                    <code>
+                                                &lt;a href=&quot;image url&quot; rel=&quot;gallery-1&quot; class=&quot;swipebox&quot; title=&quot;...&quot;&gt;
+                                                ...
+                                                &lt;/a&gt;
+                                                &lt;a href=&quot;image url&quot; rel=&quot;gallery-1&quot; class=&quot;swipebox&quot; title=&quot;...&quot;&gt;
+                                                ...
+                                                &lt;/a&gt;
+                                    </code>
+                                </pre>
                             </div>
                         </div>
                         <script>

@@ -269,12 +269,10 @@ $slider-figcaption-color: $white;
 // Lightbox
 // =================================================
 
-$lightbox-background-color: rbga($black, 0.8);
+$lightbox-background-color: rgba($tertiary-background-color, 0.8);
 $lightbox-color: $white;
-$lightbox-icon-color: rbga($white, 0.9);
+$lightbox-icon-color: $white;
 $lightbox-icon-disabled-opacity: 0.3;
-$lightbox-icon-hover-color: $white;
-$lightbox-icon-size: 50px;
-$lightbox-icon-size-lg: 30px;
-$lightbox-top-bar-background-color:rbga($black, 0.8);
+$lightbox-icon-size: $gap;
+$lightbox-top-bar-background-color:rgba($tertiary-background-color, 1);
 $lightbox-video-max-width: 1024px;

@@ -85,34 +85,29 @@ html.swipebox-html.swipebox-touch {
     position: absolute;
     left: 0;
     right: 0;
+    top: 0;
     z-index: 999;
-    padding: $gap+2px $lightbox-icon-size+$gap;
+    padding: $gap $lightbox-icon-size+$gap-double;
     background-color: $lightbox-top-bar-background-color;
 }
 
 #swipebox-prev,
 #swipebox-next {
-    position: absolute;
-    top: 50%;
-    padding: 19px 7px;
-    @include translateY(-50%);
-    background-color: $lightbox-background-color;
-    /*.swipebox-touch & {
-        padding: @gap-sm 3px;
-    }*/
+    @include centerVertical();
 }
 
 #swipebox-prev {
     left: $gap;
+    > .icon {
+        transform: rotate(180deg);
+    }
     .swipebox-touch & {
-        left: $gap;
     }
 }
 
 #swipebox-next {
     right: $gap;
     .swipebox-touch & {
-        right: $gap;
     }
 }
 
@@ -120,16 +115,31 @@ html.swipebox-html.swipebox-touch {
     display: block;
     width: 100%;
     text-align: center;
+    > * {
+        margin: 0;
+    }
 }
 
 #swipebox-prev,
 #swipebox-next,
 #swipebox-close {
+    z-index: 1;
+    display: block;
     cursor: pointer;
     font-size: $lightbox-icon-size;
     color: $lightbox-icon-color;
+    > .icon {
+        display: block;
+    }
     &:not(.disabled) {
-        //.defaultLink(@lightbox-icon-color,@lightbox-icon-hover-color,false);
+        opacity: 0.8;
+
+        .no-touch & {
+            @include transition();
+            &:hover {
+                opacity: 1;
+            }
+        }
     }
     /*.swipebox-touch & {
         font-size: @lightbox-icon-size-mobile;
@@ -141,23 +151,29 @@ html.swipebox-html.swipebox-touch {
     }
 }
 
-#swipebox-numeratio {
+#swipebox-numeratio,
+#swipebox-close {
     position: absolute;
     z-index: 9999;
     top: 0;
+    padding: $gap $gap;
+}
+
+#swipebox-numeratio {
     left: 0;
-    padding: $gap+2px $gap;
+
+    p {
+        margin: 0;
+    }
 }
 
 #swipebox-close {
-    top: $gap-sm - 2px;
-    right: $gap-sm;
-    position: absolute;
-    z-index: 9999;
-    /*.swipebox-touch & {
-        top: @gap - 2px;
-        right: @gap-sm + 4px;
-    }*/
+    right: 0;
+    text-decoration: none;
+    
+    .icon {
+        display: block;
+    }
 }
 
 .swipebox-no-close-button #swipebox-close {

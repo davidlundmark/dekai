@@ -2,8 +2,8 @@
 //@import 'neat';
 @import "variables";
 @import "helper";
-@import './core/base';
 @import './lib/base';
+@import './core/base';
 @import './components/base';
 //project specific styles
 .side-nav {
@@ -131,12 +131,12 @@
             }
         }
     }
-    .sub-information {
-        background-color: transparent;
-    }
 }
 
 #colors {
+    .sub-information {
+        background-color: transparent;
+    }
     .color {
         @include createCircle($diameter: 100px, $background-color: transparent);
         margin-left: $gap;
@@ -183,6 +183,16 @@
         margin-bottom: $gap;
     }
 }
+
+/*
+#form-elements {
+    fieldset {
+        border: none;
+        margin: 0;
+        padding: 0;
+    }
+}
+*/
 
 #icons {
     .content.standarn-icons .icon {
@@ -233,14 +243,29 @@
     .section-container {
         padding: $gap 0;
     }
+    .centered-container {
+        @include centeredContainer();
+        padding: 0 $gap-double;
+    }
     .information {
-        margin: 0 auto $gap-double;
+        margin-top: $gap;
     }
-    .code-expander {
-       margin-left: auto;
-       margin-right: auto;
+}
+
+#lightbox {
+    a.swipebox {
+        display: block;
+        position: relative;
+        > .icon-container {
+            display: block;
+        }
     }
-    .information,.code-expander {
-        max-width: $page-section-max-width;
+    .expander {
+        margin-bottom: $gap;
+    }
+    .content {
+        > .expander {
+            margin-bottom: 0;
+        }
     }
 }

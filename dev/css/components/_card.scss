@@ -4,9 +4,11 @@
     &-image {
         position: relative;
     }
+    /*
     &-icon {
         @include centerElement();
     }
+    */
     &-text {
         background-color: $base-background-color;
         @include border($dir: top);
