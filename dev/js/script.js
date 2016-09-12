@@ -10,6 +10,20 @@ require('./lib/jquery.swipebox.js');
 
 console.log('deKai v.1');
 
+//#region MobilemenuHandler
+var MobilemenuHandler = function() {}
+
+MobilemenuHandler.prototype = {
+    lastScrollPos: 0,
+    init: function() {
+        $('.burger-container').bind('click', function() {
+            $(this).toggleClass('active');
+        });
+    }
+
+};
+//#endregion
+
 //#region AccordionHandler
 var AccordionHandler = function() {}
 
@@ -147,7 +161,7 @@ var SwipeboxHandler = function() {}
 
 SwipeboxHandler.prototype = {
     $swipebox: null,
-    init: function () {
+    init: function() {
         this.$swipebox = $('.swipebox');
         if (!this.$swipebox.length) return;
 
@@ -157,9 +171,9 @@ SwipeboxHandler.prototype = {
             hideCloseButtonOnMobile: false, // true will hide the close button on mobile devices
             hideBarsDelay: 3000, // delay before hiding bars on desktop
             videoMaxWidth: 1024, // videos max width
-            beforeOpen: function () { $('body').addClass('no-scroll') }, // called before opening
+            beforeOpen: function() { $('body').addClass('no-scroll') }, // called before opening
             afterOpen: null, // called after opening
-            afterClose: function () { $('body').removeClass('no-scroll') }, // called after closing
+            afterClose: function() { $('body').removeClass('no-scroll') }, // called after closing
             loopAtEnd: false, // true will return to the first image after the last image is reached
             removeBarsOnMobile: false
         });
@@ -327,6 +341,7 @@ var expanderHandler;
 var carouselHandler;
 var flexsliderHandler;
 var swipeboxHandler;
+var mobilemenuHandler;
 
 $(document).ready(function() {
     dekai.checkOS();
@@ -379,6 +394,12 @@ $(document).ready(function() {
     if (typeof useLightbox !== 'undefined' && useLightbox) {
         swipeboxHandler = new SwipeboxHandler();
         swipeboxHandler.init();
+    }
+
+    //Header
+    if (typeof useHeader !== 'undefined' && useHeader) {
+        mobilemenuHandler = new MobilemenuHandler();
+        mobilemenuHandler.init();
     }
 });
 

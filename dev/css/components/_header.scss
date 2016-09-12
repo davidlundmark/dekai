@@ -1,0 +1,62 @@
+.header {
+    background-color: $header-background-color;
+    &.page-section {
+        border-bottom: $header-bottom-border;
+    }
+    ul,
+    ol {
+        @include resetList();
+    }
+    .section-container {
+        padding: $gap $page-section-padding;
+        @include clearfix();
+    }
+    .logo-container {
+        width: $header-logo-width;
+        float: left;
+    }
+    .menu-container {
+        @include centerVertical();
+        right: $page-section-padding;
+        .menu {
+            @include horizontalList();
+        }
+        .menu-item {
+            .text {
+                color: $header-color;
+                text-transform: $header-text-transform;
+                display: block;
+                text-decoration: none;
+                .no-touch & {
+                    &:hover {
+                        color: $header-hover-color;
+                    }
+                }
+            }
+        }
+        @include breakpoint($screen-lg) {
+        	display: none;
+        }
+    }
+    .burger-container {
+    	cursor: pointer;
+    	display: none;
+        @include centerVertical();
+        right: $page-section-padding;
+        padding: $gap;
+        padding-right: 0;
+        .burger {
+            @include burger($color: $header-color);
+        }
+
+        @include breakpoint($screen-lg) {
+        	display: block;
+        }
+
+        &.active {
+            .burger {
+                @include burger-to-cross();
+            }
+        }
+    }
+}

@@ -120,6 +120,7 @@
     }
 }
 
+#lightbox,
 #cards,
 #list-types,
 #colors {
@@ -239,8 +240,10 @@
     }
 }
 
-#slider {
-    .section-container {
+#slider,
+#footer,
+#header {
+    > .section-container {
         padding: $gap 0;
     }
     .centered-container {
@@ -265,6 +268,11 @@
     }
     .content {
         > .expander {
+            margin-bottom: 0;
+        }
+
+        > .sub-information {
+            margin-top: $gap;
             margin-bottom: 0;
         }
     }

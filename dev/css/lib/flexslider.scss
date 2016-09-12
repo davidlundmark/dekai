@@ -102,12 +102,10 @@ html[xmlns] .slides {
 }
 
 .flexslider-figcaption {
-    @include centeredContainer;
-    margin: 0 $page-section-padding;
-    padding: 0;
+    @include centeredContainer();
+    padding: 0 $page-section-padding;
     height: 0;
     .flexslider-text {
-        //margin: 0 $gap;
         top: -$gap-triple;
         @include translateY(-100%);
         position: absolute;

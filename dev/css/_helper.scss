@@ -33,6 +33,18 @@
     padding: 0;
 }
 
+@mixin horizontalList($margin:$gap) {
+    > li {
+        white-space: nowrap;
+        display: inline-block;
+        margin: $margin $margin/2;
+        position: relative;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
 @mixin customTransitionTiming($custom-transition-timing) {
     @include transition($transition-timing: $custom-transition-timing);
 }
@@ -184,10 +196,23 @@
     right: 0;
 }
 
+@mixin sharpen() {
+    backface-visibility: hidden;
+}
+
 @mixin translate($x, $y) {
     transform: translate($x, $y);
+
+    @include sharpen();
 }
 
 @mixin translateY($y) {
     transform: translateY($y);
 }
+
+@mixin breakpoint($breakpoint) {
+    @media screen and (max-width: $breakpoint) {
+      @content;
+    }
+}
+
