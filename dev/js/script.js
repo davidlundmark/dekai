@@ -185,7 +185,7 @@ CarouselHandler.prototype = {
             //easing: 'easeOutQuad',
             cssEsae: 'ease-out',
             useTransform: true,
-            lazyLoad: 'ondemand',
+            lazyLoad: 'progressive',//'ondemand',
             responsive: [{
                     breakpoint: 1024,
                     settings: {

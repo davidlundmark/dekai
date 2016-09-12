@@ -1,4 +1,4 @@
-@mixin burger($width: 30px, $height: 5px, $gutter: 3px, $color: #000, $border-radius: 0, $transition-duration: .3s) {
+@mixin burger($width: 30px, $height: 3px, $gutter: 6px, $color: #000, $border-radius: 3px, $transition-duration: .3s) {
     position: relative;
     margin-top: $height + $gutter;
     margin-bottom: $height + $gutter;
@@ -11,8 +11,9 @@
         height: $height;
         background-color: $color;
         border-radius: $border-radius;
-        transition-property: background-color, transform;
-        transition-duration: $transition-duration;
+        @include transition(all, 0.3s, $easeOutSine);
+        //transition-property: background-color, transform;
+        //transition-duration: $transition-duration;
     }
     &:before,
     &:after {
@@ -28,7 +29,7 @@
 }
 
 // Burger animation
-@mixin burger-to-cross($height: 5px, $gutter: 3px, $color: #000) {
+@mixin burger-to-cross($height: 3px, $gutter: 6px, $color: #000) {
     &:before,
     &:after {
         background-color: $color;

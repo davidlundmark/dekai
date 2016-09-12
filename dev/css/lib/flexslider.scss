@@ -127,6 +127,28 @@ html[xmlns] .slides {
             &-subtitle {}
         }
     }
+    @include breakpoint($breakpoint-lg) {
+        height: auto;
+        background-color: $slider-figcaption-background-color;
+        padding: 0 $gap $gap-double;
+        .flexslider-text {
+            @include clearfix();
+            position: relative;
+            margin: 0;
+            @include translate(0, 0);
+            top: auto;
+            bottom: auto;
+            > span {
+                clear: none;
+                padding: 0;
+                margin: 0;
+                background-color: transparent;
+                > * {
+                    padding-bottom: 0;
+                }
+            }
+        }
+    }
 }
 
 .flexslider .slides {
@@ -172,6 +194,12 @@ html[xmlns] .slides {
     }
 }
 
+.flex-direction-nav {
+    @include breakpoint($breakpoint-lg) {
+        display: none;
+    }
+}
+
 
 /*
 .flex-direction-nav .disabled {
@@ -211,5 +239,9 @@ html[xmlns] .slides {
                 opacity: 1;
             }
         }
+    }
+
+    @include breakpoint($breakpoint-lg) {
+        bottom: $gap-half;
     }
 }
