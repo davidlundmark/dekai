@@ -28,6 +28,12 @@
             bottom: 0;
             width: 100%;
             background-color: rgba($base-background-color, $card-overlay-opacity);
+
+            @include breakpoint($breakpoint-md) {
+                background-color: $base-background-color;
+                position: relative;
+                bottom: auto;
+            }
         }
     }
 }

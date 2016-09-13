@@ -1,4 +1,9 @@
 @mixin generateGrid($index: 12, $prefix: '', $gap: $grid-gap) {
+    &.col-#{$prefix} {
+        &hide {
+            display: none;
+        }
+    }
     @while $index > 0 {
         &.col-#{$prefix}#{$index} {
             @include setColumnWidth(12/$index, $gap)
