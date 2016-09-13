@@ -16,31 +16,58 @@
         float: left;
     }
     .menu-container {
+        display: inline-block;
         @include centerVertical();
         right: $page-section-padding;
         .menu {
             @include horizontalList();
         }
+        .submenu {
+            display: block;
+            position: absolute;
+            @include transition();
+            opacity: 0;
+            z-index: -1;
+            visibility: hidden;
+            //text-align: center;
+        }
         .menu-item {
+            position: relative;
             .text {
                 color: $header-color;
                 text-transform: $header-text-transform;
                 display: block;
                 text-decoration: none;
-                .no-touch & {
+                user-select: none;
+                cursor: default;
+            }
+            .no-touch & {
+                a.text {
+                    cursor: pointer;
                     &:hover {
                         color: $header-hover-color;
                     }
                 }
             }
+            .no-touch & {
+                &.has-child {
+                    &:hover {
+                        > .submenu {
+                            visibility: visible;
+                            opacity: 1;
+                            z-index: 1;
+                        }
+                    }
+                }
+            }
         }
         @include breakpoint($breakpoint-lg) {
-        	display: none;
+            display: none;
         }
     }
     .burger-container {
-    	cursor: pointer;
-    	display: none;
+        cursor: pointer;
+        display: none;
         @include centerVertical();
         right: $page-section-padding;
         padding: $gap;
@@ -48,11 +75,9 @@
         .burger {
             @include burger($color: $header-color);
         }
-
         @include breakpoint($breakpoint-lg) {
-        	display: block;
+            display: block;
         }
-
         &.active {
             .burger {
                 @include burger-to-cross();

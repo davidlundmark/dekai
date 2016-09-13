@@ -227,23 +227,44 @@ CarouselHandler.prototype = {
 var FlexsliderHandler = function() {}
 
 FlexsliderHandler.prototype = {
+    $flexslider: null,
+    $figCaption: null,
     init: function() {
-        $('.flexslider').each(function() {
-            var $slider = $(this);
-            $slider.flexslider({
-                directionNav: true,
-                controlNav: true,
-                animationLoop: true,
-                slideshow: false,
-                slideshowSpeed: 0,
-                animation: 'slide',
-                useCSS: true,
-                startAt: 0,
-                init: function(slider) {}.bind(this),
-                start: function(slider) {}.bind(this),
-                after: function(slider) {}
-            });
+        this.$flexslider = $('.flexslider');
+        this.$figCaption = this.$flexslider.find('.flexslider-figcaption');
+        this.$flexslider.flexslider({
+            directionNav: true,
+            controlNav: true,
+            animationLoop: true,
+            slideshow: false,
+            slideshowSpeed: 0,
+            animation: 'slide',
+            useCSS: true,
+            startAt: 0,
+            init: function(slider) {}.bind(this),
+            start: function(slider) {
+                this.setTopPadding();
+
+                $(window).resize(function() {
+                    this.setTopPadding();
+                }.bind(this));
+
+            }.bind(this),
+            after: function(slider) {}
         });
+
+    },
+    setTopPadding: function() {
+        if (screensizeHandler.isLgOrSmaller) {
+            var height = 0;
+            this.$figCaption.each(function() {
+                var $this = $(this);
+                var currentHeight = $this.height();
+                if (currentHeight > height) height = currentHeight;
+            });
+            this.$figCaption.height(height);
+            return;
+        }
     }
 };
 //#endregion
@@ -496,6 +517,16 @@ $(document).ready(function() {
     if (typeof useMenuToggle !== 'undefined' && useMenuToggle) {
         mobilemenuHandler = new MobilemenuHandler();
         mobilemenuHandler.init();
+    }
+    if (typeof useSubMenus !== 'undefined' && useSubMenus) {
+        var $subMenus = $('.header li.has-child');
+        $subMenus.each(function() {
+            var $this = $(this);
+            var $subMenu = $this.find('.sub-menu');
+            var marginLeft = $subMenu.width() * 0.5;
+            marginLeft -= $this.width() * 0.5;
+            $subMenu.css({ 'left': -(marginLeft) });
+        });
     }
 });
 

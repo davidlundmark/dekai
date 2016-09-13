@@ -93,6 +93,7 @@ html.swipebox-html.swipebox-touch {
 
 #swipebox-prev,
 #swipebox-next {
+    text-decoration: none;
     @include centerVertical();
 }
 
