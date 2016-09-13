@@ -1,4 +1,3 @@
-//var $ = require('jquery');
 require('./lib/jquery.easing.1.3.js');
 require('./lib/prism.js');
 require('./lib/fastclick.js');
@@ -8,7 +7,7 @@ require('./lib/slick.js');
 require('./lib/jquery.flexslider.js');
 require('./lib/jquery.swipebox.js');
 
-console.log('deKai v.1');
+console.log('deKai v.2');
 
 //#region ScreensizeHandler
 var ScreensizeHandler = function() {}
@@ -87,6 +86,7 @@ MobilemenuHandler.prototype = {
     init: function() {
         $('.menu-toggle').on('click', function(e) {
             var $this = $(this);
+            $this.toggleClass('open');
             $this.find('.burger-container').toggleClass('active');
             var $target = $($this.data('target'));
             $target.toggleClass('open');

@@ -4,14 +4,14 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0, user-scalable=no"">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0, user-scalable=no">
     <title>DeKai v.1</title>
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" href="assets/images/favicon/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="assets/images/favicon/favicon-16x16.png" sizes="16x16">
     <link rel="manifest" href="assets/images/favicon/manifest.json">
-    <link rel="mask-icon" href="assets/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="mask-icon" href="assets/images/favicon/safari-pinned-tab.svg">
     <link rel="shortcut icon" href="assets/images/favicon/favicon.ico">
     <meta name="msapplication-config" content="assets/images/favicon/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
@@ -1077,7 +1077,7 @@
                         <picture>
                             <source srcset="assets/images/1024x768.png" media="(max-width: 1024px)">
                             <source srcset="assets/images/480x320.png" media="(max-width: 480px)">
-                            <img srcset="assets/images/1920x1200.png" alt="…">
+                            <img src="assets/images/1920x1200.png" alt="…">
                         </picture>
                     </div>
                     <div class="expander code-expander">
@@ -1094,7 +1094,7 @@
                                         &lt;picture&gt;
                                             &lt;source srcset=&quot;assets/images/1024x768.png&quot; media=&quot;(max-width: 1024px)&quot;&gt;
                                             &lt;source srcset=&quot;assets/images/480x320.png&quot; media=&quot;(max-width: 480px)&quot;&gt;
-                                            &lt;img srcset=&quot;assets/images/1920x1200.png&quot; alt=&quot;&hellip;&quot;&gt;
+                                            &lt;img src=&quot;assets/images/1920x1200.png&quot; alt=&quot;&hellip;&quot;&gt;
                                         &lt;/picture&gt;
                                     </code>
                             </pre>
@@ -1727,13 +1727,13 @@
                     <div class="content">
                         <div class="slick-carousel" data-slides-to-show="2" data-slides-to-scroll="2" data-slides-lg="2" data-slides-md="1" data-slides-sm="1">
                             <div class="caoursel-item">
-                                <img data-lazy="assets/images/500x300.png" alt="..." />
+                                <img src="assets/images/500x300_blank.png" data-lazy="assets/images/500x300.png" alt="..." />
                             </div>
                             <div class="caoursel-item">
-                                <img data-lazy="assets/images/500x300_houses.png" alt="..." />
+                                <img src="assets/images/500x300_blank.png" data-lazy="assets/images/500x300_houses.png" alt="..." />
                             </div>
                             <div class="caoursel-item">
-                                <img data-lazy="assets/images/500x300_houses_copy.png" alt="..." />
+                                <img src="assets/images/500x300_blank.png" data-lazy="assets/images/500x300_houses_copy.png" alt="..." />
                             </div>
                         </div>
                         <script>
@@ -1785,16 +1785,16 @@
                                         <picture>
                                             <source srcset="assets/images/1024x768_city.png" media="(max-width: 1024px)">
                                             <source srcset="assets/images/480x320_city.png" media="(max-width: 480px)">
-                                            <img srcset="assets/images/1920x1200_city.png" alt="…">
+                                            <img src="assets/images/1920x1200_city.png" alt="…">
                                         </picture>
                                         <figcaption class="flexslider-figcaption">
                                             <div class="flexslider-text">
-                                                <span class="title">
+                                                <div class="title">
                                                     <h5>Lorem ipsum</h5>
-                                                </span>
-                                                <span class="subtitle">
+                                                </div>
+                                                <div class="subtitle">
                                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                                </span>
+                                                </div>
                                             </div>
                                         </figcaption>
                                     </figure>
@@ -1804,16 +1804,16 @@
                                         <picture>
                                             <source srcset="assets/images/1024x768.png" media="(max-width: 1024px)">
                                             <source srcset="assets/images/480x320.png" media="(max-width: 480px)">
-                                            <img srcset="assets/images/1920x1200_houses.png" alt="…">
+                                            <img src="assets/images/1920x1200_houses.png" alt="…">
                                         </picture>
                                         <figcaption class="flexslider-figcaption">
                                             <div class="flexslider-text">
-                                                <span class="title">
+                                                <div class="title">
                                                     <h5>Lorem ipsum</h5>
-                                                </span>
-                                                <span class="subtitle">
+                                                </div>
+                                                <div class="subtitle">
                                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                                </span>
+                                                </div>
                                             </div>
                                         </figcaption>
                                     </figure>
@@ -1879,7 +1879,7 @@
                                 <div class="sub-information">
                                     <h3>Single image</h3>
                                 </div>
-                                <a href="assets/images/1920x1200_houses.png" rel="single-image" class="swipebox" title="Lorem ipsum 1">
+                                <a href="assets/images/1920x1200_houses.png" data-rel="single-image" class="swipebox" title="Lorem ipsum 1">
                                     <img src="assets/images/500x300.png" alt="...">
                                     <span class="icon-container icon-center">
                                         <span class="icon-circle primary-background-color">
@@ -1910,7 +1910,7 @@
                                 <div class="sub-information">
                                     <h3>Single video</h3>
                                 </div>
-                                <a href="https://vimeo.com/181455873" rel="single-video" class="swipebox" title="Lorem ipsum 1">
+                                <a href="https://vimeo.com/181455873" data-rel="single-video" class="swipebox" title="Lorem ipsum 1">
                                     <img src="assets/images/500x300.png" alt="...">
                                     <span class="icon-container icon-center">
                                         <span class="icon-circle primary-background-color">
@@ -1943,7 +1943,7 @@
                         </div>
                         <div class="row">
                             <div class="column col-6 col-md-12">
-                                <a href="assets/images/1920x1200_houses.png" rel="gallery-1" class="swipebox" title="Lorem ipsum 1">
+                                <a href="assets/images/1920x1200_houses.png" data-rel="gallery-1" class="swipebox" title="Lorem ipsum 1">
                                     <img src="assets/images/500x300.png" alt="...">
                                     <span class="icon-container icon-center">
                                         <span class="icon-circle primary-background-color">
@@ -1953,7 +1953,7 @@
                                 </a>
                             </div>
                             <div class="column col-6 col-md-12">
-                                <a href="assets/images/1920x1200_city.png" rel="gallery-1" class="swipebox" title="Lorem ipsum 1">
+                                <a href="assets/images/1920x1200_city.png" data-rel="gallery-1" class="swipebox" title="Lorem ipsum 1">
                                     <img src="assets/images/500x300.png" alt="...">
                                     <span class="icon-container icon-center">
                                         <span class="icon-circle primary-background-color">
