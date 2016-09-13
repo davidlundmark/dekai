@@ -2,14 +2,20 @@
     width: $sidenav-width;
     @include fixedOverlay($right: auto, $background-color: $sidenav-background-color, $z-index: 10);
     @include border($sidenav-border-color, right);
-    -webkit-overflow-scrolling: touch;
-    overflow-y: auto;
     @include breakpoint($breakpoint-lg) {
         @include translateX(-100%);
         @include transition(all, 0.4s, $easeOutCubic);
-
         &.open {
-        	@include translateX(0);
+            @include translateX(0);
+        }
+    }
+    max-height: 100%;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    .has-touch & {
+        overflow-y: scroll;
+        .content {
+            min-height: 101%;
         }
     }
 }

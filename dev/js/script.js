@@ -85,24 +85,30 @@ var MobilemenuHandler = function() {}
 MobilemenuHandler.prototype = {
     lastScrollPos: 0,
     init: function() {
-        $('.menu-toggle').bind('click', function(e) {
+        $('.menu-toggle').on('click', function(e) {
             var $this = $(this);
             $this.find('.burger-container').toggleClass('active');
             var $target = $($this.data('target'));
             $target.toggleClass('open');
+            var $main = $('main');
             $('body').toggleClass('no-scroll');
             e.stopPropagation();
-
             if ($target.hasClass('open') && screensizeHandler.isLgOrSmaller) {
-                $target.bind('click', function(e) {
+                $target.on('click', function(e) {
                     e.stopPropagation();
                 });
-                $(window).bind('click', function() {
+
+                $main.on('click', function(e) {
                     $this.trigger('click');
+                    e.stopPropagation();
+                });
+                $main.on('touchmove', function(e) {
+                    e.preventDefault();
                 });
             } else {
-                $(window).unbind('click');
-                $target.unbind('click');
+                $main.off('click');
+                $main.off('touchmove');
+                $target.off('click');
             }
         });
     }
@@ -185,7 +191,7 @@ CarouselHandler.prototype = {
             //easing: 'easeOutQuad',
             cssEsae: 'ease-out',
             useTransform: true,
-            lazyLoad: 'progressive',//'ondemand',
+            lazyLoad: 'progressive', //'ondemand',
             responsive: [{
                     breakpoint: 1024,
                     settings: {
@@ -496,33 +502,3 @@ $(document).ready(function() {
 $(window).on('load', function() {
     dekai.hideOverlay();
 });
-
-
-/*
-$(document).ready(function () {
-  $('.accordion-tabs').each(function(index) {
-    $(this).children('li').first().children('a').addClass('is-active').next().addClass('is-open').show();
-  });
-  $('.accordion-tabs').on('click', 'li > a.tab-link', function(event) {
-    if (!$(this).hasClass('is-active')) {
-      event.preventDefault();
-      var accordionTabs = $(this).closest('.accordion-tabs');
-      accordionTabs.find('.is-open').removeClass('is-open').hide();
-
-      $(this).next().toggleClass('is-open').toggle();
-      accordionTabs.find('.is-active').removeClass('is-active');
-      $(this).addClass('is-active');
-    } else {
-      event.preventDefault();
-    }
-  });
-});
-
-$(document).ready(function(){
-  $('.js-menu-trigger').on('click touchstart',function (e) {
-    $('.side-nav').toggleClass('is-visible');
-    e.preventDefault();
-    return false;
-  });
-});
-*/

@@ -45,14 +45,14 @@
     > .icon {
         transform: rotate(180deg);
     }
-    @include breakpoint($breakpoint-lg) {
+    @include breakpoint($breakpoint-xl) {
         left: -($carousel-arrow-size + $gap-half);
     }
 }
 
 .slick-next {
     right: -($carousel-arrow-size + $gap);
-    @include breakpoint($breakpoint-lg) {
+    @include breakpoint($breakpoint-xl) {
         right: -($carousel-arrow-size + $gap-half);
     }
 }

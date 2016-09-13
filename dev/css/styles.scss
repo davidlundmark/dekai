@@ -290,17 +290,18 @@
     left: 0;
     padding: $gap-half;
     .circle {
-        @include createCircle($diameter: $gap-triple, $background-color: $secondary-background-color, $border: $base-border);
+        @include createCircle($diameter: $gap-triple, $background-color: $base-background-color, $border: $base-border);
         box-shadow: rgba(0, 0, 0, 0.117647) 0px 1px 6px, rgba(0, 0, 0, 0.117647) 0px 1px 4px;
     }
     .burger-container {
         @include centerElement();
+        display: inline-block;
         .burger {
             @include burger($color: $base-font-color);
         }
         &.active {
             .burger {
-                @include burger-to-cross();
+                @include burger-to-cross($color: $base-font-color);
             }
         }
     }

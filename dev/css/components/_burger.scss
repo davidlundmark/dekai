@@ -3,6 +3,7 @@
     margin-top: $height + $gutter;
     margin-bottom: $height + $gutter;
     user-select: none;
+    @include translateZ(0);
     &,
     &:before,
     &:after {
@@ -11,9 +12,9 @@
         height: $height;
         background-color: $color;
         border-radius: $border-radius;
-        @include transition(all, 0.3s, $easeOutSine);
-        //transition-property: background-color, transform;
-        //transition-duration: $transition-duration;
+        //@include transition(all, 0.3s, $easeOutSine);
+        transition-property: background-color, transform;
+        transition-duration: $transition-duration;
     }
     &:before,
     &:after {
