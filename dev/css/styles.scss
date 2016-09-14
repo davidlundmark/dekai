@@ -72,6 +72,13 @@
     }
 }
 
+#header {
+    .content {
+        position: relative;
+        z-index: 1;
+    }
+}
+
 .code-expander {
     $diameter: $gap-double;
     @include border($dir: top, $style: dashed);

@@ -522,7 +522,7 @@ $(document).ready(function() {
         var $subMenus = $('.header li.has-child');
         $subMenus.each(function() {
             var $this = $(this);
-            var $subMenu = $this.find('.sub-menu');
+            var $subMenu = $this.find('.submenu');
             var marginLeft = $subMenu.width() * 0.5;
             marginLeft -= $this.width() * 0.5;
             $subMenu.css({ 'left': -(marginLeft) });

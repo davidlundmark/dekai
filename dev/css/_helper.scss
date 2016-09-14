@@ -1,10 +1,24 @@
 @import "variables";
 @mixin clearfix {
-    &:after { 
+    &:after {
         content: "";
         display: table;
         clear: both;
     }
+}
+
+@mixin createTriangle ($dir:'up', $width:10px, $height:10px, $color: $base-font-color) {
+    width: 0;
+    height: 0; 
+    border-left: $width solid transparent;
+    border-right: $width solid transparent;
+
+    @if $dir=='up' {
+        border-bottom: $height solid $color;
+    }
+    @else if $dir=='down' {
+        border-top: $height solid $color;
+    } 
 }
 
 @mixin transition($transition-property: all, $transition-duration: $base-transition-duration, $transition-timing: $base-transition-timing, $acceleration: false) {
@@ -202,7 +216,6 @@
 
 @mixin translate($x, $y) {
     transform: translate($x, $y);
-
     @include sharpen();
 }
 
@@ -220,7 +233,6 @@
 
 @mixin breakpoint($breakpoint) {
     @media screen and (max-width: $breakpoint) {
-      @content;
+        @content;
     }
 }
-

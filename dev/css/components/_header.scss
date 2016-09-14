@@ -29,7 +29,28 @@
             opacity: 0;
             z-index: -1;
             visibility: hidden;
-            //text-align: center;
+            //text-align: center;x
+            .menu-item {
+                padding: $gap-half $gap;
+                background-color: $header-submenu-background-color;
+                &:first-child {
+                    @include border($dir: top, $thickness: 2px, $color: $base-font-color);
+                }
+            }
+            &:before {
+                height: $gap;
+                display: block;
+                content: '';
+                background-color: transparent;
+            }
+            &:after {
+                content: '';
+                @include createTriangle('up', 6px, 6px);
+                position: absolute;
+                @include translate(-50%, -100%);
+                left: 50%;
+                top: $gap + 1px;
+            }
         }
         .menu-item {
             position: relative;
@@ -55,7 +76,7 @@
                         > .submenu {
                             visibility: visible;
                             opacity: 1;
-                            z-index: 1;
+                            z-index: 99;
                         }
                     }
                 }
