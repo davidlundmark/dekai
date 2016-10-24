@@ -10,7 +10,7 @@
     }
     */
     &-text {
-        background-color: $base-background-color;
+        background-color: $card-background-color;
         @include border($dir: top);
         padding: $gap-md $gap;
         > *:last-child {
@@ -27,10 +27,10 @@
             position: absolute;
             bottom: 0;
             width: 100%;
-            background-color: rgba($base-background-color, $card-overlay-opacity);
+            background-color: rgba($card-background-color, $card-overlay-opacity);
 
             @include breakpoint($breakpoint-md) {
-                background-color: $base-background-color;
+                background-color: $card-background-color;
                 position: relative;
                 bottom: auto;
             }

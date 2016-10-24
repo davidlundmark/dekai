@@ -1,4 +1,4 @@
-@mixin generateGrid($index: 12, $prefix: '', $gap: $grid-gap) {
+@mixin generateGrid($index: 12, $prefix: '', $gap-grid: $grid-gap) {
     &.col-#{$prefix} {
         &hide {
             display: none;
@@ -6,16 +6,16 @@
     }
     @while $index > 0 {
         &.col-#{$prefix}#{$index} {
-            @include setColumnWidth(12/$index, $gap)
+            @include setColumnWidth(12/$index, $gap-grid)
         }
         $index: $index - 1;
     }
 }
 
-@mixin setColumnWidth($count, $gap) {
+@mixin setColumnWidth($count, $gap-grid) {
     body:not(.ie) & {
         @if $gap !=0 {
-            width: calc((100% / #{$count}) - #{$gap});
+            width: calc((100% / #{$count}) - #{$gap-grid});
         }
         @else {
             width: calc(100% / #{$count});
@@ -24,7 +24,7 @@
     body.ie & {
         $iefix: 1px; //-1px = IE subpixel rounding fix
         @if $gap !=0 {
-            width: calc((100% / #{$count}) - #{$gap} - #{$iefix});
+            width: calc((100% / #{$count}) - #{$gap-grid} - #{$iefix});
         }
         @else {
             width: calc((100% / #{$count}) - #{$iefix});
@@ -43,8 +43,8 @@
         overflow: hidden;
         display: block;
         float: left;
-        margin-top: $gap;
-        margin-left: $gap - 0.01px;
+        margin-top: $grid-gap;
+        margin-left: $grid-gap - 0.01px;
         width: calc(100% - #{$grid-gap});
         @include generateGrid();
         @include breakpoint($breakpoint-lg) {

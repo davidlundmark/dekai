@@ -24,31 +24,85 @@ h1,
 .h1 {
     //@include setFont($h1-font-name);
     @include setFontSize($h1-font-size);
+    @include breakpoint($breakpoint-lg) {
+        @include setFontSize($h1-font-size-lg);
+    }
+    @include breakpoint($breakpoint-md) {
+        @include setFontSize($h1-font-size-md);
+    }
+    @include breakpoint($breakpoint-sm) {
+        @include setFontSize($h1-font-size-sm);
+    }
 }
 
 h2,
 .h2 {
     @include setFontSize($h2-font-size);
+    @include breakpoint($breakpoint-lg) {
+        @include setFontSize($h2-font-size-lg);
+    }
+    @include breakpoint($breakpoint-md) {
+        @include setFontSize($h2-font-size-md);
+    }
+    @include breakpoint($breakpoint-sm) {
+        @include setFontSize($h2-font-size-sm);
+    }
 }
 
 h3,
 .h3 {
     @include setFontSize($h3-font-size);
+    @include breakpoint($breakpoint-lg) {
+        @include setFontSize($h3-font-size-lg);
+    }
+    @include breakpoint($breakpoint-md) {
+        @include setFontSize($h3-font-size-md);
+    }
+    @include breakpoint($breakpoint-sm) {
+        @include setFontSize($h3-font-size-sm);
+    }
 }
 
 h4,
 .h4 {
     @include setFontSize($h4-font-size);
+    @include breakpoint($breakpoint-lg) {
+        @include setFontSize($h4-font-size-lg);
+    }
+    @include breakpoint($breakpoint-md) {
+        @include setFontSize($h4-font-size-md);
+    }
+    @include breakpoint($breakpoint-sm) {
+        @include setFontSize($h4-font-size-sm);
+    }
 }
 
 h5,
 .h5 {
     @include setFontSize($h5-font-size);
+    @include breakpoint($breakpoint-lg) {
+        @include setFontSize($h5-font-size-lg);
+    }
+    @include breakpoint($breakpoint-md) {
+        @include setFontSize($h5-font-size-md);
+    }
+    @include breakpoint($breakpoint-sm) {
+        @include setFontSize($h5-font-size-sm);
+    }
 }
 
 h6,
 .h6 {
     @include setFontSize($h6-font-size);
+    @include breakpoint($breakpoint-lg) {
+        @include setFontSize($h6-font-size-lg);
+    }
+    @include breakpoint($breakpoint-md) {
+        @include setFontSize($h6-font-size-md);
+    }
+    @include breakpoint($breakpoint-sm) {
+        @include setFontSize($h6-font-size-sm);
+    }
 }
 
 p {
@@ -57,6 +111,7 @@ p {
 
 a,
 .link {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
     //@include setFont($link-font-name);
     color: $link-color;
     text-decoration: underline;

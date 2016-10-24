@@ -4,17 +4,7 @@ download and install node.js
 
 npm install webpack -global
 
-npm install webpack file-loader sass-loader css-loader style-loader node-sass autoprefixer postcss-loader precss extract-text-webpack-plugin url-loader jquery bourbon-neat@2.0.0-beta.1
-
-NODE_ENV=debug webpack to change ENV mode (Windows: SET NODE_ENV=debug)
-
---custom
-
-//npm install --save-dev bourbon@5.0.0-beta.6 bourbon-neat@2.0.0-beta.1
-
-get latest bitters from : https://github.com/thoughtbot/bitters
-
-get latest normalize.css from : https://necolas.github.io/normalize.css/
+npm install webpack file-loader sass-loader css-loader style-loader node-sass autoprefixer postcss-loader precss extract-text-webpack-plugin url-loader jquery
 
 -- packages
 
